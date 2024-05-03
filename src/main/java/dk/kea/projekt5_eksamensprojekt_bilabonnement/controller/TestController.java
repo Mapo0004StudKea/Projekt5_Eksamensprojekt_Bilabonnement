@@ -4,4 +4,8 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class TestController {
+
+    public int hej(int i, int e) {
+        return i+e;
+    }
 }
