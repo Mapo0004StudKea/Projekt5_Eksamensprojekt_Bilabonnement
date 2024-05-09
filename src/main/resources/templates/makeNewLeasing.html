@@ -10,28 +10,29 @@
     <div class="block-content">
         <div class="block">
             <h2>Aftaleindskrivning</h2>
-            <form>
+            <form action="makeNewLeasing" method="post">
                 <label for="ansat">Ansat:</label><br>
-                <input type="text" id="ansat" name="A
-                nsat"><br>
+                <input type="text" id="ansat" name="ansat"><br>
                 <label for="navn">Navn:</label><br>
                 <input type="text" id="navn" name="navn"><br>
                 <label for="leasingPrice">Pris:</label><br>
                 <input type="text" id="leasingPrice" name="Pris"><br>
                 <label for="carId">carId:</label><br>
                 <input type="text" id="carId" name="carId"><br>
-                <label for="abonnement">Abonnementsaftale:</label><br>
-
-                <select id="abonnement" name="abonnement">
-                    <option value="limited">begrænset </option>
-                    <option value="Ubegrænset">Ubegrænset</option>
-                </select><br>
+                <label>Abonnementsaftale:</label><br>
+                <input type="radio" id="limited" name="is_limited" value="true">
+                <label for="limited">Begrænset</label><br>
+                <input type="radio" id="unlimited" name="is_unlimited" value="true">
+                <label for="unlimited">Ubegrænset</label><br>
                 <label for="startdato">Startdato:</label><br>
                 <input type="date" id="startdato" name="startdato"><br>
                 <label for="slutdato">Slutdato:</label><br>
                 <input type="date" id="slutdato" name="slutdato"><br><br>
 
+                <a href="watchLeasingAgreements">
                 <button type="submit" class="button">Gem</button>
+                </a>
+
 
             </form>
         </div>
