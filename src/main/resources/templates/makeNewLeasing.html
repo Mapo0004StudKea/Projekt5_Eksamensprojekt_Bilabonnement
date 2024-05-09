@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="../static/css/leasing.css" th:href="@{css/leasing.css}">
 <head>
     <meta charset="UTF-8">
     <title>Opret Leasing</title>
 </head>
 <body>
-
-<div class="block">
-    <h2>Aftaleindskrivning</h2>
-    <form>
-        <label for="navn">Navn:</label><br>
-        <input type="text" id="navn" name="navn"><br>
-        <label for="telefonnummer">Telefonnummer:</label><br>
-        <input type="tel" id="telefonnummer" name="telefonnummer"><br>
-        <label for="stelnummer">Stelnummer:</label><br>
-        <input type="text" id="stelnummer" name="stelnummer"><br>
-        <label for="abonnement">Abonnementsaftale:</label><br>
-        <select id="abonnement" name="abonnement">
-            <option value="3 måneder">3 måneder</option>
-            <option value="6 måneder">6 måneder</option>
-            <option value="12 måneder">12 måneder</option>
-            <option value="Ubegrænset">Ubegrænset</option>
-        </select><br>
-        <label for="startdato">Startdato:</label><br>
-        <input type="date" id="startdato" name="startdato"><br>
-        <label for="slutdato">Slutdato:</label><br>
-        <input type="date" id="slutdato" name="slutdato"><br><br>
-        <input type="submit" value="Gem">
-    </form>
-
+<div class="block-container">
+    <div class="block-content">
+        <div class="block">
+            <h2>Aftaleindskrivning</h2>
+            <form>
+                <label for="ansat">Ansat:</label><br>
+                <input type="text" id="ansat" name="A
+                nsat"><br>
+                <label for="navn">Navn:</label><br>
+                <input type="text" id="navn" name="navn"><br>
+                <label for="telefonnummer">Telefonnummer:</label><br>
+                <input type="tel" id="telefonnummer" name="telefonnummer"><br>
+                <label for="stelnummer">Stelnummer:</label><br>
+                <input type="text" id="stelnummer" name="stelnummer"><br>
+                <label for="abonnement">Abonnementsaftale:</label><br>
+                <select id="abonnement" name="abonnement">
+                    <option value="3 måneder">3 måneder</option>
+                    <option value="6 måneder">6 måneder</option>
+                    <option value="12 måneder">12 måneder</option>
+                    <option value="Ubegrænset">Ubegrænset</option>
+                </select><br>
+                <label for="startdato">Startdato:</label><br>
+                <input type="date" id="startdato" name="startdato"><br>
+                <label for="slutdato">Slutdato:</label><br>
+                <input type="date" id="slutdato" name="slutdato"><br><br>
+                <button type="submit" class="button">Gem</button>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>
