@@ -6,6 +6,8 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class LeasingRepository {
     @Autowired
@@ -32,6 +34,11 @@ public class LeasingRepository {
         String FIND_LEASING_SQL ="SELECT * FROM leasingcontract WHERE id = ?";
         return jdbcTemplate.queryForObject(FIND_LEASING_SQL, new Object[]{id}, new BeanPropertyRowMapper<>(LeasingModel.class));
 
+    }
+    public List<LeasingModel> getListOfLeasingContracts(){
+        String GET_LIST_SQL ="SELECT * FROM leasingcontract";
+        List<LeasingModel> leasingModelList = jdbcTemplate.query(GET_LIST_SQL, new BeanPropertyRowMapper<>(LeasingModel.class));
+        return leasingModelList;
     }
 
 
