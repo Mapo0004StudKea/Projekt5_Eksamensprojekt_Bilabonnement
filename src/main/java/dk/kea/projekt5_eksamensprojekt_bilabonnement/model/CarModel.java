@@ -10,10 +10,9 @@ public class CarModel {
         private String carYear;
         private double monthlyPrice;
         private boolean isLeased;
-        private String startDate;
-        private String endDate;
 
-    public CarModel(int id, int serialNumber, int carNumber, String carModel, String carBrand, String carYear, double monthlyPrice, boolean isLeased, String startDate, String endDate) {
+
+    public CarModel(int id, int serialNumber, int carNumber, String carModel, String carBrand, String carYear, double monthlyPrice, boolean isLeased) {
         this.id = id;
         this.serialNumber = serialNumber;
         this.carNumber = carNumber;
@@ -22,8 +21,7 @@ public class CarModel {
         this.carYear = carYear;
         this.monthlyPrice = monthlyPrice;
         this.isLeased = isLeased;
-        this.startDate = startDate;
-        this.endDate = endDate;
+
     }
 
     public CarModel() {
@@ -91,21 +89,5 @@ public class CarModel {
 
     public void setLeased(boolean leased) {
         isLeased = leased;
-    }
-
-    public String getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
-    public String getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
     }
 }
