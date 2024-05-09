@@ -37,7 +37,7 @@ public class CarRepository {
         jdbcTemplate.update(DELETE_FROM_LIST_OF_CARS_SQL, id);
     }
 
-    public CarModel GetCarByIDForUpdate(int id) {
+    public CarModel GetCarByIdForUpdate(int id) {
         //find SQL
         String GET_CAR_BY_ID_SQL = "SELECT * FROM car WHERE id = ?";
         //returner query-resultat fra JdbcTemplate, med rowmapper som omsætter databaserække til car
