@@ -3,24 +3,24 @@ package dk.kea.projekt5_eksamensprojekt_bilabonnement.model;
 
 public class CarModel {
         private int id;
-        private int serialNumber;
-        private int carNumber;
-        private String carModel;
-        private String carBrand;
-        private String carYear;
-        private double monthlyPrice;
-        private boolean isLeased;
+        private int car_Serialnr;
+        private int car_number;
+        private String car_model;
+        private String car_name;
+        private String car_year;
+        private double monthly_price;
+        private boolean is_leased;
 
 
     public CarModel(int id, int serialNumber, int carNumber, String carModel, String carBrand, String carYear, double monthlyPrice, boolean isLeased) {
         this.id = id;
-        this.serialNumber = serialNumber;
-        this.carNumber = carNumber;
-        this.carModel = carModel;
-        this.carBrand = carBrand;
-        this.carYear = carYear;
-        this.monthlyPrice = monthlyPrice;
-        this.isLeased = isLeased;
+        this.car_Serialnr = serialNumber;
+        this.car_number = carNumber;
+        this.car_model = carModel;
+        this.car_name = carBrand;
+        this.car_year = carYear;
+        this.monthly_price = monthlyPrice;
+        this.is_leased = isLeased;
 
     }
 
@@ -35,59 +35,59 @@ public class CarModel {
         this.id = id;
     }
 
-    public int getSerialNumber() {
-        return serialNumber;
+    public int getCar_Serialnr() {
+        return car_Serialnr;
     }
 
-    public void setSerialNumber(int serialNumber) {
-        this.serialNumber = serialNumber;
+    public void setCar_Serialnr(int car_Serialnr) {
+        this.car_Serialnr = car_Serialnr;
     }
 
-    public int getCarNumber() {
-        return carNumber;
+    public int getCar_number() {
+        return car_number;
     }
 
-    public void setCarNumber(int carNumber) {
-        this.carNumber = carNumber;
+    public void setCar_number(int car_number) {
+        this.car_number = car_number;
     }
 
-    public String getCarModel() {
-        return carModel;
+    public String getCar_model() {
+        return car_model;
     }
 
-    public void setCarModel(String carModel) {
-        this.carModel = carModel;
+    public void setCar_model(String car_model) {
+        this.car_model = car_model;
     }
 
-    public String getCarBrand() {
-        return carBrand;
+    public String getCar_name() {
+        return car_name;
     }
 
-    public void setCarBrand(String carBrand) {
-        this.carBrand = carBrand;
+    public void setCar_name(String car_name) {
+        this.car_name = car_name;
     }
 
-    public String getCarYear() {
-        return carYear;
+    public String getCar_year() {
+        return car_year;
     }
 
-    public void setCarYear(String carYear) {
-        this.carYear = carYear;
+    public void setCar_year(String car_year) {
+        this.car_year = car_year;
     }
 
-    public double getMonthlyPrice() {
-        return monthlyPrice;
+    public double getMonthly_price() {
+        return monthly_price;
     }
 
-    public void setMonthlyPrice(double monthlyPrice) {
-        this.monthlyPrice = monthlyPrice;
+    public void setMonthly_price(double monthly_price) {
+        this.monthly_price = monthly_price;
     }
 
-    public boolean isLeased() {
-        return isLeased;
+    public boolean isIs_leased() {
+        return is_leased;
     }
 
-    public void setLeased(boolean leased) {
-        isLeased = leased;
+    public void setIs_leased(boolean is_leased) {
+        this.is_leased = is_leased;
     }
 }

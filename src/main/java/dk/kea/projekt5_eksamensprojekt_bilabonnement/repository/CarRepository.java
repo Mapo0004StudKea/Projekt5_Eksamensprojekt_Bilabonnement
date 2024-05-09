@@ -4,7 +4,6 @@ import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,8 +17,9 @@ public class CarRepository {
 
     public void createNewNewCarEntry(CarModel carModel) {
         //insert sql
-        final String CREATE_NEW_CAR_ENTRY_SQL = "INSERT INTO car (serialNumber, carNumber, carModel, carBrand, carYear, monthlyPrice, isLeased) VALUES (?,?,?,?,?,?,?)";
-        jdbcTemplate.update(CREATE_NEW_CAR_ENTRY_SQL, carModel.getSerialNumber(), carModel.getCarNumber(), carModel.getCarModel(), carModel.getCarBrand(), carModel.getCarYear(), carModel.getMonthlyPrice(), carModel.isLeased());
+        final String CREATE_NEW_CAR_ENTRY_SQL = "INSERT INTO car (car_Serialnr, car_number, car_model, car_name, car_year, monthly_price, is_leased) VALUES (?,?,?,?,?,?,?)";
+        //kald af JdbcTemplate med sql og paramter
+        jdbcTemplate.update(CREATE_NEW_CAR_ENTRY_SQL, carModel.getCar_Serialnr(), carModel.getCar_number(), carModel.getCar_model(), carModel.getCar_name(), carModel.getCar_year(), carModel.getMonthly_price(), carModel.isIs_leased());
     }
 
     public List<CarModel> getFullListOfCars() {
@@ -46,8 +46,8 @@ public class CarRepository {
 
     public void UpdateCarEntryInDatabase(CarModel carModel) {
         //update sql
-        String UPDATE_CAR_ENTRy_SQL = "UPDATE car SET serialNumber = ?, carNumber = ?, carModel = ?, carBrand = ?, carYear = ?, monthlyPrice = ?, isLeased = ? WHERE id = ?";
+        String UPDATE_CAR_ENTRy_SQL = "UPDATE car SET car_Serialnr = ?, car_number = ?, car_model = ?, car_name = ?, car_year = ?, monthly_price = ?, is_leased = ? WHERE id = ?";
         //update db vha. JdbcTemplate
-        jdbcTemplate.update(UPDATE_CAR_ENTRy_SQL, carModel.getSerialNumber(), carModel.getCarNumber(), carModel.getCarModel(), carModel.getCarBrand(), carModel.getCarYear(), carModel.getCarYear(), carModel.isLeased(), carModel.getId());
+        jdbcTemplate.update(UPDATE_CAR_ENTRy_SQL, carModel.getCar_Serialnr(), carModel.getCar_number(), carModel.getCar_model(), carModel.getCar_name(), carModel.getCar_year(), carModel.getMonthly_price(), carModel.isIs_leased(), carModel.getId());
     }
 }
