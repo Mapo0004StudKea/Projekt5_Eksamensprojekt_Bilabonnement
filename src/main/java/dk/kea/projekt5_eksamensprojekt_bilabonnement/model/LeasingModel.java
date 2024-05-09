@@ -4,30 +4,29 @@ import java.time.LocalDate;
 
 public class LeasingModel {
     int id;
-    double leasingPrice;
+    String employeeName;
+    double monthlyPrice;
+    String customerName;
     LocalDate startLeasing;
     LocalDate endLeasing;
-    String customerName;
-
     boolean isLimited;
-
     boolean isUnlimited;
-
     int carId;
 
-    public LeasingModel(int id, double leasingPrice, LocalDate startLeasing, LocalDate endLeasing, String customerName, boolean isLimited, boolean isUnlimited, int carId) {
+    public LeasingModel(int id, double leasingPrice, LocalDate startLeasing, LocalDate endLeasing, String customerName, boolean isLimited, boolean isUnlimited, int carId, String employeeName) {
         this.id = id;
-        this.leasingPrice = leasingPrice;
+        this.monthlyPrice = leasingPrice;
         this.startLeasing = startLeasing;
         this.endLeasing = endLeasing;
         this.customerName = customerName;
         this.isLimited = isLimited;
         this.isUnlimited = isUnlimited;
         this.carId = carId;
+        this.employeeName = employeeName;
     }
 
     public LeasingModel(double leasingPrice, LocalDate startLeasing, LocalDate endLeasing, String customerName, boolean isLimited, boolean isUnlimited, int carId) {
-        this.leasingPrice = leasingPrice;
+        this.monthlyPrice = leasingPrice;
         this.startLeasing = startLeasing;
         this.endLeasing = endLeasing;
         this.customerName = customerName;
@@ -47,12 +46,12 @@ public class LeasingModel {
         this.id = id;
     }
 
-    public double getLeasingPrice() {
-        return leasingPrice;
+    public double getMonthlyPrice() {
+        return monthlyPrice;
     }
 
-    public void setLeasingPrice(double leasingPrice) {
-        this.leasingPrice = leasingPrice;
+    public void setMonthlyPrice(double monthlyPrice) {
+        this.monthlyPrice = monthlyPrice;
     }
 
     public LocalDate getStartLeasing() {
@@ -101,5 +100,13 @@ public class LeasingModel {
 
     public void setCarId(int carId) {
         this.carId = carId;
+    }
+
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
     }
 }
