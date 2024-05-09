@@ -1,5 +1,6 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.controller;
 
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.LeasingModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,18 +25,18 @@ public class LeasingController {
 
     @PostMapping("/makeNewLeasing")
     public String newLeasingMade(
-            @RequestParam("")){
+            @RequestParam("employe") String employee_name,
+            @RequestParam("mothlyPrice") double monthly_price,
+            @RequestParam("customer") String customer_name,
+            @RequestParam("start_leasing") LocalDate start_leasing,
+            @RequestParam("end_leasing") LocalDate end_leasing,
+            @RequestParam("is_unlimited") boolean is_unlimited,
+            @RequestParam("is_limited") boolean is_limited,
+            @RequestParam("car_id") int car_id ) {
 
-        double leasingPrice;
-        LocalDate startLeasing;
-        LocalDate endLeasing;
-        String customerName;
+        LeasingModel leasingModel =new LeasingModel(monthly_price,start_leasing,end_leasing,customer_name,is_unlimited,is_limited,car_id,employee_name);
+        leasingRepository.leasingNewContrakt(leasingModel);
 
-        boolean isLimited;
-
-        boolean isUnlimited;
-
-        int carId
 
         return "redirect:/watchLeasingAgreements";
     }

@@ -25,13 +25,14 @@ public class LeasingModel {
         this.employee_name = employeeName;
     }
 
-    public LeasingModel(double leasingPrice, LocalDate startLeasing, LocalDate endLeasing, String customerName, boolean isLimited, boolean isUnlimited, int carId) {
+    public LeasingModel(double leasingPrice, LocalDate startLeasing, LocalDate endLeasing, String customerName, boolean isLimited, boolean isUnlimited, int carId, String employee_name) {
         this.monthly_price = leasingPrice;
         this.start_leasing = startLeasing;
         this.end_leasing = endLeasing;
         this.customer_name = customerName;
         this.is_limited = isLimited;
         this.is_unlimited = isUnlimited;
+        this.employee_name = employee_name;
         this.car_id = carId;
     }
 
