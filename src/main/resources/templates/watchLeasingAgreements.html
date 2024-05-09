@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="../static/css/leasing.css" th:href="@{css/leasing.css}">
 <head>
     <meta charset="UTF-8">
     <title>Overview of Leasing</title>
@@ -7,6 +8,33 @@
 <body>
 <h1> Oversigt over nuværende leasingaftaler</h1>
 
+<div class="block-container">
+    <div class="block-content">
+        <div class="blockLeasingContrakts">
+            <table>
+                <thead>
+                <tr>
+                    <h3>Alle Leasings Aftaler</h3>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="Leasing : ${LeasingAgremenst}">
+                    <td th:text="${Leasing.getId()}">abonoment ID</td>
+                    <td th:text="${Leasing.getCustomer_name()}">kunde navn</td>
+                    <td th:text="${Leasing.getMonthly_price()}">prisen</td>
+                    <td>
+                        <a th:href="@{'/vi mangler en slet/'+${Leasing.getId()}}"> Fjern abonoment</a>
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+
+
+
+        </div>
+    </div>
+</div>
 
 <a href="makeNewLeasing">
     <button>Opret ny leasing aftale</button>
