@@ -9,33 +9,31 @@ public class LeasingModel {
     LocalDate endLeasing;
     String customerName;
 
-    boolean threeMonths;
-    boolean sixMonths;
-    boolean twelveMonths;
+    boolean isLimited;
 
     boolean isUnlimited;
 
-    public LeasingModel(double leasingPrice, LocalDate startLeasing, LocalDate endLeasing, String customerName, boolean threeMonths, boolean sixMonths, boolean twelveMonths, boolean isUnlimited) {
-        this.leasingPrice = leasingPrice;
-        this.startLeasing = startLeasing;
-        this.endLeasing = endLeasing;
-        this.customerName = customerName;
-        this.threeMonths = threeMonths;
-        this.sixMonths = sixMonths;
-        this.twelveMonths = twelveMonths;
-        this.isUnlimited = isUnlimited;
-    }
+    int carId;
 
-    public LeasingModel(int id, double leasingPrice, LocalDate startLeasing, LocalDate endLeasing, String customerName, boolean threeMonths, boolean sixMonths, boolean twelveMonths, boolean isUnlimited) {
+    public LeasingModel(int id, double leasingPrice, LocalDate startLeasing, LocalDate endLeasing, String customerName, boolean isLimited, boolean isUnlimited, int carId) {
         this.id = id;
         this.leasingPrice = leasingPrice;
         this.startLeasing = startLeasing;
         this.endLeasing = endLeasing;
         this.customerName = customerName;
-        this.threeMonths = threeMonths;
-        this.sixMonths = sixMonths;
-        this.twelveMonths = twelveMonths;
+        this.isLimited = isLimited;
         this.isUnlimited = isUnlimited;
+        this.carId = carId;
+    }
+
+    public LeasingModel(double leasingPrice, LocalDate startLeasing, LocalDate endLeasing, String customerName, boolean isLimited, boolean isUnlimited, int carId) {
+        this.leasingPrice = leasingPrice;
+        this.startLeasing = startLeasing;
+        this.endLeasing = endLeasing;
+        this.customerName = customerName;
+        this.isLimited = isLimited;
+        this.isUnlimited = isUnlimited;
+        this.carId = carId;
     }
 
     public LeasingModel() {
@@ -81,28 +79,12 @@ public class LeasingModel {
         this.customerName = customerName;
     }
 
-    public boolean isThreeMonths() {
-        return threeMonths;
+    public boolean isLimited() {
+        return isLimited;
     }
 
-    public void setThreeMonths(boolean threeMonths) {
-        this.threeMonths = threeMonths;
-    }
-
-    public boolean isSixMonths() {
-        return sixMonths;
-    }
-
-    public void setSixMonths(boolean sixMonths) {
-        this.sixMonths = sixMonths;
-    }
-
-    public boolean isTwelveMonths() {
-        return twelveMonths;
-    }
-
-    public void setTwelveMonths(boolean twelveMonths) {
-        this.twelveMonths = twelveMonths;
+    public void setLimited(boolean limited) {
+        isLimited = limited;
     }
 
     public boolean isUnlimited() {
@@ -113,4 +95,11 @@ public class LeasingModel {
         isUnlimited = unlimited;
     }
 
+    public int getCarId() {
+        return carId;
+    }
+
+    public void setCarId(int carId) {
+        this.carId = carId;
+    }
 }
