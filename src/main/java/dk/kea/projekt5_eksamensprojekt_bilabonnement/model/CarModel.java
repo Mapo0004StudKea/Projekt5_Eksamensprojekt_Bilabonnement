@@ -24,6 +24,16 @@ public class CarModel {
 
     }
 
+    public CarModel(int car_Serialnr, int car_number, String car_model, String car_name, String car_year, double monthly_price, boolean is_leased) {
+        this.car_Serialnr = car_Serialnr;
+        this.car_number = car_number;
+        this.car_model = car_model;
+        this.car_name = car_name;
+        this.car_year = car_year;
+        this.monthly_price = monthly_price;
+        this.is_leased = is_leased;
+    }
+
     public CarModel() {
     }
 
