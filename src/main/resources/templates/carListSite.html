@@ -5,9 +5,6 @@
     <title>carListSide</title>
 </head>
 <body>
-<a href="/CreateNewCarEntry" >
-    <h3>Opret ny bil</h3>
-</a>
     <table>
         <thead>
             <tr>
@@ -40,5 +37,22 @@
         </tr>
         </tbody>
     </table>
+    <a href="/CreateNewCarEntry" >
+        <h3>Opret ny bil</h3>
+    </a>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>test</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="carlist1 : ${carModels1}">
+                    <h1><td th:text="${carlist1.car_Serialnr}">546231987</td></h1>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

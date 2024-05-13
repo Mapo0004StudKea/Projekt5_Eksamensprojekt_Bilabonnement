@@ -5,7 +5,6 @@ import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,11 +22,13 @@ public class CarController {
     @Autowired
     LeasingRepository leasingRepository;
 
-    @GetMapping("/carListSide")
+    @GetMapping("/carListSite")
     public String carListSide(Model model) {
         List<CarModel> carModels = carRepository.getFullListOfCars();
+        List<CarModel> carModels1 = carRepository.getSpecificNameFromCars();
         model.addAttribute("carlist", carModels);
-        return "carListSide";
+        model.addAttribute("carModels1", carModels1);
+        return "carListSite";
     }
 
     @GetMapping("/CreateNewCarEntry")
@@ -47,13 +48,13 @@ public class CarController {
     ) {
         CarModel carModel = new CarModel(car_Serialnr, car_number, car_model, car_name, car_year, monthly_price, is_leased);
         carRepository.createNewNewCarEntry(carModel);
-        return "redirect:carListSide";
+        return "redirect:carListSite";
     }
 
     @GetMapping("/deleteFromCarList/{id}")
     public String deleteCarEntry(@PathVariable("id") int carId) {
         carRepository.deleteFromListOfCars(carId);
-        return "/carListSide";
+        return "carListSite";
     }
 
     @GetMapping("/updateCarEntry/{id}")
@@ -76,6 +77,6 @@ public class CarController {
     ) {
         CarModel carModel = new CarModel(id, car_Serialnr, car_number, car_model, car_name, car_year, monthly_price, is_leased);
         carRepository.UpdateCarEntryInDatabase(carModel);
-        return "redirect:carListSide";
+        return "redirect:carListSite";
     }
 }
