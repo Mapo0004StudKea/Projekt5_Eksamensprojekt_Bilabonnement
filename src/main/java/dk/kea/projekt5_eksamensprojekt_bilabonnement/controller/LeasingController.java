@@ -39,12 +39,12 @@ public class LeasingController {
             @RequestParam("startdato") LocalDate start_leasing,
             @RequestParam("slutdato") LocalDate end_leasing,
             @RequestParam("navn") String customer_name,
-            @RequestParam(value = "Ubegrænset", required = false) boolean is_unlimited,
-            @RequestParam(value = "limited", required = false) boolean is_limited,
+            @RequestParam("Ubegrænset") boolean is_unlimited,
+            @RequestParam("limited") boolean is_limited,
             @RequestParam("carId") int car_id,
             @RequestParam("ansat") String employee_name){
 
-        LeasingModel leasingModel =new LeasingModel(monthly_price,start_leasing,end_leasing,customer_name,is_unlimited,is_limited,car_id,employee_name);
+        LeasingModel leasingModel =new LeasingModel(employee_name, monthly_price, customer_name, start_leasing, end_leasing, is_unlimited, is_limited, car_id);
         leasingRepository.createLeasingContract(leasingModel);
 
         return "redirect:/watchLeasingAgreements";
