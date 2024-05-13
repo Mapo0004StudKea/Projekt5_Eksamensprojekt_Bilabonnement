@@ -23,21 +23,22 @@
                     <td th:text="${Leasing.getCustomer_name()}">kunde navn</td>
                     <td th:text="${Leasing.getMonthly_price()}">prisen</td>
                     <td>
-                        <a th:href="@{'/vi mangler en slet/'+${Leasing.getId()}}"> Fjern abonoment</a>
+                        <a th:href="@{'/updateLeasingEntry/'+${Leasing.id}}">Opdater</a>
                     </td>
-
+                    <td>
+                        <a th:href="@{'/deleteFromLeasingList/'+${Leasing.id}}">Fjern</a>
+                    </td>
                 </tr>
                 </tbody>
             </table>
 
-
+            <a href="makeNewLeasing">
+                <button>Opret ny leasing aftale</button>
+            </a>
 
         </div>
     </div>
 </div>
 
-<a href="makeNewLeasing">
-    <button>Opret ny leasing aftale</button>
-</a>
 </body>
 </html>

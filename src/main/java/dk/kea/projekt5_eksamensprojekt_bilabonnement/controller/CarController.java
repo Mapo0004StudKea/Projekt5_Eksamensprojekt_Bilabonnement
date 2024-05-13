@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
 
 import java.util.List;
 
@@ -50,7 +48,7 @@ public class CarController {
             @RequestParam(value = "is_leased", defaultValue = "false") boolean is_leased
     ) {
         CarModel carModel = new CarModel(car_Serialnr, car_number, car_model, car_name, car_year, monthly_price, is_leased);
-        carRepository.createNewNewCarEntry(carModel);
+        carRepository.createNewCarEntry(carModel);
         return "redirect:carListSite";
     }
 
@@ -61,7 +59,7 @@ public class CarController {
         if (referrer != null && !referrer.isEmpty()) {
             return "redirect:" + referrer;
         } else {
-            return "redirect:/";
+            return "redirect:carListSite";
         }
     }
 
