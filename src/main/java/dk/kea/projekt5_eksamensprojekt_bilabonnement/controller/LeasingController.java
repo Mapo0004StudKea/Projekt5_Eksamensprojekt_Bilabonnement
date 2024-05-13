@@ -21,7 +21,7 @@ public class LeasingController {
 
     //her bliver lavet en metode som viser alle leasinger
     @GetMapping("/watchLeasingAgreements")
-    public String OverviewOfLeasings(@PathVariable Model model) {
+    public String OverviewOfLeasings(Model model) {
         List<LeasingModel>allLeasing =leasingRepository.getListOfLeasingContracts();
         model.addAttribute("LeasingAgremenst",allLeasing);
         return "watchLeasingAgreements";
