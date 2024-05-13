@@ -30,6 +30,12 @@ public class CarRepository {
         return carModels;
     }
 
+    public List<CarModel> getSpecificNameFromCars() {
+        String DISPLAY_SPECIFIC_NAME_FROM_CARS_SQL = "SELECT * FROM car WHERE id = 2";
+        List<CarModel> carModels = jdbcTemplate.query(DISPLAY_SPECIFIC_NAME_FROM_CARS_SQL, new BeanPropertyRowMapper<>(CarModel.class));
+        return carModels;
+    }
+
     public void deleteFromListOfCars(int id) {
         //slette sql
         String DELETE_FROM_LIST_OF_CARS_SQL = "DELETE FROM car where id = ?";
