@@ -79,7 +79,7 @@ public class LeasingModel {
         this.customer_name = customer_name;
     }
 
-    public boolean isIs_limited() {
+    public boolean getIs_limited() {
         return is_limited;
     }
 
@@ -87,7 +87,7 @@ public class LeasingModel {
         this.is_limited = is_limited;
     }
 
-    public boolean isIs_unlimited() {
+    public boolean getIs_unlimited() {
         return is_unlimited;
     }
 
@@ -110,4 +110,6 @@ public class LeasingModel {
     public void setEmployee_name(String employee_name) {
         this.employee_name = employee_name;
     }
+
+
 }

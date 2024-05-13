@@ -20,7 +20,7 @@ public class LeasingRepository {
     //jeg laver en metode som oprette en LeasingMetode
     public void createLeasingContract(LeasingModel leasing){
         final String INSERT_leasingcontract_SQL = "INSERT INTO leasingcontract (employee_name, monthly_price, customer_name, start_leasing, end_leasing, is_unlimited, is_limited, car_id) VALUES (?,?,?,?,?,?,?,?)";
-        jdbcTemplate.update(INSERT_leasingcontract_SQL, leasing.getEmployee_name(), leasing.getMonthly_price(), leasing.getCustomer_name(), leasing.getStart_leasing(), leasing.getEnd_leasing(),leasing.isIs_unlimited(),leasing.isIs_limited(), leasing.getCar_id());
+        jdbcTemplate.update(INSERT_leasingcontract_SQL, leasing.getEmployee_name(), leasing.getMonthly_price(), leasing.getCustomer_name(), leasing.getStart_leasing(), leasing.getEnd_leasing(),leasing.getIs_unlimited(),leasing.getIs_limited(), leasing.getCar_id());
     }
 
     public void deleteLeasing(int id){
@@ -29,7 +29,7 @@ public class LeasingRepository {
     }
     public void updateLeasing(LeasingModel leasing){
         String UPDATE_LEASING_SQL = "UPDATE leasingcontract SET employee_name = ?, monthly_price = ?, customer_name = ?, start_leasing = ?, end_leasing = ?, is_unlimited = ?, is_limited = ?, car_id = ? WHERE id = ?";
-        jdbcTemplate.update(UPDATE_LEASING_SQL, leasing.getEmployee_name(), leasing.getMonthly_price(), leasing.getCustomer_name(), leasing.getStart_leasing(), leasing.getEnd_leasing(),leasing.isIs_unlimited(),leasing.isIs_limited(), leasing.getCar_id());
+        jdbcTemplate.update(UPDATE_LEASING_SQL, leasing.getEmployee_name(), leasing.getMonthly_price(), leasing.getCustomer_name(), leasing.getStart_leasing(), leasing.getEnd_leasing(), leasing.getIs_unlimited(), leasing.getIs_limited(), leasing.getCar_id(), leasing.getId());
     }
 
     public LeasingModel findById(int id){
