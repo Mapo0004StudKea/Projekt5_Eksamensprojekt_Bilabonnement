@@ -39,8 +39,8 @@ public class LeasingController {
             @RequestParam("startdato") LocalDate start_leasing,
             @RequestParam("slutdato") LocalDate end_leasing,
             @RequestParam("navn") String customer_name,
-            @RequestParam("Ubegrænset") boolean is_unlimited,
-            @RequestParam("limited") boolean is_limited,
+            @RequestParam(value = "is_unlimited", defaultValue = "false") boolean is_unlimited,
+            @RequestParam(value = "is_limited", defaultValue = "false") boolean is_limited,
             @RequestParam("carId") int car_id,
             @RequestParam("ansat") String employee_name){
 
