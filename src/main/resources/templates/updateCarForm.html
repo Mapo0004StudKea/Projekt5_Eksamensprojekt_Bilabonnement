@@ -3,25 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <title>updateCarForm</title>
+    <link rel="stylesheet" href="../static/css/carForm.css" th:href="@{css/carForm.css}">
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            width: 70vh; /* Width of the form container */
+            background-color: #fff; /* Background color */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0px 0px 10px 0px rgba(0, 192, 255, 0.75); /* Shadow effect */
+            padding: 20px; /* Padding inside the container */
+        }
+
+        .form-container label {
+            display: block; /* Display labels as blocks */
+            margin-bottom: 10px; /* Add some space below each label */
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="checkbox"],
+        .form-container input[type="submit"] {
+            width: 100%; /* Full width input fields and submit button */
+            padding: 10px; /* Padding for input fields and button */
+            margin-bottom: 15px; /* Add some space below each input field and button */
+            border: 1px solid #ccc; /* Border for input fields */
+            border-radius: 5px; /* Rounded corners */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        .form-container input[type="checkbox"] {
+            width: auto; /* Auto width for checkbox */
+            margin-top: 8px; /* Adjust margin for checkbox */
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #1e90ff; /* Blue color */
+            color: #fff; /* Text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Cursor style */
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #005cbf; /* Darker blue color on hover */
+        }
+
+    </style>
 </head>
 <body>
-<form action="/updateCarEntry" method="post">
-    <input name="id" type="hidden" th:value="${updateCar.id}" th:name="id">
-    <label for="car_Serialnr-field">Serie Nummer:</label>
-    <input id="car_Serialnr-field" name="car_Serialnr" type="text" th:value="${updateCar.car_Serialnr}">
-    <label for="car_number-field">Nummerplade:</label>
-    <input id="car_number-field" name="car_number" type="text" th:value="${updateCar.car_number}">
-    <label for="car_model-field">Model:</label>
-    <input id="car_model-field" name="car_model" type="text" th:value="${updateCar.car_model}">
-    <label for="car_name-field">Mærke:</label>
-    <input id="car_name-field" name="car_name" type="text" th:value="${updateCar.car_name}">
-    <label for="car_year-field">År:</label>
-    <input id="car_year-field" name="car_year" type="text" th:value="${updateCar.car_year}">
-    <label for="monthly_price-field">Månedspris:</label>
-    <input id="monthly_price-field" name="monthly_price" type="text" th:value="${updateCar.monthly_price}">
-    <label for="is_leased-field">Udlejet:</label>
-    <input id="is_leased-field" name="is_leased" type="text" th:value="${updateCar.is_leased}">
-    <input type="submit" value="Opdater bilen">
-</form>
+<div class="container">
+    <form action="/updateCarEntry" method="post" class="form-container">
+        <h1>Opdater bil</h1>
+        <input name="id" type="hidden" th:value="${updateCar.id}" th:name="id">
+        <label for="car_Serialnr-field">Serie Nummer:</label>
+        <input id="car_Serialnr-field" name="car_Serialnr" type="text" th:value="${updateCar.car_Serialnr}">
+        <label for="car_number-field">Nummerplade:</label>
+        <input id="car_number-field" name="car_number" type="text" th:value="${updateCar.car_number}">
+        <label for="car_model-field">Model:</label>
+        <input id="car_model-field" name="car_model" type="text" th:value="${updateCar.car_model}">
+        <label for="car_name-field">Mærke:</label>
+        <input id="car_name-field" name="car_name" type="text" th:value="${updateCar.car_name}">
+        <label for="car_year-field">År:</label>
+        <input id="car_year-field" name="car_year" type="text" th:value="${updateCar.car_year}">
+        <label for="monthly_price-field">Månedspris:</label>
+        <input id="monthly_price-field" name="monthly_price" type="text" th:value="${updateCar.monthly_price}">
+        <label for="is_leased-field">Udlejet:</label>
+        <input id="is_leased-field" name="is_leased" type="text" th:value="${updateCar.is_leased}">
+        <input type="submit" value="Opdater bilen">
+    </form>
+</div>
 </body>
 </html>

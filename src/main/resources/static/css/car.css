@@ -1,0 +1,63 @@
+/* Styles for the table */
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table {
+    width: 70%; /* Adjust width as needed */
+    background-color: #fff; /* Background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 0px 10px 0px rgba(0, 192, 255, 0.75); /* Box shadow */
+    border-collapse: collapse; /* Collapse borders */
+}
+
+.table th, .table td {
+    padding: 10px; /* Padding */
+    text-align: center; /* Center text */
+    border: 1px solid #ddd; /* Border */
+    box-sizing: border-box; /* Include padding and border in total width and height */
+}
+
+/* Styles for the "Opret ny bil" link */
+.create-car-link {
+    display: block; /* Display as block element */
+    margin-top: 20px; /* Adjust margin as needed */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    color: #1e90ff; /* Link color */
+}
+
+/* Styles for the "test" table */
+.test-table {
+    width: 70%; /* Adjust width as needed */
+    margin-top: 20px; /* Adjust margin as needed */
+    background-color: #fff; /* Background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 0px 10px 0px rgba(0, 192, 255, 0.75); /* Box shadow */
+    border-collapse: collapse; /* Collapse borders */
+}
+
+.test-table th {
+    padding: 20px; /* Padding */
+    text-align: center; /* Center text */
+    border: 1px solid #ddd; /* Border */
+    box-sizing: border-box; /* Include padding and border in total width and height */
+}
+.create-car-button {
+    background-color: #1e90ff; /* Blue color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+    margin-top: 20px; /* Adjust margin as needed */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Display as block element */
+}
+
+.create-car-button:hover {
+    background-color: #005cbf; /* Darker blue color on hover */
+}

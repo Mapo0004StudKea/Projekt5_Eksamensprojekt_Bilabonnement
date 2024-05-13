@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>CreateNewCarEntryForm</title>
+    <link rel="stylesheet" href="../static/css/carForm.css" th:href="@{css/carForm.css}">
 </head>
 <body>
-    <form action="CreateNewCarEntryForm" method="post">
+<div class="container">
+    <form action="CreateNewCarEntryForm" method="post" class="form-container">
+        <h1>Opret bil</h1>
         <label for="car_Serialnr-field">Serie Nummer:</label>
         <input id="car_Serialnr-field" name="car_Serialnr" type="text">
         <label for="car_number-field">Nummerplade:</label>
@@ -19,8 +22,9 @@
         <label for="monthly_price-field">Månedspris:</label>
         <input id="monthly_price-field" name="monthly_price" type="text">
         <label for="is_leased-field">Udlejet:</label>
-        <input id="is_leased-field" name="is_leased" type="text">
+        <input id="is_leased-field" name="is_leased" type="checkbox" value="true">
         <input type="submit" value="Opret ny bil">
     </form>
+</div>
 </body>
 </html>

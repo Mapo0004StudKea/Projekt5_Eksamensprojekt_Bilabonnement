@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>carListSide</title>
+    <link rel="stylesheet" href="../static/css/car.css" th:href="@{css/car.css}"> <!-- Link to your CSS file -->
 </head>
 <body>
-    <table>
+<div class="table-container">
+    <table class="table">
         <thead>
             <tr>
                 <th>Serie Nummer</th>
@@ -27,7 +29,8 @@
             <td th:text="${carlist.car_name}">Bil brand</td>
             <td th:text="${carlist.car_year}">2014</td>
             <td th:text="${carlist.monthly_price}">130000</td>
-            <td th:text="${carlist.is_leased}">yes</td>
+            <td th:text="${carlist.is_leased} ? 'Ja' : 'Nej'">yes</td>
+
             <td>
                 <a th:href="@{'/updateCarEntry/'+${carlist.id}}">Opdater</a>
             </td>
@@ -37,22 +40,29 @@
         </tr>
         </tbody>
     </table>
-    <a href="/CreateNewCarEntry" >
-        <h3>Opret ny bil</h3>
-    </a>
-    <div>
+</div>
+
+<div class="table-container">
+    <form action="/CreateNewCarEntry">
+        <button type="submit" class="create-car-button">Opret ny bil</button>
+    </form>
+</div>
+
+    <!--
+    <div class="table-container">
         <table>
             <thead>
                 <tr>
-                    <th>test</th>
+                    <th><h1>test</h1></th>
                 </tr>
             </thead>
             <tbody>
                 <tr th:each="carlist1 : ${carModels1}">
-                    <h1><td th:text="${carlist1.car_Serialnr}">546231987</td></h1>
+                    <td th:text="${carlist1.car_Serialnr}">546231987</td>
                 </tr>
             </tbody>
         </table>
     </div>
+    -->
 </body>
 </html>

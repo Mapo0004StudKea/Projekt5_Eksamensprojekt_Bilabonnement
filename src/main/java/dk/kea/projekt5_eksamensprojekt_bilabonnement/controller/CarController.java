@@ -3,6 +3,7 @@ package dk.kea.projekt5_eksamensprojekt_bilabonnement.controller;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepository;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 import java.util.List;
 
@@ -44,7 +47,7 @@ public class CarController {
             @RequestParam("car_name") String car_name,
             @RequestParam("car_year") String car_year,
             @RequestParam("monthly_price") double monthly_price,
-            @RequestParam("is_leased") boolean is_leased
+            @RequestParam(value = "is_leased", defaultValue = "false") boolean is_leased
     ) {
         CarModel carModel = new CarModel(car_Serialnr, car_number, car_model, car_name, car_year, monthly_price, is_leased);
         carRepository.createNewNewCarEntry(carModel);
@@ -52,9 +55,14 @@ public class CarController {
     }
 
     @GetMapping("/deleteFromCarList/{id}")
-    public String deleteCarEntry(@PathVariable("id") int carId) {
+    public String deleteCarEntry(@PathVariable("id") int carId, HttpServletRequest request) {
         carRepository.deleteFromListOfCars(carId);
-        return "carListSite";
+        String referrer = request.getHeader("referer");
+        if (referrer != null && !referrer.isEmpty()) {
+            return "redirect:" + referrer;
+        } else {
+            return "redirect:/";
+        }
     }
 
     @GetMapping("/updateCarEntry/{id}")
