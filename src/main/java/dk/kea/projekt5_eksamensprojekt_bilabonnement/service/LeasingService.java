@@ -14,7 +14,10 @@ public class LeasingService {
         double totalPrice = 0;
         totalPrice += monthly_price;
 
-        
+        if(is_limited){
+            totalPrice += monthly_price;
+
+        }
 
         return totalPrice;
     }
