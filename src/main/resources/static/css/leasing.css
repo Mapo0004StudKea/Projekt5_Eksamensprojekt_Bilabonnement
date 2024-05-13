@@ -1,6 +1,6 @@
 .block{
     width: 70vh; /* Bredden på din boks */
-    height: 70vh; /* Højden på din boks */
+    height: 80vh; /* Højden på din boks */
     background-color: #fff; /* Baggrundsfarve */
     border-radius: 10px; /* Afrundede hjørner */
     box-shadow: 0px 0px 10px 0px rgba(0, 192, 255, 0.75); /* Skyggeeffekt */
