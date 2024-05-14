@@ -30,7 +30,20 @@ public class CarService {
     }
 
     public double calculateTotalMonthlyPriceForLeasedCars() {
-        double totalPrice = 0;
-        return totalPrice;
+        List<CarModel> leasedCars = carRepository.getLeasedCars();
+        double totalLeasedMonthlyPrice = 0;
+        for (CarModel car : leasedCars) {
+            totalLeasedMonthlyPrice += car.getMonthly_price();
+        }
+        return totalLeasedMonthlyPrice;
+    }
+
+    public double calculateTotalMonthlyPriceForNonLeasedCars() {
+        List<CarModel> nonLeasedCars = carRepository.getNonLeasedCars();
+        double totalNonLeasedMonthlyPrice = 0;
+        for (CarModel car : nonLeasedCars) {
+            totalNonLeasedMonthlyPrice += car.getMonthly_price();
+        }
+        return totalNonLeasedMonthlyPrice;
     }
 }

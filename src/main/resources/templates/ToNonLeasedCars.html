@@ -2,11 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>ToLeasedCars</title>
+    <title>ToNonLeasedCars</title>
     <link rel="stylesheet" href="../static/css/car.css" th:href="@{css/car.css}">
 </head>
 <body>
-<h1 style="text-align: center">Oversigt over udlejede biler</h1>
+<h1 style="text-align: center">Oversigt over ikke udlejede biler</h1>
 <div class="table-container">
     <table class="table">
         <thead>
@@ -20,7 +20,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="carlist : ${leasedCars}">
+        <tr th:each="carlist : ${nonLeasedCars}">
             <td th:text="${carlist.car_Serialnr}">546231987</td>
             <td th:text="${carlist.car_number}">123654898213</a></td>
             <td th:text="${carlist.car_model}">Bil model</td>

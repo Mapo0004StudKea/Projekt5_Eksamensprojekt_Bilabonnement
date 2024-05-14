@@ -6,7 +6,6 @@ import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepositor
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.service.CarService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
-import java.util.Locale;
 
 /**
  * car controller class
@@ -48,8 +46,19 @@ public class CarController {
     @GetMapping("/ToLeasedCars")
     public String toLeasedCars(Model model) {
         List<CarModel> carModels = carRepository.getLeasedCars();
-        model.addAttribute("leasedcars", carModels);
+        double totalMonthlyPriceForLeasedCars = carService.calculateTotalMonthlyPriceForLeasedCars();
+        model.addAttribute("leasedCars", carModels);
+        model.addAttribute("totalMonthlyPrice", totalMonthlyPriceForLeasedCars);
         return "ToLeasedCars";
+    }
+
+    @GetMapping("/ToNonLeasedCars")
+    public String toNonLeasedCars(Model model) {
+        List<CarModel> carModels = carRepository.getNonLeasedCars();
+        double totalMonthlyPriceForNonLeasedCars = carService.calculateTotalMonthlyPriceForNonLeasedCars();
+        model.addAttribute("nonLeasedCars", carModels);
+        model.addAttribute("totalMonthlyPrice", totalMonthlyPriceForNonLeasedCars);
+        return "ToNonLeasedCars";
     }
 
     @GetMapping("/CreateNewCarEntry")
