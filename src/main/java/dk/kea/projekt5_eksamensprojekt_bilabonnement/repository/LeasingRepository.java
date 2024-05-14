@@ -8,6 +8,14 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * leasing repository class
+ *
+ * @author Viggo Beck, vibe0002@stud.kea.dk
+ * @author Sebastian Drumm, sedr0001@stud.kea.dk
+ * @author Martin Poulsen, mapo0004@stud.kea.dk
+ */
+
 @Repository
 public class LeasingRepository {
     @Autowired

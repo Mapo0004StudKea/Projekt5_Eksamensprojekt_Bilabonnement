@@ -1,5 +1,10 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.model;
 
+/**
+ * leasing model class
+ *
+ * @author Viggo Beck, vibe0002@stud.kea.dk
+ */
 public class DamageModel {
     int id;
     String damage_name;

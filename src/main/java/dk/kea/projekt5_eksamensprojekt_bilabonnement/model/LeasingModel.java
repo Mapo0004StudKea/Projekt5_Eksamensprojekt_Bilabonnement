@@ -2,6 +2,14 @@ package dk.kea.projekt5_eksamensprojekt_bilabonnement.model;
 
 import java.time.LocalDate;
 
+/**
+ * leasing model class
+ *
+ * @author Viggo Beck, vibe0002@stud.kea.dk
+ * @author Sebastian Drumm, sedr0001@stud.kea.dk
+ * @author Martin Poulsen, mapo0004@stud.kea.dk
+ */
+
 public class LeasingModel {
     int id;
     String employee_name;

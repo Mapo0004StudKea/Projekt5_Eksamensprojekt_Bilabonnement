@@ -4,6 +4,12 @@ import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepositor
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * leasing service class
+ *
+ * @author Viggo Beck, vibe0002@stud.kea.dk
+ */
+
 @Service
 public class LeasingService {
 

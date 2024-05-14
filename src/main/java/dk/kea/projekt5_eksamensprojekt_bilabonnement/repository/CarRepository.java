@@ -8,7 +8,11 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-
+/**
+ * car repository class
+ *
+ * @author Martin Poulsen, mapo0004@stud.kea.dk
+ */
 @Repository
 public class CarRepository {
 

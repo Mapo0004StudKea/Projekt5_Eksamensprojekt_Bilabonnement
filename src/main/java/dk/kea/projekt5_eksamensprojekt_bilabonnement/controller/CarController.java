@@ -15,6 +15,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
+/**
+ * car controller class
+ *
+ * @author Martin Poulsen, mapo0004@stud.kea.dk
+ */
 @Controller
 public class CarController {
 

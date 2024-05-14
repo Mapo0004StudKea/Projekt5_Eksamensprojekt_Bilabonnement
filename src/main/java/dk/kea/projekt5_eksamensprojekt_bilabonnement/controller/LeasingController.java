@@ -15,7 +15,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
 import java.util.List;
-
+/**
+ * leasing controller class
+ *
+ * @author Viktor Rasmussen, vira0004@stud.kea
+ * @author Viggo Beck, vibe0002@stud.kea.dk
+ * @author Sebastian Drumm, sedr0001@stud.kea.dk
+ * @author Martin Poulsen, mapo0004@stud.kea.dk
+ */
 @Controller
 public class LeasingController {
 

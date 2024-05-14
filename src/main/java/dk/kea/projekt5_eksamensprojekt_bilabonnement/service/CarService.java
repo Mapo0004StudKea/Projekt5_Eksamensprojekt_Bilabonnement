@@ -7,6 +7,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * car service class
+ *
+ * @author Martin Poulsen, mapo0004@stud.kea.dk
+ *
+ */
+
 @Service
 public class CarService {
 
