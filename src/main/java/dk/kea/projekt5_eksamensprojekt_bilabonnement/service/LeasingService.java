@@ -16,16 +16,15 @@ public class LeasingService {
     @Autowired
     private LeasingRepository leasingRepository;
 
+    //Metode til at beregne forskellen mellem limited og unlimited.
     public double calculateLeasingPrice (boolean is_limited, boolean is_unlimited, double monthly_price){
         double totalPrice = 0;
-        totalPrice += monthly_price;
 
         if(is_limited){
-            totalPrice += monthly_price;
-
+            totalPrice = monthly_price + 500; //Tillæg for limited
+        } else if(is_unlimited){
+            totalPrice = monthly_price + 1000; //Tillæg for unlimited
         }
-
         return totalPrice;
     }
-
 }

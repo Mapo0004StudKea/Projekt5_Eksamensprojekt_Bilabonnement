@@ -8,11 +8,11 @@ package dk.kea.projekt5_eksamensprojekt_bilabonnement.model;
 public class DamageModel {
     int id;
     String damage_name;
-    String damage_price;
+    double damage_price;
     String damage_description;
     int damageReport_id;
 
-    public DamageModel(int id, String damage_name, String damage_price, String damage_description, int damageReport_id) {
+    public DamageModel(int id, String damage_name, double damage_price, String damage_description, int damageReport_id) {
         this.id = id;
         this.damage_name = damage_name;
         this.damage_price = damage_price;
@@ -20,7 +20,7 @@ public class DamageModel {
         this.damageReport_id = damageReport_id;
     }
 
-    public DamageModel(String damage_name, String damage_price, String damage_description, int damageReport_id) {
+    public DamageModel(String damage_name, double damage_price, String damage_description, int damageReport_id) {
         this.damage_name = damage_name;
         this.damage_price = damage_price;
         this.damage_description = damage_description;
@@ -46,11 +46,11 @@ public class DamageModel {
         this.damage_name = damage_name;
     }
 
-    public String getDamage_price() {
+    public double getDamage_price() {
         return damage_price;
     }
 
-    public void setDamage_price(String damage_price) {
+    public void setDamage_price(double damage_price) {
         this.damage_price = damage_price;
     }
 
