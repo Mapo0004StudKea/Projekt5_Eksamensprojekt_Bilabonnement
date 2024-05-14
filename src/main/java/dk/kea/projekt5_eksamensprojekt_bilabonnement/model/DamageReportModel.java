@@ -63,4 +63,8 @@ public class DamageReportModel {
     public int getCar_id() {
         return car_id;
     }
+
+    public void setCar_id(int car_id) {
+        this.car_id = car_id;
+    }
 }

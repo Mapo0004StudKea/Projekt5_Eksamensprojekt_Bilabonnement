@@ -1,5 +1,6 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.controller;
 
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageReportModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.LeasingModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageReportRepository;
