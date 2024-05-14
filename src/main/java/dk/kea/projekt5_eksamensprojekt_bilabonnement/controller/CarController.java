@@ -6,6 +6,7 @@ import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepositor
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.service.CarService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Locale;
 
 /**
  * car controller class
@@ -41,6 +43,13 @@ public class CarController {
         model.addAttribute("carModels1", carModels1);
         model.addAttribute("totalMonthlyPrice", totalMonthlyPrice);
         return "carListSite";
+    }
+
+    @GetMapping("/ToLeasedCars")
+    public String toLeasedCars(Model model) {
+        List<CarModel> carModels = carRepository.getLeasedCars();
+        model.addAttribute("leasedcars", carModels);
+        return "ToLeasedCars";
     }
 
     @GetMapping("/CreateNewCarEntry")

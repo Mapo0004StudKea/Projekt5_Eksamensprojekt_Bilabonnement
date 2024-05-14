@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DamageReportSite</title>
+    <link rel="stylesheet" href="../static/css/car.css" th:href="@{css/car.css}">
+</head>
+<body>
+<h1 style="text-align: center">Oversigt over alle skadesrapporter</h1>
+    <div class="table-container">
+        <table>
+            <thead>
+            <tr>
+                <th>Navn</th>
+                <th>Beskrivelse</th>
+                <th>Opdater</th>
+                <th>Slet</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+<div class="table-container">
+    <form action="/CreateNewReportEntry">
+        <button type="submit" class="create-Report-button">Opret ny rapport</button>
+    </form>
+</div>
+</body>
+</html>

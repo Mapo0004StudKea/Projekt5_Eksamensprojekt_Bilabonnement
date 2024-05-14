@@ -34,6 +34,12 @@ public class CarRepository {
         return carModels;
     }
 
+    public List<CarModel> getLeasedCars() {
+        String DISPLAY_LEASED_CARS = "SELECT * FROM car WHERE is_leased = 1";
+        List<CarModel> carModels = jdbcTemplate.query(DISPLAY_LEASED_CARS, new BeanPropertyRowMapper<>(CarModel.class));
+        return  carModels;
+    }
+
     public List<CarModel> getSpecificNameFromCars() {
         String DISPLAY_SPECIFIC_NAME_FROM_CARS_SQL = "SELECT * FROM car WHERE id = 2";
         List<CarModel> carModels = jdbcTemplate.query(DISPLAY_SPECIFIC_NAME_FROM_CARS_SQL, new BeanPropertyRowMapper<>(CarModel.class));
