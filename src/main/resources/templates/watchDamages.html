@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skadesoversigt</title>
+</head>
+<body>
+
+<h1> Oversigt over skader</h1>
+
+<div class="block-container">
+    <div class="block-content">
+        <div class="blockLeasingContrakts">
+            <table>
+                <thead>
+                <tr>
+                    <h3>Oversigt over alle Skader</h3>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each=" Damage : ${damageOverview}">
+                    <td th:text="${Damage.getId()}">ID</td>
+                    <td th:text="${Damage.getDamage_name()}">Navn på skaden</td>
+                    <td th:text="${Damage.getDamage_price()}">Prisen på skaden</td>
+                    <td th:text="${Damage.getDamage_description()}"> Beskrivelse af skaden </td>
+
+                </tr>
+                </tbody>
+            </table>
+
+            <a href="/makeNewDamage">
+                <button>Opret ny skade</button>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

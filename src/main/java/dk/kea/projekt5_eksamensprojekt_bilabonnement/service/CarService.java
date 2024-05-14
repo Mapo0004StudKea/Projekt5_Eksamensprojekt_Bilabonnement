@@ -24,7 +24,7 @@ public class CarService {
         List<CarModel> cars = carRepository.getFullListOfCars();
         double totalPrice = 0;
         for (CarModel car : cars) {
-            totalPrice += car.getMonthly_price();
+                totalPrice += car.getMonthly_price();
         }
         return totalPrice;
     }

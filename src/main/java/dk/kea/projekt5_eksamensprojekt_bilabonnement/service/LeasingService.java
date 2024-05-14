@@ -1,5 +1,6 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.service;
 
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.LeasingModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
