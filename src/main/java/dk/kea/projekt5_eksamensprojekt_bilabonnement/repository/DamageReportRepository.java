@@ -16,13 +16,14 @@ public class DamageReportRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    CarModel carModel;
 
 
     //lave et nyt damageReportModel
     public void createNewDamageReport(DamageReportModel damageReportModel){
         //indsæt sql statement
-        final String CREA_NEW_DamageReportModel_SQL = "INSERT INTO damagereport (id, report_name, report_description,report_employee_name) values (?,?,?,?)";
-        jdbcTemplate.update(CREA_NEW_DamageReportModel_SQL, damageReportModel.getId(), damageReportModel.getReport_name(), damageReportModel.getReport_description());
+        final String CREA_NEW_DamageReportModel_SQL = "INSERT INTO damagereport (report_name, report_description, report_employee_name, car_id) values (?,?,?,?)";
+        jdbcTemplate.update(CREA_NEW_DamageReportModel_SQL, damageReportModel.getReport_name(), damageReportModel.getReport_description(), damageReportModel.getCar_id());
     }
 
     public void deletedDamageReportById(int id){
@@ -36,7 +37,7 @@ public class DamageReportRepository {
     }
 
     public List<DamageReportModel> getFullListOfReport(){
-        final String DISPLAY_FULL_LIST_OF_damage_report_SQL = "SELECT * FROM damagerepory";
+        final String DISPLAY_FULL_LIST_OF_damage_report_SQL = "SELECT * FROM damagereport";
         List<DamageReportModel> damageReportModels = jdbcTemplate.query(DISPLAY_FULL_LIST_OF_damage_report_SQL, new BeanPropertyRowMapper<>(DamageReportModel.class));
         return damageReportModels;
     }

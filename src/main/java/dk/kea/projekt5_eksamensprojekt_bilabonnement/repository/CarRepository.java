@@ -19,6 +19,7 @@ public class CarRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+
     public void createNewCarEntry(CarModel carModel) {
         //insert sql
         final String CREATE_NEW_CAR_ENTRY_SQL = "INSERT INTO car (car_Serialnr, car_number, car_model, car_name, car_year, monthly_price, is_leased) VALUES (?,?,?,?,?,?,?)";

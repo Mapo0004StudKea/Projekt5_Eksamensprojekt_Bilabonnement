@@ -39,9 +39,11 @@ public class DamageReportController {
     @PostMapping("/CreateNewReportEntry")
     public String MakeNewReportEntry(@RequestParam("name") String name,
                                      @RequestParam("description") String description,
-                                     @RequestParam("employee") String employee){
+                                     @RequestParam("employee") String employee,
+                                     @RequestParam("car_id") int car_id)
+    {
 
-    DamageReportModel damageReportModel = new DamageReportModel(name,description,employee);
+    DamageReportModel damageReportModel = new DamageReportModel(name,description,employee, car_id);
     damageReportRepository.createNewDamageReport(damageReportModel);
     return "redirect:/DamageReportSite";
     }

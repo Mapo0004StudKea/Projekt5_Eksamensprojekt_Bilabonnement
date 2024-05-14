@@ -12,11 +12,21 @@ public class DamageReportModel {
     public DamageReportModel() {
     }
 
-    public DamageReportModel(String report_name, String report_description, String report_employee_name) {
+    public DamageReportModel(int id, String report_name, String report_description, String report_employee_name, int car_id) {
+        this.id = id;
         this.report_name = report_name;
         this.report_description = report_description;
         this.report_employee_name = report_employee_name;
+        this.car_id = car_id;
     }
+
+    public DamageReportModel(String report_name, String report_description, String report_employee_name, int car_id) {
+        this.report_name = report_name;
+        this.report_description = report_description;
+        this.report_employee_name = report_employee_name;
+        this.car_id = car_id;
+    }
+
 
     public int getId() {
         return id;
@@ -48,5 +58,9 @@ public class DamageReportModel {
 
     public void setReport_employee_name(String report_employee_name) {
         this.report_employee_name = report_employee_name;
+    }
+
+    public int getCar_id() {
+        return car_id;
     }
 }
