@@ -23,7 +23,7 @@ public class DamageReportRepository {
     public void createNewDamageReport(DamageReportModel damageReportModel){
         //indsæt sql statement
         final String CREA_NEW_DamageReportModel_SQL = "INSERT INTO damagereport (report_name, report_description, report_employee_name, car_id) values (?,?,?,?)";
-        jdbcTemplate.update(CREA_NEW_DamageReportModel_SQL, damageReportModel.getReport_name(), damageReportModel.getReport_description(), damageReportModel.getCar_id());
+        jdbcTemplate.update(CREA_NEW_DamageReportModel_SQL, damageReportModel.getReport_name(), damageReportModel.getReport_description(), damageReportModel.getReport_employee_name(), damageReportModel.getCar_id());
     }
 
     public void deletedDamageReportById(int id){

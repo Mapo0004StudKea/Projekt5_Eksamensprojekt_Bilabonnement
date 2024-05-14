@@ -48,7 +48,4 @@ public class LeasingRepository {
         return leasingModelList;
     }
 
-
-
-
 }
