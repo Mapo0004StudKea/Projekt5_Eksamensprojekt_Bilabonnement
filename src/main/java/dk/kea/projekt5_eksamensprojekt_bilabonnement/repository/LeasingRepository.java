@@ -21,9 +21,6 @@ public class LeasingRepository {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    private LeasingModel leasingModel;
-
-
 
     //jeg laver en metode som oprette en LeasingMetode
     public void createLeasingContract(LeasingModel leasing){
