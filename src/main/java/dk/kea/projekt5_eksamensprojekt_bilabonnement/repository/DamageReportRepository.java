@@ -21,7 +21,7 @@ public class DamageReportRepository {
     //lave et nyt damageReportModel
     public void createNewDamageReport(DamageReportModel damageReportModel){
         //indsæt sql statement
-        final String CREA_NEW_DamageReportModel_SQL = "INSERT INTO damagereport (id, report_name, report_description) values (?,?,?,)";
+        final String CREA_NEW_DamageReportModel_SQL = "INSERT INTO damagereport (id, report_name, report_description,report_employee_name) values (?,?,?,?)";
         jdbcTemplate.update(CREA_NEW_DamageReportModel_SQL, damageReportModel.getId(), damageReportModel.getReport_name(), damageReportModel.getReport_description());
     }
 
@@ -31,8 +31,8 @@ public class DamageReportRepository {
     }
 
     public void updateDamageReportInDatabase(DamageReportModel damageReportModel){
-        String UPDATE_BY_DAMAGE_REPORT = "UPDATE damagereport SET id = ?, report_name = ?, report_description = ?";
-        jdbcTemplate.update(UPDATE_BY_DAMAGE_REPORT,damageReportModel.getId(),damageReportModel.getReport_name(), damageReportModel.getReport_description());
+        String UPDATE_BY_DAMAGE_REPORT = "UPDATE damagereport SET id = ?, report_name = ?, report_description = ?,report_employee_name = ?";
+        jdbcTemplate.update(UPDATE_BY_DAMAGE_REPORT,damageReportModel.getId(),damageReportModel.getReport_name(), damageReportModel.getReport_description(), damageReportModel.getReport_employee_name());
     }
 
     public List<DamageReportModel> getFullListOfReport(){

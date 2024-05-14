@@ -18,9 +18,10 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td></td>
-                <td></td>
+            <tr th:each="Report : ${damageReport}">
+                <td th:text="${Report.getReport_employee_name()}"></td>
+                <td th:text="${Report.getReport_name()}"></td>
+                <td th:text="${Report.getReport_description()}"></td>
             </tr>
             </tbody>
         </table>
