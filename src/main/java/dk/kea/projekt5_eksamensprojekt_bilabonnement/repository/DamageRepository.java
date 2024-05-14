@@ -40,5 +40,6 @@ public class DamageRepository {
         List<DamageModel> damageList = jdbcTemplate.query(GET_ALL_DAMAGE_SQL, new BeanPropertyRowMapper<>(DamageModel.class));
         return damageList;
     }
+    
 }
 
