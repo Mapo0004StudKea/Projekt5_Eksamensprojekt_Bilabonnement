@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../static/css/car.css" th:href="@{css/car.css}"> <!-- Link to your CSS file -->
 </head>
 <body>
+<h1 style="text-align: center">Oversigt over biler</h1>
 <div class="table-container">
     <table class="table">
         <thead>
@@ -37,6 +38,14 @@
             <td>
                 <a th:href="@{'/deleteFromCarList/'+${carlist.id}}">Fjern</a>
             </td>
+        </tr>
+        <tr>
+            <td>total forventet pris</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td th:text="${totalMonthlyPrice}"></td>
         </tr>
         </tbody>
     </table>

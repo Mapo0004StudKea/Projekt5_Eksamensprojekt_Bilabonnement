@@ -3,6 +3,7 @@ package dk.kea.projekt5_eksamensprojekt_bilabonnement.controller;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepository;
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.service.CarService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,12 +24,17 @@ public class CarController {
     @Autowired
     LeasingRepository leasingRepository;
 
+    @Autowired
+    CarService carService;
+
     @GetMapping("/carListSite")
     public String carListSide(Model model) {
         List<CarModel> carModels = carRepository.getFullListOfCars();
         List<CarModel> carModels1 = carRepository.getSpecificNameFromCars();
+        double totalMonthlyPrice = carService.calculateTotalMonthlyPrice();
         model.addAttribute("carlist", carModels);
         model.addAttribute("carModels1", carModels1);
+        model.addAttribute("totalMonthlyPrice", totalMonthlyPrice);
         return "carListSite";
     }
 
