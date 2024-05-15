@@ -49,7 +49,7 @@ public class DamageController {
     {
         DamageModel damageModel = new DamageModel(damagename, damageprice, damageDescription, damageReport_id);
         damageRepository.createNewDamage(damageModel);
-        return "redirect:watchDamages/" + damageReport_id;
+        return "redirect:watchDamageReport/" + damageReport_id;
 
     }
 
