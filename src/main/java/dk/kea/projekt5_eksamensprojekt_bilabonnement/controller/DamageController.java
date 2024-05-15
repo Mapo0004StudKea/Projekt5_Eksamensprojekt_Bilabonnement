@@ -19,8 +19,8 @@ public class DamageController {
     DamageRepository damageRepository;
 
 
-    @GetMapping("/watchDamages")
-    public String overviewOfDamages(Model model) {
+    @GetMapping("/watchDamages/{id}")
+    public String overviewOfDamages(@PathVariable("id") int reportID, Model model) {
         List<DamageModel> damages = damageRepository.findAllDamage();
         model.addAttribute("damageOverview", damages);
         return "watchDamages";

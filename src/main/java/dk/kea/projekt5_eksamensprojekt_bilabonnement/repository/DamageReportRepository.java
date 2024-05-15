@@ -31,9 +31,16 @@ public class DamageReportRepository {
         jdbcTemplate.update(DELETED_BY_ID, id);
     }
 
-    public void updateDamageReportInDatabase(DamageReportModel damageReportModel){
-        String UPDATE_BY_DAMAGE_REPORT = "UPDATE damagereport SET id = ?, report_name = ?, report_description = ?,report_employee_name = ?";
-        jdbcTemplate.update(UPDATE_BY_DAMAGE_REPORT,damageReportModel.getId(),damageReportModel.getReport_name(), damageReportModel.getReport_description(), damageReportModel.getReport_employee_name());
+    public DamageReportModel getDamageReportInDatabaseByID(int id) {
+        String GET_REPORT_BY_ID = "SELECT * FROM damagereport WHERE id = ?";
+        return jdbcTemplate.queryForObject(GET_REPORT_BY_ID, new Object[]{id}, new BeanPropertyRowMapper<>(DamageReportModel.class));
+    }
+
+    public void UpdateDamageReportEntryInDatabase(DamageReportModel damageReportModel) {
+        //update sql
+        String UPDATE_REPORT_BY_ID = "UPDATE damagereport SET report_name =?, report_description = ?, report_employee_name =?   WHERE id = ?";
+        //update db vha. JdbcTemplate
+        jdbcTemplate.update(UPDATE_REPORT_BY_ID, damageReportModel.getReport_name(),damageReportModel.getReport_description(), damageReportModel.getReport_employee_name());
     }
 
     public List<DamageReportModel> getFullListOfReport(){
