@@ -25,10 +25,11 @@ public class DamageReportModel {
         this.car_id = car_id;
     }
 
-    public DamageReportModel(String report_name, String report_description, String report_employee_name) {
+    public DamageReportModel(String report_name, String report_description, String report_employee_name, int car_id) {
         this.report_name = report_name;
         this.report_description = report_description;
         this.report_employee_name = report_employee_name;
+        this.car_id =car_id;
     }
 
 

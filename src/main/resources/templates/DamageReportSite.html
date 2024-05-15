@@ -30,6 +30,11 @@
                        </a>
                 </td>
                 <td th:text="${Report.getReport_description()}"></td>
+
+                <td>
+                    <a th:href="@{'/UpdateReport/'+${Report.getId()}}">Opdater</a>
+                </td>
+
             </tr>
             </tbody>
         </table>

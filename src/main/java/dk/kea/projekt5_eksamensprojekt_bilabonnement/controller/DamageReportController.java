@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -40,15 +41,15 @@ public class DamageReportController {
     public String MakeNewReportEntry(@RequestParam("name") String name,
                                      @RequestParam("description") String description,
                                      @RequestParam("employee") String employee,
-                                     @RequestParam("car_id") int car_id)
+                                     @RequestParam("car_id")int car_id)
     {
-    DamageReportModel damageReportModel = new DamageReportModel(report_name,report_description,report_employee_name);
+    DamageReportModel damageReportModel = new DamageReportModel(name,description,employee,car_id);
     damageReportRepository.createNewDamageReport(damageReportModel);
     return "redirect:/DamageReportSite";
     }
 
     @GetMapping("/UpdateReport/{id}")
-    public String updateReportByID(@PathVariable ( "id") int reportID, Model model){
+    public String updateReportByID(@PathVariable( "id") int reportID, Model model){
         DamageReportModel damageReportModel = damageReportRepository.getDamageReportInDatabaseByID(reportID);
         model.addAttribute("updateReport", damageReportModel);
         return "UpdateReport";}
@@ -57,14 +58,11 @@ public class DamageReportController {
     @PostMapping("/UpdateReport")
     public String updateReportByID(@RequestParam("report_name") String report_name,
                                      @RequestParam("report_description") String report_description,
-                                     @RequestParam("report_employee_name") String report_employee_name)
-    {
-        DamageReportModel damageReportModel = new DamageReportModel(report_name,report_description,report_employee_name);
-        damageReportRepository.createNewDamageReport(damageReportModel);
-        return "redirect:/DamageReportSite";
-        DamageReportModel damageReportModel = new DamageReportModel(name,description,employee, car_id);
-        damageReportRepository.createNewDamageReport(damageReportModel);
-        return "redirect:/DamageReportSite";
+                                     @RequestParam("report_employee_name") String report_employee_name,
+                                     @RequestParam("car_id") int car_id){
+        DamageReportModel damageReportModel = new DamageReportModel(report_name,report_description,report_employee_name,car_id);
+        damageReportRepository.UpdateDamageReportEntryInDatabase(damageReportModel);
+        return "redirect:DamageReportSite";
     }
 
 }
