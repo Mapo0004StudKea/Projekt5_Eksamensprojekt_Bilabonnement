@@ -56,11 +56,12 @@ public class DamageReportController {
 
 
     @PostMapping("/UpdateReport")
-    public String updateReportByID(@RequestParam("report_name") String report_name,
+    public String updateReportByID( @RequestParam("id") int id,
+                                    @RequestParam("report_name") String report_name,
                                      @RequestParam("report_description") String report_description,
                                      @RequestParam("report_employee_name") String report_employee_name,
                                      @RequestParam("car_id") int car_id){
-        DamageReportModel damageReportModel = new DamageReportModel(report_name,report_description,report_employee_name,car_id);
+        DamageReportModel damageReportModel = new DamageReportModel(id, report_name,report_description,report_employee_name,car_id);
         damageReportRepository.UpdateDamageReportEntryInDatabase(damageReportModel);
         return "redirect:DamageReportSite";
     }

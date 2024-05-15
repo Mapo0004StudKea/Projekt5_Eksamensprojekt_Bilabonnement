@@ -40,7 +40,7 @@ public class DamageReportRepository {
         //update sql
         String UPDATE_REPORT_BY_ID = "UPDATE damagereport SET report_name =?, report_description = ?, report_employee_name =?, car_id =?   WHERE id = ?";
         //update db vha. JdbcTemplate
-        jdbcTemplate.update(UPDATE_REPORT_BY_ID, damageReportModel.getReport_name(),damageReportModel.getReport_description(), damageReportModel.getReport_employee_name(), damageReportModel.getCar_id());
+        jdbcTemplate.update(UPDATE_REPORT_BY_ID, damageReportModel.getReport_name(),damageReportModel.getReport_description(), damageReportModel.getReport_employee_name(), damageReportModel.getCar_id(), damageReportModel.getId());
     }
 
     public List<DamageReportModel> getFullListOfReport(){

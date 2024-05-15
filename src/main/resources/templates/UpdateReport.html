@@ -56,7 +56,7 @@
 </head>
 <body>
 <div class="container">
-    <form action="/UpdateReport/" method="post" class="form-container">
+    <form action="/UpdateReport" method="post" class="form-container">
         <h1>Opdater report</h1>
         <input name="id" type="hidden" th:value="${updateReport.id}" th:name="id">
 
@@ -69,7 +69,7 @@
         <label for="report_employee_name">Model:</label>
         <input id="report_employee_name" name="report_employee_name" type="text" th:value="${updateReport.getReport_employee_name()}">
 
-        <label for="car_id">Mærke:</label>
+        <label for="car_id">Bilens id nr:</label>
         <input id="car_id" name="car_id" type="text" th:value="${updateReport.getCar_id()}">
 
         <input type="submit" value="Opdater report">
