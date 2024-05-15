@@ -7,27 +7,30 @@
 </head>
 <body>
 <h1 style="text-align: center">Oversigt over alle skadesrapporter</h1>
-    <div class="table-container">
-        <table>
-            <thead>
+<div class="table-container">
+    <table>
+        <thead>
 
 
-            <tr>
-                <th>Navn</th>
-                <th>Beskrivelse</th>
-                <th>Opdater</th>
-                <th>Slet</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="Report : ${damageReport}">
-                <td th:text="${Report.getReport_employee_name()}"></td>
-                <td th:text="${Report.getReport_name()}"></td>
-                <td th:text="${Report.getReport_description()}"></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+        <tr>
+            <th>Rapport navn</th>
+            <th>Rapport beskrivelse</th>
+            <th>Medarbejder navn</th>
+            <th>Opdater</th>
+            <th>Slet</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Report : ${damageReport}">
+            <td th:text="${Report.getReport_name()}"></td>
+            <td th:text="${Report.getReport_description()}"></td>
+            <td th:text="${Report.getReport_employee_name()}"></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 <div class="table-container">
     <form action="/CreateNewReportEntry">
         <button type="submit" class="create-Report-button">Opret ny rapport</button>

@@ -12,6 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
+/**
+ * Damages controller class
+ *
+ * @author Viggo Beck, vibe0002@stud.kea.dk
+ * */
+
 @Controller
 public class DamageController {
 

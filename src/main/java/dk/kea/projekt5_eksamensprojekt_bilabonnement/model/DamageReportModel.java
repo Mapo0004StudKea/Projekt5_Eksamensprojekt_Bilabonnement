@@ -1,6 +1,11 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.model;
 
-
+/**
+ * Damage Report model class
+ *
+ * @author Viggo Beck, vibe0002@stud.kea.dk
+ * @author Sebastian Drumm, sedr0001@stud.kea.dk
+ */
 
 public class DamageReportModel {
     int id;
