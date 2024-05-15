@@ -12,7 +12,7 @@
     <div class="block-content">
         <div class="block">
             <h2>Aftaleindskrivning</h2>
-            <form action="makeNewDamage" method="post">
+            <form action="/makeNewDamage" method="post">
                 <label for="damagename">Skadens navn:</label><br>
                 <input type="text" id="damagename" name="damage_name"><br>
 
@@ -22,12 +22,11 @@
                 <label for="damagedescription"> Beskrivelse af skaden:</label><br>
                 <input type="text" id="damagedescription" name="damage_description"><br>
 
-                <label for="damageid">SkadesId:</label><br>
-                <input type="number" id="damageid" name="damageReport_id"><br>
+                <p>
+                    <input id="damageReport_id" name="damageReport_id" type="text" hidden th:value="${damagereportid}">
+                </p>
 
-                <a href="watchDamages">
                     <button type="submit" class="button">Gem</button>
-                </a>
 
 
             </form>
