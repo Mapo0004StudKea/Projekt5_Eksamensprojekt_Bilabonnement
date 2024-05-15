@@ -9,6 +9,10 @@
 <div class="container">
     <form action="CreateNewCarEntryForm" method="post" class="form-container">
         <h1>Opret bil</h1>
+        <label for="car_picture-field">Billed:</label>
+        <input id="car_picture-field" name="car_picture" type="text">
+        <label for="car_full_name-field">Fulde navn:</label>
+        <input id="car_full_name-field" name="car_full_name" type="text">
         <label for="car_Serialnr-field">Serie Nummer:</label>
         <input id="car_Serialnr-field" name="car_Serialnr" type="text">
         <label for="car_number-field">Nummerplade:</label>
@@ -23,6 +27,8 @@
         <input id="monthly_price-field" name="monthly_price" type="text">
         <label for="is_leased-field">Udlejet:</label>
         <input id="is_leased-field" name="is_leased" type="checkbox" value="true">
+        <label for="car_description-field">Beskrivelse:</label>
+        <input id="car_description-field" name="car_description" type="text">
         <input type="submit" value="Opret ny bil">
     </form>
 </div>

@@ -60,6 +60,10 @@
     <form action="/updateCarEntry" method="post" class="form-container">
         <h1>Opdater bil</h1>
         <input name="id" type="hidden" th:value="${updateCar.id}" th:name="id">
+        <label for="car_picture-field">Billed:</label>
+        <input id="car_picture-field" name="car_picture" type="text" th:value="${updateCar.car_picture}">
+        <label for="car_full_name-field">Fulde navn:</label>
+        <input id="car_full_name-field" name="car_full_name" type="text" th:value="${updateCar.car_full_name}">
         <label for="car_Serialnr-field">Serie Nummer:</label>
         <input id="car_Serialnr-field" name="car_Serialnr" type="text" th:value="${updateCar.car_Serialnr}">
         <label for="car_number-field">Nummerplade:</label>
@@ -74,6 +78,8 @@
         <input id="monthly_price-field" name="monthly_price" type="text" th:value="${updateCar.monthly_price}">
         <label for="is_leased-field">Udlejet:</label>
         <input id="is_leased-field" name="is_leased" type="text" th:value="${updateCar.is_leased}">
+        <label for="car_description-field">Beskrivelse:</label>
+        <input id="car_description-field" name="car_description" type="text" th:value="${updateCar.car_description}">
         <input type="submit" value="Opdater bilen">
     </form>
 </div>
