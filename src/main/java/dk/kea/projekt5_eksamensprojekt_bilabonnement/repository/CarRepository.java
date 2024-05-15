@@ -22,9 +22,9 @@ public class CarRepository {
 
     public void createNewCarEntry(CarModel carModel) {
         //insert sql
-        final String CREATE_NEW_CAR_ENTRY_SQL = "INSERT INTO car (car_Serialnr, car_number, car_model, car_name, car_year, monthly_price, is_leased) VALUES (?,?,?,?,?,?,?)";
+        final String CREATE_NEW_CAR_ENTRY_SQL = "INSERT INTO car (car_picture, car_full_name, car_Serialnr, car_number, car_model, car_name, car_year, monthly_price, is_leased, car_description) VALUES (?,?,?,?,?,?,?,?,?,?)";
         //kald af JdbcTemplate med sql og paramter
-        jdbcTemplate.update(CREATE_NEW_CAR_ENTRY_SQL, carModel.getCar_Serialnr(), carModel.getCar_number(), carModel.getCar_model(), carModel.getCar_name(), carModel.getCar_year(), carModel.getMonthly_price(), carModel.isIs_leased());
+        jdbcTemplate.update(CREATE_NEW_CAR_ENTRY_SQL, carModel.getCar_picture(), carModel.getCar_full_name(),carModel.getCar_Serialnr(), carModel.getCar_number(), carModel.getCar_model(), carModel.getCar_name(), carModel.getCar_year(), carModel.getMonthly_price(), carModel.isIs_leased(), carModel.getCar_description());
     }
 
     public List<CarModel> getFullListOfCars() {
@@ -69,9 +69,9 @@ public class CarRepository {
 
     public void UpdateCarEntryInDatabase(CarModel carModel) {
         //update sql
-        String UPDATE_CAR_ENTRy_SQL = "UPDATE car SET car_Serialnr = ?, car_number = ?, car_model = ?, car_name = ?, car_year = ?, monthly_price = ?, is_leased = ? WHERE id = ?";
+        String UPDATE_CAR_ENTRy_SQL = "UPDATE car SET car_picture = ?, car_full_name = ?, car_Serialnr = ?, car_number = ?, car_model = ?, car_name = ?, car_year = ?, monthly_price = ?, is_leased = ?, car_description = ? WHERE id = ?";
         //update db vha. JdbcTemplate
-        jdbcTemplate.update(UPDATE_CAR_ENTRy_SQL, carModel.getCar_Serialnr(), carModel.getCar_number(), carModel.getCar_model(), carModel.getCar_name(), carModel.getCar_year(), carModel.getMonthly_price(), carModel.isIs_leased(), carModel.getId());
+        jdbcTemplate.update(UPDATE_CAR_ENTRy_SQL, carModel.getCar_picture(), carModel.getCar_full_name(), carModel.getCar_Serialnr(), carModel.getCar_number(), carModel.getCar_model(), carModel.getCar_name(), carModel.getCar_year(), carModel.getMonthly_price(), carModel.isIs_leased(), carModel.getCar_description(), carModel.getId());
     }
 
     public CarModel GetCarById(int id) {

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * car controller class
@@ -68,15 +69,18 @@ public class CarController {
 
     @PostMapping("/CreateNewCarEntryForm")
     public String CreateNewCarEntryForm(
+            @RequestParam("car_picture") String car_picture,
+            @RequestParam("car_full_name") String car_full_name,
             @RequestParam("car_Serialnr") int car_Serialnr,
             @RequestParam("car_number") int car_number,
             @RequestParam("car_model") String car_model,
             @RequestParam("car_name") String car_name,
             @RequestParam("car_year") String car_year,
             @RequestParam("monthly_price") double monthly_price,
-            @RequestParam(value = "is_leased", defaultValue = "false") boolean is_leased
-    ) {
-        CarModel carModel = new CarModel(car_Serialnr, car_number, car_model, car_name, car_year, monthly_price, is_leased);
+            @RequestParam(value = "is_leased", defaultValue = "false") boolean is_leased,
+            @RequestParam("car_description") String car_description
+            ) {
+        CarModel carModel = new CarModel(car_picture, car_full_name, car_Serialnr, car_number, car_model, car_name, car_year, monthly_price, is_leased, car_description);
         carRepository.createNewCarEntry(carModel);
         return "redirect:carListSite";
     }
@@ -102,15 +106,18 @@ public class CarController {
     @PostMapping("/updateCarEntry")
     public String updateCarEntry(
         @RequestParam("id") int id,
+        @RequestParam("car_picture") String car_picture,
+        @RequestParam("car_full_name") String car_full_name,
         @RequestParam("car_Serialnr") int car_Serialnr,
         @RequestParam("car_number") int car_number,
         @RequestParam("car_model") String car_model,
         @RequestParam("car_name") String car_name,
         @RequestParam("car_year") String car_year,
         @RequestParam("monthly_price") double monthly_price,
-        @RequestParam("is_leased") boolean is_leased
+        @RequestParam("is_leased") boolean is_leased,
+        @RequestParam("car_description") String car_description
     ) {
-        CarModel carModel = new CarModel(id, car_Serialnr, car_number, car_model, car_name, car_year, monthly_price, is_leased);
+        CarModel carModel = new CarModel(id, car_picture, car_full_name, car_Serialnr, car_number, car_model, car_name, car_year, monthly_price, is_leased, car_description);
         carRepository.UpdateCarEntryInDatabase(carModel);
         return "redirect:carListSite";
     }
