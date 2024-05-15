@@ -1,13 +1,17 @@
-CREATE TABLE IF NOT EXISTS car (
-                                   id	INT		AUTO_INCREMENT	NOT NULL 	PRIMARY KEY,
-                                   car_serialnr	VARCHAR(50) NOT NULL,
-    car_number	INT 	NOT NULL,
-    car_model	VARCHAR(50),
-    car_name	VARCHAR(50),
-    car_year	INT,
-    monthly_price	DOUBLE,
-    is_leased	INT
-    );
+CREATE TABLE `car` (
+                       `id` int NOT NULL AUTO_INCREMENT,
+                       `car_picture` varchar(255) DEFAULT NULL,
+                       `car_full_name` varchar(255) DEFAULT NULL,
+                       `car_name` varchar(50) DEFAULT NULL,
+                       `car_model` varchar(50) DEFAULT NULL,
+                       `car_serialnr` varchar(50) NOT NULL,
+                       `car_number` int NOT NULL,
+                       `car_year` int DEFAULT NULL,
+                       `monthly_price` double DEFAULT NULL,
+                       `is_leased` int DEFAULT NULL,
+                       `car_description` varchar(255) DEFAULT NULL,
+                       PRIMARY KEY (`id`)
+)
 
 CREATE TABLE IF NOT EXISTS leasingcontract (
                                                id	INT 	AUTO_INCREMENT	NOT NULL	PRIMARY KEY,

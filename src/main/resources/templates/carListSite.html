@@ -18,7 +18,6 @@
                 <th>Nummerplade</th>
                 <th>År</th>
                 <th>Månedspris</th>
-                <th>Beskrivelse</th>
                 <th>Opdater</th>
                 <th>Slet</th>
             </tr>
@@ -36,7 +35,6 @@
             <td th:text="${carlist.car_number}">123654898213</a></td>
             <td th:text="${carlist.car_year}">2014</td>
             <td th:text="${carlist.monthly_price}">130000</td>
-            <td th:text="${carlist.car_description}"></td>
             <td>
                 <a th:href="@{'/updateCarEntry/'+${carlist.id}}">Opdater</a>
             </td>
@@ -58,7 +56,7 @@
     </table>
 </div>
 
-<div class="flex-contrainer">
+<div class="flex-container">
     <div class="table-container">
         <form action="/CreateNewCarEntry">
             <button type="submit" class="create-car-button">Opret ny bil</button>
@@ -75,22 +73,5 @@
         </form>
     </div>
 </div>
-
-    <!--
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th><h1>test</h1></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="carlist1 : ${carModels1}">
-                    <td th:text="${carlist1.car_Serialnr}">546231987</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    -->
 </body>
 </html>
