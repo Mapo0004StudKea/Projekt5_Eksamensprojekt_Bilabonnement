@@ -10,11 +10,8 @@
     <div class="table-container">
         <table>
             <thead>
-
-
             <tr>
                 <th> Navn </th>
-                <th>Beskrivelse</th>
                 <th>Opdater</th>
                 <th>Slet</th>
             </tr>
@@ -29,8 +26,6 @@
                     <span th:text="${Report.getReport_name()}"> </span>
                        </a>
                 </td>
-                <td th:text="${Report.getReport_description()}"></td>
-
                 <td>
                     <a th:href="@{'/deleteFromDamageReportSite/'+${Report.getId()}}">Fjern</a>
                 </td>

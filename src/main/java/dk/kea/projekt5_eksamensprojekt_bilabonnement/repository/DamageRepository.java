@@ -35,11 +35,20 @@ public class DamageRepository {
         String GET_DAMAGE_SQL = "SELECT * FROM damages WHERE id = ?";
         return jdbcTemplate.queryForObject(GET_DAMAGE_SQL, new BeanPropertyRowMapper<>(DamageModel.class), id);
     }
+    public List<DamageModel> findDamageReportById(int reportID){
+        String GET_DAMAGE_SQL = "SELECT * FROM damages WHERE damagereport_id = ?";
+        List<DamageModel> damageModelList = jdbcTemplate.query(GET_DAMAGE_SQL, new Object[]{reportID}, new BeanPropertyRowMapper<>(DamageModel.class));
+        return damageModelList;
+    }
+
+
     public List<DamageModel> findAllDamage(){
         String GET_ALL_DAMAGE_SQL = "SELECT * FROM damages";
         List<DamageModel> damageList = jdbcTemplate.query(GET_ALL_DAMAGE_SQL, new BeanPropertyRowMapper<>(DamageModel.class));
         return damageList;
     }
+
+
     
 }
 

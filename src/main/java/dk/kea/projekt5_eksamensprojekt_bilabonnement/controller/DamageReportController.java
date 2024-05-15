@@ -1,8 +1,10 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.controller;
 
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageReportModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.LeasingModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageReportRepository;
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,6 +28,9 @@ public class DamageReportController {
 
     @Autowired
     DamageReportRepository damageReportRepository;
+    @Autowired
+    DamageRepository damageRepository;
+
 
     @GetMapping("/DamageReportSite")
     public String viewDamageReport(Model model) {
@@ -83,6 +88,9 @@ public class DamageReportController {
     public String watchDamageReport(@PathVariable("id") int id, Model model) {
         DamageReportModel damageReportModel = damageReportRepository.getDamageReportInDatabaseByID(id);
         model.addAttribute("watchdamage", damageReportModel);
+
+        List<DamageModel> damageModelList = damageRepository.findDamageReportById(id);
+        model.addAttribute("damage",damageModelList);
         return "watchDamageReport";
     }
 }

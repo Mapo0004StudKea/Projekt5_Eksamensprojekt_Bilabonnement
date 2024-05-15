@@ -6,16 +6,24 @@
 </head>
 <body>
 <thead>
-<h1 th:text="${watchdamage.getReport_name()}"> </h1>
+    <h1>Report omhandlene </h1>
+    <h3 th:text="${watchdamage.getReport_name()}"> </h3>
+        <tr>
+            <p>medarbejder</p>
+           <p> <th th:text="${watchdamage.getReport_employee_name()}"></th></p>
+            <p>beskrvielse af reporten</p>
+           <p> <th th:text="${watchdamage.getReport_description()}"></th></p>
+        </tr>
+    <tr>
+        <h3>Oversigt over alle Skader</h3>
+<tbody>
+    <tr th:each=" damage : ${damage}">
+        <td th:text="${damage.getDamage_name()}">Navn på skaden</td>
+        <td th:text="${damage.getDamage_price()}">Prisen på skaden</td>
+        <td th:text="${damage.getDamage_description()}"> Beskrivelse af skaden </td>
 
-
-<tr>
-    <th> Skader på bilen </th>
-
-
-    <th>Beskrivelse</th>
-</tr>
-</thead>
+    </tr>
+</tbody>
 
 <a th:href="@{'/makeNewDamage/' + ${watchdamage.getId()}}">
     <button type="submit" >Opret ny skade</button>
