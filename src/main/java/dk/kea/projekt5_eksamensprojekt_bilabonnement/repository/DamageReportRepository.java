@@ -27,7 +27,7 @@ public class DamageReportRepository {
     }
 
     public void deletedDamageReportById(int id){
-        final String DELETED_BY_ID = "DELETED FROM damagereport where id =? ";
+        final String DELETED_BY_ID = "DELETE FROM damagereport where id =? ";
         jdbcTemplate.update(DELETED_BY_ID, id);
     }
 

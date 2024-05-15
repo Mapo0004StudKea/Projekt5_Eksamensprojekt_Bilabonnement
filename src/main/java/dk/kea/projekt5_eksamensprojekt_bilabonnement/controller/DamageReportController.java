@@ -3,6 +3,7 @@ package dk.kea.projekt5_eksamensprojekt_bilabonnement.controller;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageReportModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.LeasingModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageReportRepository;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -64,6 +65,17 @@ public class DamageReportController {
         DamageReportModel damageReportModel = new DamageReportModel(id, report_name,report_description,report_employee_name,car_id);
         damageReportRepository.UpdateDamageReportEntryInDatabase(damageReportModel);
         return "redirect:DamageReportSite";
+    }
+
+    @GetMapping("/deleteFromDamageReportSite/{id}")
+    public String deleteCarEntry(@PathVariable("id") int reportId, HttpServletRequest request) {
+        damageReportRepository.deletedDamageReportById(reportId);
+        String referrer = request.getHeader("referer");
+        if (referrer != null && !referrer.isEmpty()) {
+            return "redirect:" + referrer;
+        } else {
+            return "redirect:DamageReportSite";
+        }
     }
 
 }
