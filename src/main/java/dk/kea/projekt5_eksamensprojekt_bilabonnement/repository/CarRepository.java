@@ -38,13 +38,13 @@ public class CarRepository {
     public List<CarModel> getLeasedCars() {
         String DISPLAY_LEASED_CARS = "SELECT * FROM car WHERE is_leased = 1";
         List<CarModel> carModels = jdbcTemplate.query(DISPLAY_LEASED_CARS, new BeanPropertyRowMapper<>(CarModel.class));
-        return  carModels;
+        return carModels;
     }
 
     public List<CarModel> getNonLeasedCars() {
         String DISPLAY_NonLEASED_CARS = "SELECT * FROM car WHERE is_leased = 0";
         List<CarModel> carModels = jdbcTemplate.query(DISPLAY_NonLEASED_CARS, new BeanPropertyRowMapper<>(CarModel.class));
-        return  carModels;
+        return carModels;
     }
 
     public List<CarModel> getSpecificNameFromCars() {
@@ -72,5 +72,10 @@ public class CarRepository {
         String UPDATE_CAR_ENTRy_SQL = "UPDATE car SET car_Serialnr = ?, car_number = ?, car_model = ?, car_name = ?, car_year = ?, monthly_price = ?, is_leased = ? WHERE id = ?";
         //update db vha. JdbcTemplate
         jdbcTemplate.update(UPDATE_CAR_ENTRy_SQL, carModel.getCar_Serialnr(), carModel.getCar_number(), carModel.getCar_model(), carModel.getCar_name(), carModel.getCar_year(), carModel.getMonthly_price(), carModel.isIs_leased(), carModel.getId());
+    }
+
+    public CarModel GetCarById(int id) {
+        String GET_CAR_BY_ID_SQL = "SELECT * FROM car WHERE id = ?";
+        return jdbcTemplate.queryForObject(GET_CAR_BY_ID_SQL, new Object[]{id}, new BeanPropertyRowMapper<>(CarModel.class));
     }
 }

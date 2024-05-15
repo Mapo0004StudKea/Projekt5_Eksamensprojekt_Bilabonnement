@@ -1,5 +1,7 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.model;
 
+import java.util.PrimitiveIterator;
+
 /**
  * car model class
  *
@@ -8,6 +10,8 @@ package dk.kea.projekt5_eksamensprojekt_bilabonnement.model;
  */
 public class CarModel {
         private int id;
+        private String car_picture;
+        private String car_full_name;
         private int car_Serialnr;
         private int car_number;
         private String car_model;
@@ -15,7 +19,28 @@ public class CarModel {
         private String car_year;
         private double monthly_price;
         private boolean is_leased;
+        private String car_description;
 
+    public CarModel(String car_picture, String car_full_name, int car_Serialnr, int car_number, String car_model, String car_name, String car_year, double monthly_price, boolean is_leased, String car_description) {
+        this.car_picture = car_picture;
+        this.car_full_name = car_full_name;
+        this.car_Serialnr = car_Serialnr;
+        this.car_number = car_number;
+        this.car_model = car_model;
+        this.car_name = car_name;
+        this.car_year = car_year;
+        this.monthly_price = monthly_price;
+        this.is_leased = is_leased;
+        this.car_description = car_description;
+    }
+
+    public String getCar_description() {
+        return car_description;
+    }
+
+    public void setCar_description(String car_description) {
+        this.car_description = car_description;
+    }
 
     public CarModel(int id, int serialNumber, int carNumber, String carModel, String carBrand, String carYear, double monthlyPrice, boolean isLeased) {
         this.id = id;
@@ -104,5 +129,21 @@ public class CarModel {
 
     public void setIs_leased(boolean is_leased) {
         this.is_leased = is_leased;
+    }
+
+    public String getCar_picture() {
+        return car_picture;
+    }
+
+    public void setCar_picture(String car_picture) {
+        this.car_picture = car_picture;
+    }
+
+    public String getCar_full_name() {
+        return car_full_name;
+    }
+
+    public void setCar_full_name(String car_full_name) {
+        this.car_full_name = car_full_name;
     }
 }

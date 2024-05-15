@@ -114,4 +114,14 @@ public class CarController {
         carRepository.UpdateCarEntryInDatabase(carModel);
         return "redirect:carListSite";
     }
+
+    @GetMapping("/CarInfoPage/{id}")
+    public String carInfoPage(
+            @PathVariable("id") int car_Id,
+            Model model
+    ) {
+        CarModel carModel = carRepository.GetCarById(car_Id);
+        model.addAttribute("carModel", carModel);
+        return "carInfoPage";
+    }
 }

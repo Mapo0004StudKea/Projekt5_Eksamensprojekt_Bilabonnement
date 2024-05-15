@@ -6,32 +6,39 @@
     <link rel="stylesheet" href="../static/css/car.css" th:href="@{css/car.css}">
 </head>
 <body>
-<h1 style="text-align: center">Oversigt over biler</h1>
+<h1 style="text-align: center">Oversigt over alle biler</h1>
 <div class="table-container">
     <table class="table">
         <thead>
             <tr>
+                <th>Fulde navn</th>
+                <th>Mærke</th>
+                <th>Model</th>
                 <th>Serie Nummer</th>
                 <th>Nummerplade</th>
-                <th>Model</th>
-                <th>Mærke</th>
                 <th>År</th>
                 <th>Månedspris</th>
                 <th>Udlejet?</th>
+                <th>Beskrivelse</th>
                 <th>Opdater</th>
                 <th>Slet</th>
             </tr>
         </thead>
         <tbody>
         <tr th:each="carlist : ${carlist}">
+            <td>
+                <a th:href="@{'/CarInfoPage/'+${carlist.getId()}}">
+                    <span th:text="${carlist.car_full_name}"></span>
+                </a>
+            </td>
+            <td th:text="${carlist.car_name}">Bil brand</td>
+            <td th:text="${carlist.getCar_model()}"></td>
             <td th:text="${carlist.car_Serialnr}">546231987</td>
             <td th:text="${carlist.car_number}">123654898213</a></td>
-            <td th:text="${carlist.car_model}">Bil model</td>
-            <td th:text="${carlist.car_name}">Bil brand</td>
             <td th:text="${carlist.car_year}">2014</td>
             <td th:text="${carlist.monthly_price}">130000</td>
             <td th:text="${carlist.is_leased} ? 'Ja' : 'Nej'">yes</td>
-
+            <td th:text="${carlist.car_description}"></td>
             <td>
                 <a th:href="@{'/updateCarEntry/'+${carlist.id}}">Opdater</a>
             </td>
@@ -42,6 +49,7 @@
         </tr>
         <tr>
             <td>total forventet pris</td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>

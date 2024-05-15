@@ -1,0 +1,41 @@
+.flex-container {
+    display: flex;
+}
+
+.smallBox {
+    color: white;
+    height: 100vh;
+    width: 10%;
+}
+
+.largerBox {
+    margin: 0;
+    color: white;
+    height: 100vh;
+    width: 90%;
+}
+
+.pictureBox {
+    margin: 0;
+    color: red;
+    height: 35vh;
+    width: 25%;
+}
+
+.ModelBrand {
+    margin: 0;
+    font-size: 33px;
+    text-align: left;
+    color: black;
+    height: 35vh;
+    width: 75%;
+}
+
+.DescriptionBox {
+    font-size: 33px;
+    text-align: left;
+    color: black;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+}

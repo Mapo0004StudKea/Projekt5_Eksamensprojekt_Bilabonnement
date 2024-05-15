@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>carInfopage</title>
+    <link rel="stylesheet" href="../static/css/carInfo.css" th:href="@{/css/carInfo.css}">
+</head>
+<body>
+<h1>Bil info: </h1>
+<div class="flex-container">
+    <div class="smallBox"></div>
+    <div class=largerBox>
+        <div class="flex-container">
+            <div class="pictureBox">
+                <img th:src="@{'/image/'+${carModel.car_picture}}" style="height: 35vh;width: 120%;">
+            </div>
+            <div class="ModelBrand">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td th:text="${carModel.car_full_name}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="DescriptionBox">
+            <h1>Beskrivelse:</h1>
+            <table>
+                <tbody>
+                <tr>
+                    <td th:text="${carModel.car_description}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
