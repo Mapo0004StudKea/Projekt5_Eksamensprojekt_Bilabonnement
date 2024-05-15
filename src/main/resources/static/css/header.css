@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.sidebar{
+    position: fixed;
+    font-size: 18px;
+    left: 0;
+    width: 10%;
+    height: 100%;
+    text-decoration: none;
+    margin-right: 100px;
+    background: cadetblue;
+}
+.sidebar a::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #FFC601;
+    transition: 1s;
+}
+.sidebar a:hover::before{
+    width: 100%;
+}
+
+
+

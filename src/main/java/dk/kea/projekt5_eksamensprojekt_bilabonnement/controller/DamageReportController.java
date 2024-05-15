@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -38,9 +37,10 @@ public class DamageReportController {
         return "CreateNewReportEntry";}
 
     @PostMapping("/CreateNewReportEntry")
-    public String MakeNewReportEntry(@RequestParam("report_name") String report_name,
-                                     @RequestParam("report_description") String report_description,
-                                     @RequestParam("report_employee_name") String report_employee_name)
+    public String MakeNewReportEntry(@RequestParam("name") String name,
+                                     @RequestParam("description") String description,
+                                     @RequestParam("employee") String employee,
+                                     @RequestParam("car_id") int car_id)
     {
     DamageReportModel damageReportModel = new DamageReportModel(report_name,report_description,report_employee_name);
     damageReportRepository.createNewDamageReport(damageReportModel);
@@ -62,10 +62,9 @@ public class DamageReportController {
         DamageReportModel damageReportModel = new DamageReportModel(report_name,report_description,report_employee_name);
         damageReportRepository.createNewDamageReport(damageReportModel);
         return "redirect:/DamageReportSite";
+        DamageReportModel damageReportModel = new DamageReportModel(name,description,employee, car_id);
+        damageReportRepository.createNewDamageReport(damageReportModel);
+        return "redirect:/DamageReportSite";
     }
-
-
-
-
 
 }

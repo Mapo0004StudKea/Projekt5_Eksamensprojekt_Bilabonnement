@@ -4,6 +4,7 @@ package dk.kea.projekt5_eksamensprojekt_bilabonnement.model;
  * car model class
  *
  * @author Martin Poulsen, mapo0004@stud.kea.dk
+ * @author Sebastian Drumm, sedr0001@stud.kea.dk
  */
 public class CarModel {
         private int id;
