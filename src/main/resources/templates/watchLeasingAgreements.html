@@ -20,7 +20,12 @@
                 <tbody>
                 <tr th:each="Leasing : ${LeasingAgremenst}">
                     <td th:text="${Leasing.getId()}">abonoment ID</td>
-                    <td th:text="${Leasing.getCustomer_name()}">kunde navn</td>
+
+                    <td>
+                    <a th:href="@{'/CarInfoPage/' + ${Leasing.getCar_id()}}">
+                    <span th:text="${Leasing.getCustomer_name()}">kunde navn</span>
+                    </a>
+                    </td>
                     <td th:text="${Leasing.getMonthly_price()}">prisen</td>
                     <td>
                         <a th:href="@{'/updateLeasingEntry/'+${Leasing.id}}">Opdater</a>
