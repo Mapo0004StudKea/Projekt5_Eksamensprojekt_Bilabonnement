@@ -30,7 +30,7 @@ public class CarRepository {
     public List<CarModel> getFullListOfCars() {
         //henter fulde liste af car
         String DISPLAY_FULL_LIST_OF_CARS_SQL = "SELECT * FROM car";
-        //kald af JdbcTemplate med sql og paramter
+        //kald af JdbcTemplate med sql og parameter
         List<CarModel> carModels = jdbcTemplate.query(DISPLAY_FULL_LIST_OF_CARS_SQL, new BeanPropertyRowMapper<>(CarModel.class));
         return carModels;
     }

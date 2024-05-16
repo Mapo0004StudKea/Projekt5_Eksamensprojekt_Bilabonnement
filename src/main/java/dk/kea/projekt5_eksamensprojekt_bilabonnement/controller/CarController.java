@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * car controller class
@@ -33,10 +32,10 @@ public class CarController {
     LeasingRepository leasingRepository;
 
     @Autowired
-    CarService carService;
+    DamageReportRepository damageReportRepository;
 
     @Autowired
-    DamageReportRepository damageReportRepository;
+    CarService carService;
 
     @GetMapping("/carListSite")
     public String carListSide(Model model) {

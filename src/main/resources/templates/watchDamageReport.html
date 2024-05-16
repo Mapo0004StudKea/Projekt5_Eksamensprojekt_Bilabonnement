@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Se din skadesrapport</title>
@@ -24,19 +24,19 @@
     <thead>
     <h1>Oversigt over alle Skader</h1>
         <tr>
-            <th>navn på skaden</th>
-            <th>prisen på skaden</th>
-            <th>Skade beskrivelse</th>
+            <th>Navn på skaden</th>
+            <th>Prisen på skaden</th>
+            <th>Skadebeskrivelse</th>
         </tr>
     <tbody>
         <tr th:each=" damage : ${damage}">
             <td th:text="${damage.getDamage_name()}">Navn på skaden</td>
             <td th:text="${damage.getDamage_price()}">Prisen på skaden</td>
-            <td th:text="${damage.getDamage_description()}"> Beskrivelse af skaden </td>
+            <td th:text="${damage.getDamage_description()}">Beskrivelse af skaden</td>
         </tr>
         <tr>
-            <td>total pris</td>
-            <td>500</td>
+            <td>Total pris:</td>
+            <td th:text="${totalPriceForDamages}"></td>
         </tr>
 </table>
 <a th:href="@{'/makeNewDamage/' + ${watchdamage.getId()}}">

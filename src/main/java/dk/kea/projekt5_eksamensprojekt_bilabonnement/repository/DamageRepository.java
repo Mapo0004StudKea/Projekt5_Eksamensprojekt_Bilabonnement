@@ -8,14 +8,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
-@Repository
 /**
  * leasing service class
  *
  * @author Viggo Beck, vibe0002@stud.kea.dk
+ * @author Martin Poulsen, mapo0004@stud.kea.dk
  */
-
+@Repository
 public class DamageRepository {
 
     @Autowired
@@ -49,6 +48,10 @@ public class DamageRepository {
     }
 
 
-    
+    public List<DamageModel> getFullPriceFromId(int damageReport_id) {
+        String GET_FULL_PRICE_FROM_ID_SQL = "SELECT * FROM damages WHERE damageReport_id = ?";
+        List<DamageModel> damageModelList = jdbcTemplate.query(GET_FULL_PRICE_FROM_ID_SQL, new Object[]{damageReport_id}, new BeanPropertyRowMapper<>(DamageModel.class));
+        return damageModelList;
+    }
 }
 
