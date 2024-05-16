@@ -47,5 +47,9 @@ public class LeasingRepository {
         List<LeasingModel> leasingModelList = jdbcTemplate.query(GET_LIST_SQL, new BeanPropertyRowMapper<>(LeasingModel.class));
         return leasingModelList;
     }
-
+    public List<LeasingModel> getListOfLeasingContractsById(int id){
+        String GET_LIST_SQL ="SELECT * FROM leasingcontract WHERE car_id = ?";
+        List<LeasingModel> leasingModelList = jdbcTemplate.query(GET_LIST_SQL, new Object[]{id}, new BeanPropertyRowMapper<>(LeasingModel.class));
+        return leasingModelList;
+    }
 }

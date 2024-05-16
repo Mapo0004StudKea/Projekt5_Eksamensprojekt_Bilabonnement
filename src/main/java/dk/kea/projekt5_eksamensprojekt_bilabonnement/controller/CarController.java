@@ -2,6 +2,7 @@ package dk.kea.projekt5_eksamensprojekt_bilabonnement.controller;
 
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageReportModel;
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.LeasingModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageReportRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepository;
@@ -135,6 +136,8 @@ public class CarController {
         model.addAttribute("carModel", carModel);
         List<DamageReportModel> damageReportModels = damageReportRepository.getAllReportsByCarId(car_Id);
         model.addAttribute("damageReport", damageReportModels);
+        List<LeasingModel> leasingModels = leasingRepository.getListOfLeasingContractsById(car_Id);
+        model.addAttribute("leaseReport", leasingModels);
         return "carInfoPage";
     }
 }

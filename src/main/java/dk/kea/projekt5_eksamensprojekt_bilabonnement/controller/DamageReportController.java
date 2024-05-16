@@ -54,7 +54,7 @@ public class DamageReportController {
                                      @RequestParam("car_id") int car_id) {
         DamageReportModel damageReportModel = new DamageReportModel(name, description, employee, car_id);
         damageReportRepository.createNewDamageReport(damageReportModel);
-        return "redirect:/DamageReportSite";
+        return "redirect:/CarInfoPage/" + car_id;
     }
 
     @GetMapping("/UpdateReport/{id}")

@@ -43,7 +43,6 @@
                     </thead>
                     <tbody>
                     <tr th:each="Report : ${damageReport}">
-
                         <td>
                             <a th:href="@{'/watchDamageReport/' + ${Report.getId()}}">
                                 <span th:text="${Report.getReport_name()}"> </span>
@@ -53,15 +52,35 @@
                     </tr>
                     </tbody>
                 </table>
+                <table>
+                    <h1>Leasingaftaler på bilen:</h1>
+                    <thead>
+                    <tr>
+                        <th>Kundenavn</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="Report : ${leaseReport}">
+                        <td>
+                            <a th:href="@{'/watchLeasingAgreements'}">
+                                <span th:text="${Report.customer_name}"> </span>
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
                 <div class="flex-container">
-                    <form action="/CreateNewReportEntry">
-                        <button type="submit" class="create-Report-button">Opret ny rapport</button>
-                    </form>
                     <form action="/carListSite">
                         <button type="submit" class="create-car-button">Tilbage til bil Siden</button>
                     </form>
+                    <form action="/CreateNewReportEntry">
+                        <button type="submit" class="create-Report-button">Opret ny rapport</button>
+                    </form>
                     <form action="/DamageReportSite">
-                        <button type="submit" class="All-Reports-button">Se alle rapporter</button>
+                        <button type="submit" class="All-Reports-button">Se Skade alle rapporter</button>
+                    </form>
+                    <form action="/makeNewLeasing">
+                        <button type="submit" class="New-Leasing-Report-button">Opret leasing rapport</button>
                     </form>
                 </div>
             </div>
