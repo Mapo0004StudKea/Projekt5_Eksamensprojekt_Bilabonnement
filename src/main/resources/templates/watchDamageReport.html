@@ -5,26 +5,40 @@
     <title>Se din skadesrapport</title>
 </head>
 <body>
-<thead>
+<h3 th:text="${watchdamage.getReport_name()}"> </h3>
+<table>
+    <thead>
     <h1>Report omhandlene </h1>
-    <h3 th:text="${watchdamage.getReport_name()}"> </h3>
         <tr>
-            <p>medarbejder</p>
-           <p> <th th:text="${watchdamage.getReport_employee_name()}"></th></p>
-            <p>beskrvielse af reporten</p>
-           <p> <th th:text="${watchdamage.getReport_description()}"></th></p>
+            <th>medarbejder</th>
+            <th>beskrivelse af rapporten</th>
         </tr>
-    <tr>
-        <h3>Oversigt over alle Skader</h3>
-<tbody>
-    <tr th:each=" damage : ${damage}">
-        <td th:text="${damage.getDamage_name()}">Navn på skaden</td>
-        <td th:text="${damage.getDamage_price()}">Prisen på skaden</td>
-        <td th:text="${damage.getDamage_description()}"> Beskrivelse af skaden </td>
-
-    </tr>
-</tbody>
-
+    <tbody>
+        <tr>
+            <td th:text="${watchdamage.getReport_employee_name()}"></td>
+            <td th:text="${watchdamage.getReport_description()}"></td>
+        </tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+    <h1>Oversigt over alle Skader</h1>
+        <tr>
+            <th>navn på skaden</th>
+            <th>prisen på skaden</th>
+            <th>Skade beskrivelse</th>
+        </tr>
+    <tbody>
+        <tr th:each=" damage : ${damage}">
+            <td th:text="${damage.getDamage_name()}">Navn på skaden</td>
+            <td th:text="${damage.getDamage_price()}">Prisen på skaden</td>
+            <td th:text="${damage.getDamage_description()}"> Beskrivelse af skaden </td>
+        </tr>
+        <tr>
+            <td>total pris</td>
+            <td>500</td>
+        </tr>
+</table>
 <a th:href="@{'/makeNewDamage/' + ${watchdamage.getId()}}">
     <button type="submit" >Opret ny skade</button>
 </a>
