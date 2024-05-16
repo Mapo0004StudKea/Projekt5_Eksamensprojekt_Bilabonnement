@@ -1,7 +1,9 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.controller;
 
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageReportModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository;
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageReportRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.service.CarService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -32,6 +34,9 @@ public class CarController {
 
     @Autowired
     CarService carService;
+
+    @Autowired
+    DamageReportRepository damageReportRepository;
 
     @GetMapping("/carListSite")
     public String carListSide(Model model) {
@@ -129,6 +134,8 @@ public class CarController {
     ) {
         CarModel carModel = carRepository.GetCarById(car_Id);
         model.addAttribute("carModel", carModel);
+        List<DamageReportModel> damageReportModels = damageReportRepository.getAllReportsByCarId(car_Id);
+        model.addAttribute("damageReport", damageReportModels);
         return "carInfoPage";
     }
 }

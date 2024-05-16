@@ -49,4 +49,9 @@ public class DamageReportRepository {
         return damageReportModels;
     }
 
+    public List<DamageReportModel> getAllReportsByCarId(int id) {
+        final String GET_ALL_REPORTS_BY_CAR_ID_SQL = "select * from damagereport where car_id = ?;";
+        List<DamageReportModel> damageReportModels = jdbcTemplate.query(GET_ALL_REPORTS_BY_CAR_ID_SQL, new Object[]{id}, new BeanPropertyRowMapper<>(DamageReportModel.class));
+        return damageReportModels;
+    }
 }
