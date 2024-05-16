@@ -46,6 +46,10 @@ public class DamageRepository {
         List<DamageModel> damageList = jdbcTemplate.query(GET_ALL_DAMAGE_SQL, new BeanPropertyRowMapper<>(DamageModel.class));
         return damageList;
     }
+    public void updateDamage(DamageModel damage){
+        String UPDATE_DAMAGE_SQL = "UPDATE damages SET damage_name = ?, damage_price = ?, damage_description = ?, damageReport_id = ? WHERE id = ?";
+        jdbcTemplate.update(UPDATE_DAMAGE_SQL, damage.getDamage_name(), damage.getDamage_price(), damage.getDamage_description(), damage.getDamageReport_id(), damage.getId());
+    }
 
 
     public List<DamageModel> getFullPriceFromId(int damageReport_id) {
