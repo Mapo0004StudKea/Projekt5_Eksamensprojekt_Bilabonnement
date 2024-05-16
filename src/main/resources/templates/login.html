@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="../static/css/login.css" th:href="@{css/login.css}">
 </head>
 <body>
+<div class="loginbox">
+    <div class="login">
+        <form action="/loginside" method="post">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="input-box">
+                <input type="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <div class="remember">
+                <label><input type="checkbox">Remember me</label>
+                <a href="/">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="button"><a href ="/FrontPage">Login</a></button>
+
+
+        </form>
+    </div>
+</div>
 
 </body>
 </html>
