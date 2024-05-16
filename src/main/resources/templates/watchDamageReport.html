@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Se din skadesrapport</title>
@@ -33,8 +33,11 @@
             <td th:text="${damage.getDamage_name()}">Navn på skaden</td>
             <td th:text="${damage.getDamage_price()}">Prisen på skaden</td>
             <td th:text="${damage.getDamage_description()}"> Beskrivelse af skaden </td>
-            <td><a th:href="@{'/UpdateDamage/'+${}}">Opdater</a></td>
-            <td><a th:href="@{'/deleteDamage/'+${}}">Slet</a></td>
+            <td>
+                <a th:href="@{'/UpdateDamage/'+${damage.id}}">Opdater</a></td>
+
+            <td>
+                <a th:href="@{'/deleteDamage/'+${damage.id}}">Slet</a></td>
         </tr>
 
         <tr>

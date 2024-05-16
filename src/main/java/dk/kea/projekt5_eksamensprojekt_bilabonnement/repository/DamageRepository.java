@@ -1,7 +1,6 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.repository;
 
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageModel;
-import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.LeasingModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -30,23 +29,31 @@ public class DamageRepository {
         String DELETE_DAMAGE_SQL = "DELETE FROM damages WHERE id = ?";
         jdbcTemplate.update(DELETE_DAMAGE_SQL, id);
     }
-    public DamageModel findDamageById(int id){
-        String GET_DAMAGE_SQL = "SELECT * FROM damages WHERE id = ?";
-        return jdbcTemplate.queryForObject(GET_DAMAGE_SQL, new BeanPropertyRowMapper<>(DamageModel.class), id);
-    }
-    public List<DamageModel> findDamageReportById(int reportID){
-        String GET_DAMAGE_SQL = "SELECT * FROM damages WHERE damagereport_id = ?";
-        List<DamageModel> damageModelList = jdbcTemplate.query(GET_DAMAGE_SQL, new Object[]{reportID}, new BeanPropertyRowMapper<>(DamageModel.class));
-        return damageModelList;
-    }
-
-
     public List<DamageModel> findAllDamage(){
         String GET_ALL_DAMAGE_SQL = "SELECT * FROM damages";
         List<DamageModel> damageList = jdbcTemplate.query(GET_ALL_DAMAGE_SQL, new BeanPropertyRowMapper<>(DamageModel.class));
         return damageList;
     }
-    public void updateDamage(DamageModel damage){
+
+    public List<DamageModel> findDamageReportById(int reportID){
+        String GET_DAMAGE_SQL = "SELECT * FROM damages WHERE damagereport_id = ?";
+        List<DamageModel> damageModelList = jdbcTemplate.query(GET_DAMAGE_SQL, new Object[]{reportID}, new BeanPropertyRowMapper<>(DamageModel.class));
+        return damageModelList;
+    }
+    public DamageModel findDamageById(int id){
+        //Find sql
+        String GET_DAMAGE_SQL = "SELECT * FROM damages WHERE id = ?";
+        //return query
+        return jdbcTemplate.queryForObject(GET_DAMAGE_SQL, new Object[]{id}, new BeanPropertyRowMapper<>(DamageModel.class));
+    }
+    public DamageModel updateDamageById(int id){
+        String GET_UPDATE_DAMAGE_BY_ID = "SELECT * FROM damages WHERE id = ?";
+        return jdbcTemplate.queryForObject(GET_UPDATE_DAMAGE_BY_ID, new Object[]{id}, DamageModel.class);
+
+    }
+
+
+    public void updateDamageDatabase(DamageModel damage){
         String UPDATE_DAMAGE_SQL = "UPDATE damages SET damage_name = ?, damage_price = ?, damage_description = ?, damageReport_id = ? WHERE id = ?";
         jdbcTemplate.update(UPDATE_DAMAGE_SQL, damage.getDamage_name(), damage.getDamage_price(), damage.getDamage_description(), damage.getDamageReport_id(), damage.getId());
     }

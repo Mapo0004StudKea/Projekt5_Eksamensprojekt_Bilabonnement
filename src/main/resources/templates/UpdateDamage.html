@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>update</title>
 </head>
 <body>
+<form action="/updateDamage" method="post" class="form-container">
+    <h2>Opdater damage</h2>
+    <input name="id" type="hidden" th:value="${updateDamage.id}" th:name="id">
+
+    <label for="damage_name">Navn på skade</label>
+    <input id="damage_name" name="damage_name" type="text" th:value="${updateDamage.getDamage_name()}">
+
+    <label for="damage_price">Pris på skaden</label>
+    <input id="damage_price" name="damage_price" type="text" th:value="${updateDamage.getDamage_price()}">
+
+    <label for="damage_description">Beskrivelse af skade</label>
+    <input id="damage_description" name="damage_description" type="text" th:value="${updateDamage.getDamage_description()}">
+
+    <label for="damageReport_id">Skadesrapport id</label>
+    <input id="damageReport_id" name="damageReport_id" type="text" th:value="${updateDamage.getDamage_description()}">
+
+    <input type="submit" value="Opdater rapport">
+</form>
 
 </body>
 </html>

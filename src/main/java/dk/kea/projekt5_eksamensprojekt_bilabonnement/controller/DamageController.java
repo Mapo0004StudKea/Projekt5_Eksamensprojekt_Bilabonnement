@@ -62,22 +62,22 @@ public class DamageController {
             return "redirect:" + referrer;
         } else{return "redirect:watchDamageReport/";}
     }
-    @GetMapping("/updateDamage/{id}")
-    public String updateDamageById(@PathVariable("id") int damageReport_id, Model model) {
-        DamageModel damageModel = damageRepository.findDamageById(damageReport_id);
-        model.addAttribute("updateDamage", damageReport_id);
+    @GetMapping("/UpdateDamage/{id}")
+    public String updateDamageById(@PathVariable("id") int damage_id, Model model) {
+        DamageModel damageModel = damageRepository.updateDamageById(damage_id);
+        model.addAttribute("updateDamage", damageModel);
         return "UpdateDamage";
     }
     @PostMapping("/updateDamage")
     public String updateDamage(
             @RequestParam("id") int id,
-            @RequestParam("damage_name") String damageName,
-            @RequestParam("damage_price") double damagePrice,
-            @RequestParam("damage_description") String damageDescription,
+            @RequestParam("damage_name") String damage_name,
+            @RequestParam("damage_price") double damage_price,
+            @RequestParam("damage_description") String damage_description,
             @RequestParam("damageReport_id") int damageReport_id)
     {
-        DamageModel damageModel = new DamageModel(damageName, damagePrice, damageDescription, damageReport_id);
-        damageRepository.updateDamage(damageModel);
+        DamageModel damageModel = new DamageModel(id,damage_name, damage_price, damage_description, damageReport_id);
+        damageRepository.updateDamageDatabase(damageModel);
         return "redirect:watchDamageReport/";
     }
 
