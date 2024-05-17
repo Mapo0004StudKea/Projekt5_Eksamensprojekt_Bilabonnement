@@ -10,7 +10,7 @@
     <div class="block-content">
         <div class="block">
             <h2>Aftaleindskrivning</h2>
-            <form action="makeNewLeasing" method="post">
+            <form action="/makeNewLeasing" method="post">
                 <label for="ansat">Ansat:</label><br>
                 <input type="text" id="ansat" name="ansat"><br>
 
@@ -20,8 +20,8 @@
                 <label for="leasingPrice">Pris:</label><br>
                 <input type="text" id="leasingPrice" name="Pris"><br>
 
-                <label for="carId">carId:</label><br>
-                <input type="text" id="carId" name="carId"><br>
+
+                <input name="car_id" th:value="${car_id.getId()}" th:name="car_id" type="hidden"><br>
 
                 <label>Abonnementsaftale:</label><br>
                 <input id="limited" name="is_limited" type="checkbox" value="true">

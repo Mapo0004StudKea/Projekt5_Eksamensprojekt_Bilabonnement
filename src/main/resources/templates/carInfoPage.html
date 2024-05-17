@@ -81,7 +81,7 @@
                     <form action="/DamageReportSite">
                         <button type="submit" class="All-Reports-button">Se alle skaderapporter</button>
                     </form>
-                    <form action="/makeNewLeasing">
+                    <form th:action="@{'/makeNewLeasing/'+ ${carModel.getId()}}">
                         <button type="submit" class="New-Leasing-Report-button">Opret leasing rapport</button>
                     </form>
                 </div>

@@ -41,8 +41,10 @@ public class LeasingController {
     }
 
 
-    @GetMapping("/makeNewLeasing")
-    public String makeNewLeasing(){
+    @GetMapping("/makeNewLeasing/{id}")
+    public String makeNewLeasing(@PathVariable("id") int car_id, Model model){
+        CarModel carModel = carRepository.GetCarById(car_id);
+        model.addAttribute("car_id", carModel);
         return "makeNewLeasing";
     }
 
@@ -54,12 +56,11 @@ public class LeasingController {
             @RequestParam("navn") String customer_name,
             @RequestParam(value = "is_unlimited", defaultValue = "false") boolean is_unlimited,
             @RequestParam(value = "is_limited", defaultValue = "false") boolean is_limited,
-            @RequestParam("carId") int car_id,
+            @RequestParam("car_id") int car_id,
             @RequestParam("ansat") String employee_name){
 
-        LeasingModel leasingModel =new LeasingModel(employee_name, monthly_price, customer_name, start_leasing, end_leasing, is_unlimited, is_limited, car_id);
+        LeasingModel leasingModel = new LeasingModel(employee_name, monthly_price, customer_name, start_leasing, end_leasing, is_unlimited, is_limited, car_id);
         leasingRepository.createLeasingContract(leasingModel);
-
         return "redirect:/watchLeasingAgreements";
     }
 
