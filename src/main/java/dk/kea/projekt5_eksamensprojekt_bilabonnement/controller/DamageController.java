@@ -25,14 +25,15 @@ public class DamageController {
     @Autowired
     DamageRepository damageRepository;
 
-
+// denne metode/getMapping visser en liste af skader.
     @GetMapping("/watchDamages")
     public String overviewOfDamages(Model model) {
         List<DamageModel> damages = damageRepository.findAllDamage();
         model.addAttribute("damageOverview", damages);
         return "watchDamages";
     }
-
+    // denne metode /getmapping gør at vi kan komme ind på en Update side
+    // hvor værdierne bliver hentet og sendt hen til en input formel, så man kan se hvad der stod i forvejen.
     @GetMapping("/UpdateDamage/{id}")
     public String updateDamageById(@PathVariable("id") int damage_id, Model model) {
         DamageModel damageModel = damageRepository.updateDamageById(damage_id);
@@ -40,7 +41,7 @@ public class DamageController {
         return "UpdateDamage";
     }
 
-
+    // PostMapping sørge for at gemme nye værdiere til update metoden.
     @PostMapping("/UpdateDamage")
     public String updateDamage(
             @RequestParam("id") int id,
@@ -53,8 +54,6 @@ public class DamageController {
         damageRepository.updateDamageDatabase(damageModel);
         return "redirect:watchDamages";
     }
-
-
 
     @GetMapping("makeNewDamage/{id}")
         public String createNewDamage(@PathVariable("id") int damageReport_id, Model model) {
