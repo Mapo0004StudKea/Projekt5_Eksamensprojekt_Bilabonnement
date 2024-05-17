@@ -6,21 +6,27 @@
     <title>Overview of Leasing</title>
 </head>
 <body>
-<h1> Oversigt over nuværende leasingaftaler</h1>
+
 
 <div class="block-container">
     <div class="block-content">
+        <h1>Oversigt over nuværende leasingaftaler</h1>
         <div class="blockLeasingContrakts">
+            <h3>Alle Leasings Aftaler</h3>
             <table>
                 <thead>
                 <tr>
-                    <h3>Alle Leasings Aftaler</h3>
+                    <th>Medarbejder</th>
+                    <th>Kunde navn</th>
+                    <th>Månedlig pris</th>
+                    <th>Opdater</th>
+                    <th>slet</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="Leasing : ${LeasingAgremenst}">
-                    <td th:text="${Leasing.getId()}">abonoment ID</td>
-
+                    <!-- <td th:text="${Leasing.getId()}">abonoment ID</td> -->
+                    <td th:text="${Leasing.getEmployee_name()}"></td>
                     <td>
                     <a th:href="@{'/CarInfoPage/' + ${Leasing.getCar_id()}}">
                     <span th:text="${Leasing.getCustomer_name()}">kunde navn</span>
