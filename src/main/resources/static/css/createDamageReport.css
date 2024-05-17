@@ -1,0 +1,73 @@
+.block {
+    width: 70vh; /* Bredden på din boks */
+    height: 80vh; /* Højden på din boks */
+    background-color: #fff; /* Baggrundsfarve */
+    border-radius: 10px; /* Afrundede hjørner */
+    box-shadow: 0px 0px 10px 0px rgba(0, 192, 255, 0.75); /* Skyggeeffekt */
+    display: flex;
+    flex-direction: column;
+}
+
+.blockLeasingContrakts {
+    width: 60vh; /* Bredden på din boks */
+    height: 50vh; /* Højden på din boks */
+    background-color: #fff; /* Baggrundsfarve */
+    border-radius: 10px; /* Afrundede hjørner */
+    box-shadow: 0px 0px 10px 0px rgba(0, 192, 255, 0.75); /* Skyggeeffekt */
+    display: flex;
+    flex-direction: column;
+}
+
+.block-content {
+    text-align: center; /* Centrer indholdet vandret */
+}
+
+.block-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Sætter højden til 100% af vinduets højde */
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Tilføj margin under hver række */
+    width: 100%;
+    align-items: center; /* Centrér indholdet vertikalt */
+}
+
+.form-row label {
+    width: 30%;
+    text-align: right;
+    padding-right: 10px;
+    margin-right: 10px; /* Tilføj margin til højre for label */
+}
+
+.form-row input[type="text"] {
+    width: 60%;
+    padding: 5px; /* Tilføj padding for at øge indre plads */
+    margin-left: 10px; /* Tilføj margin til venstre for input */
+}
+
+.button {
+    background-color: #1e90ff; /* Mørkeblå farve */
+    color: #fff; /* Hvid tekstfarve */
+    padding: 10px 20px; /* Tilføj lidt polstring */
+    border: none; /* Fjern kanten */
+    border-radius: 5px; /* Afrundede hjørner */
+    cursor: pointer; /* Gør cursor til en hånd når det er over knappen */
+    margin: 10px;
+}
+
+/* Ændre farven, når musen er over knappen */
+.button:hover {
+    background-color: #005cbf; /* Mørkere blå farve */
+}

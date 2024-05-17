@@ -15,6 +15,11 @@
                 <thead>
                 <tr>
                     <h3>Oversigt over alle Skader</h3>
+                    <th>skade ID</th>
+                    <th>skade Navn</th>
+                    <th>skade Pris</th>
+                    <th>skade beskrivelse</th>
+                    <th>Opdater</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -23,7 +28,9 @@
                     <td th:text="${Damage.getDamage_name()}">Navn på skaden</td>
                     <td th:text="${Damage.getDamage_price()}">Prisen på skaden</td>
                     <td th:text="${Damage.getDamage_description()}"> Beskrivelse af skaden </td>
-
+                    <td>
+                        <a th:href="@{'/UpdateDamage/'+${Damage.getId()}}">Opdater</a>
+                    </td>
                 </tr>
                 </tbody>
             </table>

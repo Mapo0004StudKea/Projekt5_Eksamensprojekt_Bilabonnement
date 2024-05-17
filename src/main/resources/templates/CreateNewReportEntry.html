@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Ny Raport</title>
+    <link rel="stylesheet" href="../static/css/createDamageReport.css" th:href="@{/css/createDamageReport.css}">
 </head>
 <body>
+<div class="block-container">
+    <div class="block-content">
+        <div class="blockLeasingContrakts">
+            <form action="/CreateNewReportEntry" method="post" class="form-container">
+                <h1>Opret ny skaderapport</h1>
+                <label for="name">Rapport navn:</label>
+                <input id="name" name="name" type="text">
 
-<div class="container">
-    <form action="/CreateNewReportEntry" method="post" class="form-container">
-        <h1>Opret ny skaderapport</h1>
-        <label for="name">Rapport navn:</label>
-        <input id="name" name="name" type="text">
+                <label for="description">beskrivelse:</label>
+                <input id="description" name="description" type="text">
 
-        <label for="description">beskrivelse:</label>
-        <input id="description" name="description" type="text">
+                <label for="employee">Medarbejder Navn:</label>
+                <input id="employee" name="employee" type="text">
 
-        <label for="employee">Medarbejder Navn:</label>
-        <input id="employee" name="employee" type="text">
+                <input name="car_id" th:value="${car_id.getId()}" th:name="car_id" type="hidden">
 
-        <input name="car_id" th:value="${car_id.getId()}" th:name="car_id">
-
-        <input type="submit" value="opret Report">
-    </form>
+                <input type="submit" value="opret Report" class="button">
+            </form>
+        </div>
+    </div>
 </div>
 </body>
 </html>
