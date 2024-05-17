@@ -60,6 +60,7 @@
     <form action="/updateCarEntry" method="post" class="form-container">
         <h1>Opdater bil</h1>
         <input name="id" type="hidden" th:value="${updateCar.id}" th:name="id">
+
         <label for="car_picture-field">Billed:</label>
 
         <input id="car_picture-field" name="car_picture" type="text" th:value="${updateCar.car_picture}">

@@ -73,9 +73,11 @@
                     <form action="/carListSite">
                         <button type="submit" class="create-car-button">Tilbage til bil Siden</button>
                     </form>
-                    <form action="/CreateNewReportEntry">
+
+                    <form th:action="@{'/CreateNewReportEntry/'+ ${carModel.getId()}}">
                         <button type="submit" class="create-Report-button">Opret ny rapport</button>
                     </form>
+
                     <form action="/DamageReportSite">
                         <button type="submit" class="All-Reports-button">Se Skade alle rapporter</button>
                     </form>

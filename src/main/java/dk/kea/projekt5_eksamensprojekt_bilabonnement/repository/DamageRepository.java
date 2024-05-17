@@ -49,9 +49,7 @@ public class DamageRepository {
     public DamageModel updateDamageById(int id){
         String GET_UPDATE_DAMAGE_BY_ID = "SELECT * FROM damages WHERE id = ?";
         return jdbcTemplate.queryForObject(GET_UPDATE_DAMAGE_BY_ID, new Object[]{id}, DamageModel.class);
-
     }
-
 
     public void updateDamageDatabase(DamageModel damage){
         String UPDATE_DAMAGE_SQL = "UPDATE damages SET damage_name = ?, damage_price = ?, damage_description = ?, damageReport_id = ? WHERE id = ?";

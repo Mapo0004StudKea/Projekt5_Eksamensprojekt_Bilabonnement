@@ -1,8 +1,10 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.controller;
 
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageReportModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.LeasingModel;
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageReportRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.service.DamageService;
@@ -34,6 +36,8 @@ public class DamageReportController {
     DamageRepository damageRepository;
     @Autowired
     DamageService damageService;
+    @Autowired
+    CarRepository carRepository;
 
     @GetMapping("/DamageReportSite")
     public String viewDamageReport(Model model) {
@@ -42,17 +46,20 @@ public class DamageReportController {
         return "DamageReportSite";
     }
 
-    @GetMapping("/CreateNewReportEntry")
-    public String CreateNewReportEntry() {
+    @GetMapping("/CreateNewReportEntry/{id}")
+    public String CreateNewReportEntry(@PathVariable("id") int car_id, Model model) {
+        CarModel carModel = carRepository.GetCarById(car_id);
+        model.addAttribute("car_id", carModel);
         return "CreateNewReportEntry";
     }
 
     @PostMapping("/CreateNewReportEntry")
-    public String MakeNewReportEntry(@RequestParam("name") String name,
+    public String MakeNewReportEntry(
+                                     @RequestParam("name") String name,
                                      @RequestParam("description") String description,
                                      @RequestParam("employee") String employee,
-                                     @RequestParam("car_id") int car_id) {
-        DamageReportModel damageReportModel = new DamageReportModel(name, description, employee, car_id);
+                                     @RequestParam("car_id") int car_id){
+        DamageReportModel damageReportModel = new DamageReportModel(name, description, employee,car_id);
         damageReportRepository.createNewDamageReport(damageReportModel);
         return "redirect:/CarInfoPage/" + car_id;
     }

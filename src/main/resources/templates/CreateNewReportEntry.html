@@ -7,7 +7,7 @@
 <body>
 
 <div class="container">
-    <form action="CreateNewReportEntry" method="post" class="form-container">
+    <form action="/CreateNewReportEntry" method="post" class="form-container">
         <h1>Opret Report</h1>
         <label for="name">Rapport navn:</label>
         <input id="name" name="name" type="text">
@@ -18,8 +18,7 @@
         <label for="employee">Medarbejder Navn:</label>
         <input id="employee" name="employee" type="text">
 
-        <label for="car_id">car id:</label>
-        <input id="car_id" name="car_id" type="number">
+        <input name="car_id" th:value="${car_id.getId()}" th:name="car_id">
 
         <input type="submit" value="opret Report">
     </form>
