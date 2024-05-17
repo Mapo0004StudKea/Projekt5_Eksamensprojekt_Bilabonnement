@@ -22,7 +22,11 @@
         </thead>
         <tbody>
         <tr th:each="carlist : ${nonLeasedCars}">
-            <td th:text="${carlist.car_full_name}"></td>
+            <td>
+                <a th:href="@{'/CarInfoPage/'+${carlist.getId()}}">
+                    <span th:text="${carlist.car_full_name}"></span>
+                </a>
+            </td>
             <td th:text="${carlist.car_Serialnr}">546231987</td>
             <td th:text="${carlist.car_number}">123654898213</a></td>
             <td th:text="${carlist.car_model}">Bil model</td>

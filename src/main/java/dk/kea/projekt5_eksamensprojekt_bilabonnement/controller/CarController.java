@@ -41,10 +41,10 @@ public class CarController {
     @GetMapping("/carListSite")
     public String carListSide(Model model) {
         List<CarModel> carModels = carRepository.getFullListOfCars();
-        List<CarModel> carModels1 = carRepository.getSpecificNameFromCars();
+        //List<CarModel> carModels1 = carRepository.getSpecificNameFromCars();
         double totalMonthlyPrice = carService.calculateTotalMonthlyPrice();
         model.addAttribute("carlist", carModels);
-        model.addAttribute("carModels1", carModels1);
+        //model.addAttribute("carModels1", carModels1);
         model.addAttribute("totalMonthlyPrice", totalMonthlyPrice);
         return "carListSite";
     }
