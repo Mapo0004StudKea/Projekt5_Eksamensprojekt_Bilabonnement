@@ -1,5 +1,7 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.model;
 
+import java.time.LocalDate;
+
 /**
  * Damage Report model class
  *
@@ -12,6 +14,7 @@ public class DamageReportModel {
     String report_name;
     String report_description;
     String report_employee_name;
+    LocalDate report_Damage_Date;
     int car_id;
 
     public DamageReportModel() {
@@ -63,6 +66,14 @@ public class DamageReportModel {
 
     public void setReport_employee_name(String report_employee_name) {
         this.report_employee_name = report_employee_name;
+    }
+
+    public LocalDate getReport_Damage_Date() {
+        return report_Damage_Date;
+    }
+
+    public void setReport_Damage_Date(LocalDate report_Damage_Date) {
+        this.report_Damage_Date = report_Damage_Date;
     }
 
     public int getCar_id() {
