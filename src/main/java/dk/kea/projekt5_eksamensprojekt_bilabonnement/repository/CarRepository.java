@@ -78,4 +78,11 @@ public class CarRepository {
         String GET_CAR_BY_ID_SQL = "SELECT * FROM car WHERE id = ?";
         return jdbcTemplate.queryForObject(GET_CAR_BY_ID_SQL, new Object[]{id}, new BeanPropertyRowMapper<>(CarModel.class));
     }
+
+    /*public List<CarModel> showCarsByINT() {
+        //count (*) finder antallet af udlejede biler som en int, i stedet for som en List, som vores metode ovenover gør.
+        String GET_CARS_BY_INT_NUMBER = "SELECT count(*) FROM car WHERE is_leased = 1";
+        List<CarModel> carmodel = jdbcTemplate.query(GET_CARS_BY_INT_NUMBER, new BeanPropertyRowMapper<>(CarModel.class));
+        return carmodel;
+    }*/
 }

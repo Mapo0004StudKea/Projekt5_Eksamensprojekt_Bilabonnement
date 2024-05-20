@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <link rel="stylesheet" href="../static/css/header.css" th:href="@{css/header.css}">
-    <link rel="stylesheet" href="../static/css/body.css" th:href="${css/body.css}">
+    <link rel="stylesheet" href="../static/css/body.css" th:href="@{css/body.css}">
 </head>
 <body>
+
 
 <div class="sidebar">
     <header>Bil abonnement</header>
@@ -23,7 +24,18 @@
 </div>
 <div class="flex-container">
     <div class="flex-box">
+        <table>
+            <tbody>
+            <tr>
+                <td th:text="${carsByNumber}">
+
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
         <div class="flex-box-image fest-1"></div>
+
         <h4>Biler</h4>
         <a href="#">Klik her for mere!</a>
     </div>
