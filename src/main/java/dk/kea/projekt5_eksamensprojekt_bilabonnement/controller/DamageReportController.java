@@ -80,7 +80,7 @@ public class DamageReportController {
                                    @RequestParam("car_id") int car_id) {
         DamageReportModel damageReportModel = new DamageReportModel(id, report_name, report_description, report_employee_name, car_id);
         damageReportRepository.UpdateDamageReportEntryInDatabase(damageReportModel);
-        return "redirect:DamageReportSite";
+        return "redirect:watchDamageReport/" + id;
     }
 
     @GetMapping("/deleteFromDamageReportSite/{id}")
