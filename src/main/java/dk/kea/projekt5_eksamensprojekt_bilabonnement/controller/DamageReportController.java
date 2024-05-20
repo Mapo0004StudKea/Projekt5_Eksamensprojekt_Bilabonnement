@@ -3,7 +3,7 @@ package dk.kea.projekt5_eksamensprojekt_bilabonnement.controller;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageReportModel;
-import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.LeasingModel;
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarReport;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageReportRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageRepository;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * damageReport controller class
@@ -41,11 +41,37 @@ public class DamageReportController {
 
     @GetMapping("/DamageReportSite")
     public String viewDamageReport(Model model) {
+        //Her henter den alle skadesrapporter fra databasen
         List<DamageReportModel> allDamageReports = damageReportRepository.getFullListOfReport();
-        model.addAttribute("damageReport", allDamageReports);
+        //Her henter den alle biler fra databasen
+        List<CarModel> carModels = carRepository.getFullListOfCars();
+
+        //Her bruger vi TreeMap for at bevare rækkefølgen efter bil id'er
+        Map<Integer, List<DamageReportModel>> carReportMap = new TreeMap<>();
+
+        //Her udfylder vi map med bil id'er og tilsvarende rapporter
+        for (DamageReportModel report : allDamageReports) {
+            carReportMap.computeIfAbsent(report.getCar_id(), k -> new ArrayList<>()).add(report);
+        }
+
+        //Her oprettes en liste af CarReport objekter
+        List<CarReport> carReports = new ArrayList<>();
+
+        //Her kombineres bil-modellen med skaderapport-modellen
+        for (CarModel car : carModels) {
+            List<DamageReportModel> reports = carReportMap.get(car.getId());
+            if (reports != null) {
+                for (DamageReportModel report : reports) {
+                    carReports.add(new CarReport(car, report));
+                }
+            }
+        }
+
+        //Her tilføjes carReports til modelattributten
+        model.addAttribute("carReports", carReports);
+        //Her returneres navnet på visningen
         return "DamageReportSite";
     }
-
     @GetMapping("/CreateNewReportEntry/{id}")
     public String CreateNewReportEntry(@PathVariable("id") int car_id, Model model) {
         CarModel carModel = carRepository.GetCarById(car_id);

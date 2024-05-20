@@ -7,37 +7,38 @@
 </head>
 <body>
 <h1 style="text-align: center">Oversigt over alle skadesrapporter</h1>
-    <div class="table-container">
-        <table>
-            <thead>
-            <tr>
-                <th> Navn </th>
-                <th>Opdater</th>
-                <th>Slet</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="Report : ${damageReport}">
-                <td th:text="${Report.getReport_employee_name()}"></td>
-
-                <td>
-
-                <a th:href="@{'/watchDamageReport/' + ${Report.getId()}}">
-                    <span th:text="${Report.getReport_name()}"> </span>
-                       </a>
-                </td>
-                <td>
-                    <a th:href="@{'/deleteFromDamageReportSite/'+${Report.getId()}}">Fjern</a>
-                </td>
-
-                <td>
-                    <a th:href="@{'/UpdateReport/'+${Report.getId()}}">Opdater</a>
-                </td>
-
-            </tr>
-            </tbody>
-        </table>
-    </div>
+<div class="table-container">
+    <table>
+        <thead>
+        <tr>
+            <th>Bil id</th>
+            <th>Serienummer</th>
+            <th>Medarbejder Navn</th>
+            <th>Rapport Navn</th>
+            <th>Opdater</th>
+            <th style="text-align: left">Slet</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="carReport : ${carReports}">
+            <td th:text="${carReport.carModel.id}"></td>
+            <td th:text="${carReport.carModel.car_Serialnr}"></td>
+            <td th:text="${carReport.damageReportModel.report_employee_name}"></td>
+            <td>
+                <a th:href="@{'/watchDamageReport/' + ${carReport.damageReportModel.id}}">
+                    <span th:text="${carReport.damageReportModel.report_name}"> </span>
+                </a>
+            </td>
+            <td>
+                <a th:href="@{'/UpdateReport/' + ${carReport.damageReportModel.id}}">Opdater</a>
+            </td>
+            <td>
+                <a th:href="@{'/deleteFromDamageReportSite/' + ${carReport.damageReportModel.id}}">Fjern</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 <div class="table-container">
     <form action="/CreateNewReportEntry">
         <button type="submit" class="create-Report-button">Opret ny rapport</button>
