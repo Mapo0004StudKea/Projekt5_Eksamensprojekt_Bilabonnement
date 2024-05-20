@@ -3,7 +3,7 @@ package dk.kea.projekt5_eksamensprojekt_bilabonnement.controller;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageReportModel;
-import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarReport;
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarReportModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageReportRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageRepository;
@@ -59,14 +59,14 @@ public class DamageReportController {
         }
 
         //Her oprettes en liste af CarReport objekter
-        List<CarReport> carReports = new ArrayList<>();
+        List<CarReportModel> carReports = new ArrayList<>();
 
         //Her kombineres bil-modellen med skaderapport-modellen
         for (CarModel car : carModels) {
             List<DamageReportModel> reports = carReportMap.get(car.getId());
             if (reports != null) {
                 for (DamageReportModel report : reports) {
-                    carReports.add(new CarReport(car, report));
+                    carReports.add(new CarReportModel(car, report));
                 }
             }
         }

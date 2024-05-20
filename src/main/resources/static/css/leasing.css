@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
 }
-.blockLeasingContrakts{
+.blockLeasingContracts{
     width: 100vh; /* Bredden på din boks */
     height: 70vh; /* Højden på din boks */
     background-color: #fff; /* Baggrundsfarve */

@@ -1,10 +1,10 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.model;
 
-public class  CarReport {
+public class CarReportModel {
     private CarModel carModel;
     private DamageReportModel damageReportModel;
 
-    public CarReport(CarModel carModel, DamageReportModel damageReportModel) {
+    public CarReportModel(CarModel carModel, DamageReportModel damageReportModel) {
         this.carModel = carModel;
         this.damageReportModel = damageReportModel;
     }
