@@ -22,7 +22,7 @@ public class DamageRepository {
     private DamageModel damageModel;
 
     public void createNewDamage(DamageModel damage){
-        final String INSERT_DAMAGE_SQL = "INSERT INTO damages (damage_name, damage_price, damage_description, damageReport_id) VALUES (?, ?, ?, ?)";
+        final String INSERT_DAMAGE_SQL = "INSERT INTO damages (damage_name, damage_price, damage_description, damagereport_id) VALUES (?, ?, ?, ?)";
         jdbcTemplate.update(INSERT_DAMAGE_SQL, damage.getDamage_name(), damage.getDamage_price(), damage.getDamage_description(), damage.getDamageReport_id());
     }
     public void deleteDamage(int id){
@@ -52,13 +52,13 @@ public class DamageRepository {
     }
 
     public void updateDamageDatabase(DamageModel damage){
-        String UPDATE_DAMAGE_SQL = "UPDATE damages SET damage_name = ?, damage_price = ?, damage_description = ?, damageReport_id = ? WHERE id = ?";
+        String UPDATE_DAMAGE_SQL = "UPDATE damages SET damage_name = ?, damage_price = ?, damage_description = ?, damagereport_id = ? WHERE id = ?";
         jdbcTemplate.update(UPDATE_DAMAGE_SQL, damage.getDamage_name(), damage.getDamage_price(), damage.getDamage_description(), damage.getDamageReport_id(), damage.getId());
     }
 
 
     public List<DamageModel> getFullPriceFromId(int damageReport_id) {
-        String GET_FULL_PRICE_FROM_ID_SQL = "SELECT * FROM damages WHERE damageReport_id = ?";
+        String GET_FULL_PRICE_FROM_ID_SQL = "SELECT * FROM damages WHERE damagereport_id = ?";
         List<DamageModel> damageModelList = jdbcTemplate.query(GET_FULL_PRICE_FROM_ID_SQL, new Object[]{damageReport_id}, new BeanPropertyRowMapper<>(DamageModel.class));
         return damageModelList;
     }
