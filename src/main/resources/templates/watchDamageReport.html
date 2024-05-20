@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Se din skadesrapport</title>
     <link rel="stylesheet" href="../static/css/header.css" th:href="@{/css/header.css}">
+    <link rel="stylesheet" href="../static/css/carForm.css" th:href="@{/css/carForm.css}">
+    <link rel="stylesheet" href="../static/css/car.css" th:href="@{/css/car.css}">
 
 </head>
 <body>
@@ -17,9 +19,11 @@
     </ul>
 </div>
 <div>
+    <div class="container">
 <h1 th:text="${watchdamage.getReport_name()}"></h1>
 <h1>Om Rapporten</h1>
-<table>
+    <div class="table-container">
+<table class="table">
     <thead>
         <tr>
             <th>Udført af</th>
@@ -36,7 +40,7 @@
         </tr>
     </tbody>
 </table>
-<table>
+<table class="table">
     <thead>
     <h1>Oversigt over skader i rapporten</h1>
         <tr>
@@ -60,9 +64,11 @@
             <td th:text="${totalPriceForDamages}"></td>
         </tr>
 </table>
+    </div>
 <a th:href="@{'/makeNewDamage/' + ${watchdamage.getId()}}">
     <button type="submit" >Opret ny skade</button>
 </a>
+</div>
 </div>
 </body>
 </html>

@@ -2,6 +2,7 @@
 <html lang="en">
 <link rel="stylesheet" href="../static/css/leasing.css" th:href="@{css/leasing.css}">
 <link rel="stylesheet" href="../static/css/header.css" th:href="@{css/header.css}">
+<link rel="stylesheet" href="../static/css/car.css" th:href="@{css/car.css}">
 <head>
     <meta charset="UTF-8">
     <title>Overview of Leasing</title>
@@ -18,12 +19,10 @@
 </div>
 
 
-<div class="block-container">
-    <div class="block-content">
-        <h1>Oversigt over nuværende leasingaftaler</h1>
-        <div class="blockLeasingContrakts">
-            <h3>Alle Leasings Aftaler</h3>
-            <table>
+        <h1 style="text-align: center">Oversigt over nuværende leasingaftaler</h1>
+            <h3 style="text-align: center">Alle Leasings Aftaler</h3>
+            <div class="table-container">
+            <table class="table">
                 <thead>
                 <tr>
                     <th>Medarbejder</th>
@@ -53,13 +52,12 @@
                 </tbody>
             </table>
 
-            <a href="makeNewLeasing">
-                <button>Opret ny leasing aftale</button>
-            </a>
+                <a href="makeNewLeasing">
+                    <button>Opret ny leasing aftale</button>
+                </a>
+
 
         </div>
-    </div>
-</div>
 
 </body>
 </html>
