@@ -1,6 +1,6 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.model;
 
-public class CarReport {
+public class  CarReport {
     private CarModel carModel;
     private DamageReportModel damageReportModel;
 
