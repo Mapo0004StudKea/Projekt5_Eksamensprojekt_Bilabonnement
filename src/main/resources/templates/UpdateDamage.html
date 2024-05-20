@@ -7,7 +7,7 @@
 <body>
 <form action="/UpdateDamage" method="post" class="form-container">
     <h2>Opdater damage</h2>
-    <input name="id" type="hidden" th:value="${updateDamage.id}" th:name="id">
+    <input type="hidden" name="id" th:value="${updateDamage.id}">
 
     <label for="damage_name">Navn på skade</label>
     <input id="damage_name" name="damage_name" type="text" th:value="${updateDamage.getDamage_name()}">
@@ -18,8 +18,7 @@
     <label for="damage_description">Beskrivelse af skade</label>
     <input id="damage_description" name="damage_description" type="text" th:value="${updateDamage.getDamage_description()}">
 
-    <label for="damageReport_id">Skadesrapport id</label>
-    <input id="damageReport_id" name="damageReport_id" type="text" th:value="${updateDamage.getId()}">
+    <input type="hidden" id="damageReport_id" name="damageReport_id" th:value="${updateDamage.getDamageReport_id()}">
 
     <input type="submit" value="Opdater rapport">
 </form>
