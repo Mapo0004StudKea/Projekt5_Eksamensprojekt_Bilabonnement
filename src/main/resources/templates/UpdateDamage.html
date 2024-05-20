@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>update</title>
+    <link rel="stylesheet" href="../static/css/update.css" th:href="@{/css/update.css}">
 </head>
 <body>
+<div class="container">
 <form action="/UpdateDamage" method="post" class="form-container">
     <h2>Opdater damage</h2>
     <input type="hidden" name="id" th:value="${updateDamage.id}">
@@ -22,6 +24,7 @@
 
     <input type="submit" value="Opdater rapport">
 </form>
+</div>
 
 </body>
 </html>

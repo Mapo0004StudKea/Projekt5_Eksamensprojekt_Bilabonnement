@@ -30,6 +30,8 @@
 .flex-container-block h1 {
     height: 5vh; /* Fast højde til h1 */
     line-height: 0vh; /* Gør tekst vertikalt centreret */
+    text-align: left;
+    display: flex;
 }
 
 .block{

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="UTF-8">
     <title>updateLeasingForm</title>
+    <link rel="stylesheet" href="../static/css/update.css" th:href="@{/css/update.css}">
     <link rel="stylesheet" href="../static/css/header.css" th:href="@{/css/header.css}">
-
 </head>
 <body>
 <div class="sidebar">
@@ -17,26 +16,38 @@
         <li><a href="DamageReportSite">Skadesrapport</a> </li>
     </ul>
 </div>
-<form action="/updateLeasingEntry" method="post">
-    <h1>Opdater leasing</h1>
-    <input name="id" type="hidden" th:value="${updateLease.id}" th:name="id">
-    <label for="employee_name">Ansat:</label>
-    <input id="employee_name" name="employee_name" type="text" th:value="${updateLease.employee_name}">
-    <label for="monthly_price">Månedspris:</label>
-    <input id="monthly_price" name="monthly_price" type="text" th:value="${updateLease.monthly_price}">
-    <label for="customer_name">Kunde Navn:</label>
-    <input id="customer_name" name="customer_name" type="text" th:value="${updateLease.customer_name}">
-    <label for="start_leasing">Kunde Navn:</label>
-    <input id="start_leasing" name="start_leasing" type="text" th:value="${updateLease.start_leasing}">
-    <label for="end_leasing">Kunde Navn:</label>
-    <input id="end_leasing" name="end_leasing" type="text" th:value="${updateLease.end_leasing}">
-    <label for="is_unlimited">Ubegrænse:</label>
-    <input id="is_unlimited" name="is_unlimited" type="text" th:value="${updateLease.is_unlimited}">
-    <label for="is_limited">Begrænset:</label>
-    <input id="is_limited" name="is_limited" type="text" th:value="${updateLease.is_limited}">
-    <label for="car_id">Bil id:</label>
-    <input id="car_id" name="car_id" type="text" th:value="${updateLease.car_id}">
-    <input type="submit" value="Opdater Abonnementsaftalen">
-</form>
+
+<div class="container">
+    <form action="/updateLeasingEntry" method="post">
+        <h1>Opdater leasing</h1>
+        <input name="id" type="hidden" th:value="${updateLease.id}" th:name="id">
+        <label for="employee_name">Ansat:</label>
+        <input id="employee_name" name="employee_name" type="text" th:value="${updateLease.employee_name}">
+
+        <label for="monthly_price">Månedspris:</label>
+        <input id="monthly_price" name="monthly_price" type="text" th:value="${updateLease.monthly_price}">
+
+        <label for="customer_name">Kunde Navn:</label>
+        <input id="customer_name" name="customer_name" type="text" th:value="${updateLease.customer_name}">
+
+        <label for="start_leasing">Kunde Navn:</label>
+        <input id="start_leasing" name="start_leasing" type="text" th:value="${updateLease.start_leasing}">
+
+        <label for="end_leasing">Kunde Navn:</label>
+        <input id="end_leasing" name="end_leasing" type="text" th:value="${updateLease.end_leasing}">
+
+        <label for="is_unlimited">Ubegrænse:</label>
+        <input id="is_unlimited" name="is_unlimited" type="text" th:value="${updateLease.is_unlimited}">
+
+        <label for="is_limited">Begrænset:</label>
+        <input id="is_limited" name="is_limited" type="text" th:value="${updateLease.is_limited}">
+
+
+        <input id="car_id" name="car_id" type="hidden" th:value="${updateLease.car_id}">
+
+        <input type="submit" value="Opdater Abonnementsaftalen">
+    </form>
+</div>
+
 </body>
 </html>
