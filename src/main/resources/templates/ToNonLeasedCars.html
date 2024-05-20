@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <title>ToNonLeasedCars</title>
     <link rel="stylesheet" href="../static/css/car.css" th:href="@{css/car.css}">
+    <link rel="stylesheet" href="../static/css/header.css" th:href="@{css/header.css}">
 </head>
 <body>
+<div class="sidebar">
+    <header>Bil abonnement</header>
+    <ul>
+        <li><a href="dashboard">Dashboard</a> </li>
+        <li><a href="carListSite">Biler</a> </li>
+        <li><a href="watchLeasingAgreements">Leasing</a> </li>
+        <li><a href="DamageReportSite">Skadesrapport</a> </li>
+    </ul>
+</div>
 <h1 style="text-align: center">Oversigt over ikke udlejede biler</h1>
+
 <div class="table-container">
     <table class="table">
         <thead>
@@ -21,6 +32,7 @@
         </tr>
         </thead>
         <tbody>
+
         <tr th:each="carlist : ${nonLeasedCars}">
             <td>
                 <a th:href="@{'/CarInfoPage/'+${carlist.getId()}}">

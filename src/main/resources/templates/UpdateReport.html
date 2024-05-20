@@ -53,8 +53,20 @@
 
     </style>
     <title>update report</title>
+    <link rel="stylesheet" href="../static/css/header.css" th:href="@{/css/header.css}">
+
 </head>
 <body>
+<div class="sidebar">
+    <header>Bil abonnement</header>
+    <ul>
+        <li><a href="dashboard">Dashboard</a> </li>
+        <li><a href="carListSite">Biler</a> </li>
+        <li><a href="watchLeasingAgreements">Leasing</a> </li>
+        <li><a href="DamageReportSite">Skadesrapport</a> </li>
+    </ul>
+</div>
+
 <div class="container">
     <form action="/UpdateReport" method="post" class="form-container">
         <h1>Opdater report</h1>
