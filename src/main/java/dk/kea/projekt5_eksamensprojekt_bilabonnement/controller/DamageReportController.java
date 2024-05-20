@@ -50,8 +50,11 @@ public class DamageReportController {
         //Her bruger vi TreeMap for at bevare rækkefølgen efter bil id'er
         Map<Integer, List<DamageReportModel>> carReportMap = new TreeMap<>();
 
-        //Her udfylder vi map med bil id'er og tilsvarende rapporter
+        //For hver skaderapport i listen af alle skadesrapporter
         for (DamageReportModel report : allDamageReports) {
+            //Her bruger vi computeIfAbsent for at sikre, at der er en liste tilknyttet til det givne bil-id
+            //Hvis bil-id'et ikke allerede findes i de TreeMap (carReportMap), tilføjer vi en ny ArrayList
+            //Derefter tilføjer vi skaderapporten til listen
             carReportMap.computeIfAbsent(report.getCar_id(), k -> new ArrayList<>()).add(report);
         }
 
