@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <link rel="stylesheet" href="../static/css/header.css" th:href="@{css/header.css}">
+    <link rel="stylesheet" href="../static/css/body.css" th:href="${css/body.css}">
 </head>
 <body>
-    <div class="sidebar">
-        <header>Bil abonnement</header>
-        <ul>
-            <li><a href="dashboard">Dashboard</a> </li>
-            <li><a href="carListSite">Biler</a> </li>
-            <li><a href="watchLeasingAgreements">Leasing</a> </li>
-            <li><a href="DamageReportSite">Skadesrapport</a> </li>
-        </ul>
+
+<div class="sidebar">
+    <header>Bil abonnement</header>
+    <ul>
+        <li><a href="dashboard">Dashboard</a> </li>
+        <li><a href="carListSite">Biler</a> </li>
+        <li><a href="watchLeasingAgreements">Leasing</a> </li>
+        <li><a href="DamageReportSite">Skadesrapport</a> </li>
+    </ul>
+</div>
+
+<div class="overskrift">
+    <h2>Dashboard</h2>
+</div>
+<div class="flex-container">
+    <div class="flex-box">
+        <div class="flex-box-image fest-1"></div>
+        <h4>Biler</h4>
+        <a href="#">Klik her for mere!</a>
     </div>
+    <div class="flex-box">
+        <div class="flex-box-image fest-2"></div>
+        <h4>Leasing</h4>
+        <a href="#">Klik her for mere!</a>
+    </div>
+    <div class="flex-box">
+        <div class="flex-box-image fest-3"></div>
+        <h4>Skader</h4>
+        <a href="https://www.ticketmaster.dk/">Klik her for mere!</a>
+
+    </div>
+    <div class="flex-box">
+        <div class="flex-box-image fest-4"></div>
+        <h4>#</h4>
+        <a href="https://sydforsolen.dk/">Klik her for mere!</a>
+    </div>
+</div>
 
 </body>
 </html>
