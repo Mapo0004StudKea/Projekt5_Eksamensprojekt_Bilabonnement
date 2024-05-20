@@ -52,7 +52,7 @@ public class DamageController {
     {
         DamageModel damageModel = new DamageModel(id, damage_name, damage_price, damage_description, damageReport_id);
         damageRepository.updateDamageDatabase(damageModel);
-        return "redirect:watchDamages";
+        return "redirect:watchDamageReport/" + damageModel.getDamageReport_id();
     }
 
     @GetMapping("makeNewDamage/{id}")

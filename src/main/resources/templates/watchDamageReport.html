@@ -34,7 +34,7 @@
             <td th:text="${damage.getDamage_price()}">Prisen på skaden</td>
             <td th:text="${damage.getDamage_description()}"> Beskrivelse af skaden </td>
             <td>
-                <a th:href="@{'/watchDamages'}">Opdater</a>
+                <a th:href="@{'/UpdateDamage/'+${damage.getId()}}">Opdater</a>
             <td>
                 <a th:href="@{'/deleteDamage/'+${damage.id}}">Slet</a></td>
         </tr>

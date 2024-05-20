@@ -99,6 +99,7 @@ public class DamageReportController {
         DamageReportModel damageReportModel = damageReportRepository.getDamageReportInDatabaseByID(id);
         model.addAttribute("watchdamage", damageReportModel);
         List<DamageModel> damageModelList = damageRepository.findDamageReportById(id);
+
         model.addAttribute("damage",damageModelList);
         double totalPrice = damageService.totalPriceForDamages(id);
         model.addAttribute("totalPriceForDamages", totalPrice);
