@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDate;
 import java.util.*;
 
 /**
@@ -49,8 +50,11 @@ public class DamageReportController {
         //Her bruger vi TreeMap for at bevare rækkefølgen efter bil id'er
         Map<Integer, List<DamageReportModel>> carReportMap = new TreeMap<>();
 
-        //Her udfylder vi map med bil id'er og tilsvarende rapporter
+        //For hver skaderapport i listen af alle skadesrapporter
         for (DamageReportModel report : allDamageReports) {
+            //Her bruger vi computeIfAbsent for at sikre, at der er en liste tilknyttet til det givne bil-id
+            //Hvis bil-id'et ikke allerede findes i de TreeMap (carReportMap), tilføjer vi en ny ArrayList
+            //Derefter tilføjer vi skaderapporten til listen
             carReportMap.computeIfAbsent(report.getCar_id(), k -> new ArrayList<>()).add(report);
         }
 
@@ -84,8 +88,9 @@ public class DamageReportController {
             @RequestParam("name") String name,
             @RequestParam("description") String description,
             @RequestParam("employee") String employee,
-            @RequestParam("car_id") int car_id){
-        DamageReportModel damageReportModel = new DamageReportModel(name, description, employee,car_id);
+            @RequestParam("car_id") int car_id,
+            @RequestParam("report_Damage_Date")LocalDate report_Damage_Date){
+        DamageReportModel damageReportModel = new DamageReportModel(name, description, employee,car_id, report_Damage_Date);
         damageReportRepository.createNewDamageReport(damageReportModel);
         return "redirect:/CarInfoPage/" + car_id;
     }
@@ -103,8 +108,9 @@ public class DamageReportController {
                                    @RequestParam("report_name") String report_name,
                                    @RequestParam("report_description") String report_description,
                                    @RequestParam("report_employee_name") String report_employee_name,
-                                   @RequestParam("car_id") int car_id) {
-        DamageReportModel damageReportModel = new DamageReportModel(id, report_name, report_description, report_employee_name, car_id);
+                                   @RequestParam("car_id") int car_id,
+                                   @RequestParam("report_Damage_Date")LocalDate report_Damage_Date){
+        DamageReportModel damageReportModel = new DamageReportModel(id, report_name, report_description, report_employee_name, car_id, report_Damage_Date);
         damageReportRepository.UpdateDamageReportEntryInDatabase(damageReportModel);
         return "redirect:watchDamageReport/" + id;
     }

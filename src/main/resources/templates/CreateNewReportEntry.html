@@ -14,11 +14,14 @@
                 <label for="name">Rapport navn:</label>
                 <input id="name" name="name" type="text">
 
-                <label for="description">beskrivelse:</label>
-                <input id="description" name="description" type="text">
+                <label for="description" >beskrivelse:</label>
+                <input id="description" class="label-wide" name="description" type="text">
 
                 <label for="employee">Medarbejder Navn:</label>
                 <input id="employee" name="employee" type="text">
+
+                <label for="report_Damage_Date">Dato:</label>
+                <input id="report_Damage_Date" name="report_Damage_Date" type="Date">
 
                 <input name="car_id" th:value="${car_id.getId()}" th:name="car_id" type="hidden">
 

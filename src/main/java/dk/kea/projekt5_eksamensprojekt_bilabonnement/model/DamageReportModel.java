@@ -20,19 +20,21 @@ public class DamageReportModel {
     public DamageReportModel() {
     }
 
-    public DamageReportModel(int id, String report_name, String report_description, String report_employee_name, int car_id) {
+    public DamageReportModel(int id, String report_name, String report_description, String report_employee_name, int car_id, LocalDate report_Damage_Date) {
         this.id = id;
         this.report_name = report_name;
         this.report_description = report_description;
         this.report_employee_name = report_employee_name;
         this.car_id = car_id;
+        this.report_Damage_Date = report_Damage_Date;
     }
 
-    public DamageReportModel(String report_name, String report_description, String report_employee_name, int car_id) {
+    public DamageReportModel(String report_name, String report_description, String report_employee_name, int car_id, LocalDate report_Damage_Date) {
         this.report_name = report_name;
         this.report_description = report_description;
         this.report_employee_name = report_employee_name;
         this.car_id =car_id;
+        this.report_Damage_Date = report_Damage_Date;
     }
 
 
