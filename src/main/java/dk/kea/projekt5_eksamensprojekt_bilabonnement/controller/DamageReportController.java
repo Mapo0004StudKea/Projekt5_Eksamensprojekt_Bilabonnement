@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDate;
 import java.util.*;
 
 /**
@@ -84,8 +85,9 @@ public class DamageReportController {
             @RequestParam("name") String name,
             @RequestParam("description") String description,
             @RequestParam("employee") String employee,
-            @RequestParam("car_id") int car_id){
-        DamageReportModel damageReportModel = new DamageReportModel(name, description, employee,car_id);
+            @RequestParam("car_id") int car_id,
+            @RequestParam("report_Damage_Date")LocalDate report_Damage_Date){
+        DamageReportModel damageReportModel = new DamageReportModel(name, description, employee,car_id, report_Damage_Date);
         damageReportRepository.createNewDamageReport(damageReportModel);
         return "redirect:/CarInfoPage/" + car_id;
     }
@@ -103,8 +105,9 @@ public class DamageReportController {
                                    @RequestParam("report_name") String report_name,
                                    @RequestParam("report_description") String report_description,
                                    @RequestParam("report_employee_name") String report_employee_name,
-                                   @RequestParam("car_id") int car_id) {
-        DamageReportModel damageReportModel = new DamageReportModel(id, report_name, report_description, report_employee_name, car_id);
+                                   @RequestParam("car_id") int car_id,
+                                   @RequestParam("report_Damage_Date")LocalDate report_Damage_Date){
+        DamageReportModel damageReportModel = new DamageReportModel(id, report_name, report_description, report_employee_name, car_id, report_Damage_Date);
         damageReportRepository.UpdateDamageReportEntryInDatabase(damageReportModel);
         return "redirect:watchDamageReport/" + id;
     }
