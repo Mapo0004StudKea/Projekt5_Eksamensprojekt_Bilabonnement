@@ -1,28 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Skadesoversigt</title>
+    <link rel="stylesheet" href="../static/css/car.css" th:href="@{css/car.css}">
+    <link rel="stylesheet" href="../static/css/header.css" th:href="@{css/header.css}">
 </head>
 <body>
+<div class="sidebar">
+    <header><a href="dashboard">Bilabonnement</a></header>
+    <ul>
+        <li><a href="dashboard">Dashboard</a> </li>
+        <li><a href="carListSite">Biler</a> </li>
+        <li><a href="watchLeasingAgreements">Leasing</a> </li>
+        <li><a href="DamageReportSite">Skadesrapport</a> </li>
+    </ul>
+</div>
 
-<h1> Oversigt over skader</h1>
-
-<div class="block-container">
-    <div class="block-content">
-        <div class="blockLeasingContracts">
-            <table>
-                <thead>
+<h1 style="text-align: center"> Oversigt over skader</h1>
+<h3 style="text-align: center">Oversigt over alle Skader</h3>
+    <div class="table-container">
+        <table class="table">
+            <thead>
                 <tr>
-                    <h3>Oversigt over alle Skader</h3>
-                    <th>skade ID</th>
-                    <th>skade Navn</th>
-                    <th>skade Pris</th>
-                    <th>skade beskrivelse</th>
+                    <th>Skade id</th>
+                    <th>Navn på skade</th>
+                    <th>Pris på skade</th>
+                    <th>Skade beskrivelse</th>
                     <th>Opdater</th>
+                    <th>Slet</th>
                 </tr>
-                </thead>
-                <tbody>
+            </thead>
+            <tbody>
                 <tr th:each=" Damage : ${damageOverview}">
                     <td th:text="${Damage.getId()}">ID</td>
                     <td th:text="${Damage.getDamage_name()}">Navn på skaden</td>
@@ -31,18 +40,12 @@
                     <td>
                         <a th:href="@{'/UpdateDamage/'+${Damage.getId()}}">Opdater</a>
                     </td>
+                    <td>
+                        <a th:href="@{'/deleteDamage/'+${Damage.getId()}}">slet</a>
+                    </td>
                 </tr>
-                </tbody>
-            </table>
-
-            <a href="/makeNewDamage">
-                <button>Opret ny skade</button>
-            </a>
-
-        </div>
+            </tbody>
+        </table>
     </div>
-</div>
-
-
 </body>
 </html>

@@ -26,27 +26,27 @@
 <div class="flex-container">
     <div class="flex-box">
         <h2>Information for biler</h2>
-        <table>
+        <table style="border: 1px solid #ddd">
             <thead>
                 <tr>
+                    <th></th>
                     <th>Total Antal Biler</th>
                     <th>Antal biler udlejet</th>
                     <th>Antal ikke udlejet biler</th>
-                    <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody style="border: 1px solid #ddd">
                 <tr>
+                    <td></td>
                     <td th:text="${carsByNumber}"></td>
                     <td th:text="${LeasedCars}"></td>
                     <td th:text="${NonLeasedCars}"></td>
-                    <td></td>
                 </tr>
                 <tr>
+                    <td>total forventet pris</td>
                     <td th:text="${totalMonthlyPrice}"></td>
                     <td th:text="${totalMonthlyPriceLease}"></td>
                     <td th:text="${totalMonthlyPriceNonLease}"></td>
-                    <td>total forventet pris</td>
                 </tr>
             </tbody>
         </table>
