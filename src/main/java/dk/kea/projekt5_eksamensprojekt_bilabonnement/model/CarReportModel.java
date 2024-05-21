@@ -1,5 +1,7 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.model;
 
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
+
 public class CarReportModel {
     private CarModel carModel;
     private DamageReportModel damageReportModel;
@@ -9,7 +11,9 @@ public class CarReportModel {
         this.damageReportModel = damageReportModel;
     }
 
-    // Getters and Setters
+    public CarReportModel() {
+    }
+
     public CarModel getCarModel() {
         return carModel;
     }

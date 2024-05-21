@@ -24,23 +24,53 @@
 </div>
 <div class="flex-container">
     <div class="flex-box">
+        <h2>Information for biler</h2>
         <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Total Antal Biler</th>
+                    <th>Antal biler udlejet</th>
+                    <th>Antal ikke udlejet biler</th>
+                </tr>
+            </thead>
             <tbody>
-            <tr>
-                <td th:text="${carsByNumber}">
-
-                </td>
-            </tr>
+                <tr>
+                    <td></td>
+                    <td th:text="${carsByNumber}"></td>
+                    <td th:text="${LeasedCars}"></td>
+                    <td th:text="${NonLeasedCars}"></td>
+                </tr>
+                <tr>
+                    <td>total forventet pris</td>
+                    <td th:text="${totalMonthlyPrice}"></td>
+                    <td th:text="${totalMonthlyPriceLease}"></td>
+                    <td th:text="${totalMonthlyPriceNonLease}"></td>
+                </tr>
             </tbody>
-
         </table>
-        <div class="flex-box-image fest-1"></div>
-
-        <h4>Biler</h4>
-        <a href="#">Klik her for mere!</a>
+        <a href="carListSite" style="color: black">Klik her for mere!</a>
     </div>
     <div class="flex-box">
-        <div class="flex-box-image fest-2"></div>
+        <div class="flex-box-image fest-2">
+            <h2>Information for Leasing Aftaler</h2>
+            <table>
+                <thead>
+                    <tr>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+                    </tr>
+                    <tr>
+
+                    </tr>
+                </tbody>
+            </table>
+            <a href="watchLeasingAgreements" style="color: black">Klik her for mere!</a>
+        </div>
         <h4>Leasing</h4>
         <a href="#">Klik her for mere!</a>
     </div>

@@ -18,7 +18,7 @@ body{
     gap: 2em;
 }
 .flex-box {
-    background: #1A1A1A;
+    background: white;
     width: 40%;
     height: 400px;
     font-size: 15px;

@@ -39,8 +39,7 @@ public class LeasingController {
         model.addAttribute("LeasingAgremenst",allLeasing);
         return "watchLeasingAgreements";
     }
-
-
+    
     @GetMapping("/makeNewLeasing/{id}")
     public String makeNewLeasing(@PathVariable("id") int car_id, Model model){
         CarModel carModel = carRepository.GetCarById(car_id);

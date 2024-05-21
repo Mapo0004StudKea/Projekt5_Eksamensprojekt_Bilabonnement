@@ -1,5 +1,6 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.repository;
 
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.LeasingModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
