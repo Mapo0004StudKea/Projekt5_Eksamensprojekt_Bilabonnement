@@ -31,6 +31,12 @@ public class DashController {
     @Autowired
     CarService carService;
 
+    @Autowired
+    LeasingRepository leasingRepository;
+
+    @Autowired
+    DamageReportRepository damageReportRepository;
+
 
     @GetMapping("/login")
     public String loginPage(){return "login";}
@@ -53,6 +59,10 @@ public class DashController {
         model.addAttribute("totalMonthlyPriceLease", totalMonthlyPriceForLeasedCars);
         double totalMonthlyPriceForNonLeasedCars = carService.calculateTotalMonthlyPriceForNonLeasedCars();
         model.addAttribute("totalMonthlyPriceNonLease", totalMonthlyPriceForNonLeasedCars);
+        int totalNumberOfLeasingAgreements = leasingRepository.getListOfLeasingContracts().size();
+        model.addAttribute("LeasingAgreementsByNumbers", totalNumberOfLeasingAgreements);
+        int totalNumbersOfDamageReports = damageReportRepository.getFullListOfReport().size();
+        model.addAttribute("NumberOfDamageReports", totalNumbersOfDamageReports);
         return "dashboard";
     }
 }

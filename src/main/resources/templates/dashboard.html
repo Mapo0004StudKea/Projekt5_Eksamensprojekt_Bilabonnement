@@ -57,28 +57,35 @@
             <table>
                 <thead>
                     <tr>
-
+                        <th>Total Antal Leasing Aftaler</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-
-                    </tr>
-                    <tr>
-
+                        <td th:text="${LeasingAgreementsByNumbers}"></td>
                     </tr>
                 </tbody>
             </table>
             <a href="watchLeasingAgreements" style="color: black">Klik her for mere!</a>
         </div>
-        <h4>Leasing</h4>
-        <a href="#">Klik her for mere!</a>
     </div>
     <div class="flex-box">
-        <div class="flex-box-image fest-3"></div>
-        <h4>Skader</h4>
-        <a href="https://www.ticketmaster.dk/">Klik her for mere!</a>
-
+        <div class="flex-box-image fest-3">
+            <h2>Information for Skaderapporter</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Total Antal Skaderapporter</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td th:text="${NumberOfDamageReports}"></td>
+                </tr>
+                </tbody>
+            </table>
+            <a href="DamageReportSite" style="color: black">Klik her for mere!</a>
+        </div>
     </div>
     <div class="flex-box">
         <div class="flex-box-image fest-4"></div>
