@@ -62,5 +62,20 @@ public class DamageRepository {
         List<DamageModel> damageModelList = jdbcTemplate.query(GET_FULL_PRICE_FROM_ID_SQL, new Object[]{damageReport_id}, new BeanPropertyRowMapper<>(DamageModel.class));
         return damageModelList;
     }
+
+    public double getTotalPrice() {
+        String GET_TOTAL_PRICE = "select sum(damage_price) from damages";
+        return jdbcTemplate.queryForObject(GET_TOTAL_PRICE, double.class);
+    }
+
+    public double getMostExpensiveDamage() {
+        String GET_MOST_EXPENSIVE_DAMAGE = "SELECT damage_price FROM damages WHERE damage_price = (SELECT MAX(damage_price) FROM damages)";
+        return jdbcTemplate.queryForObject(GET_MOST_EXPENSIVE_DAMAGE, double.class);
+    }
+
+    public double getCheapestDamage() {
+        String GET_CHEAPEST_DAMAGE = "SELECT damage_price FROM damages WHERE damage_price = (SELECT MIN(damage_price) FROM damages)";
+        return jdbcTemplate.queryForObject(GET_CHEAPEST_DAMAGE, double.class);
+    }
 }
 

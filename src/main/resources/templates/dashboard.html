@@ -16,6 +16,7 @@
         <li><a href="carListSite">Biler</a> </li>
         <li><a href="watchLeasingAgreements">Leasing</a> </li>
         <li><a href="DamageReportSite">Skadesrapport</a> </li>
+        <li><a href="watchDamages">Skader</a> </li>
     </ul>
 </div>
 
@@ -94,14 +95,21 @@
                 <thead>
                 <tr>
                     <th>Total Antal Skader</th>
+                    <th>Total pris for alle skader</th>
+                    <th>Dyreste skade</th>
+                    <th>Billigste skade</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <td th:text="${TotalNumberOfDamages}"></td>
+                    <td th:text="${TotalSumOfDamages}"></td>
+                    <td th:text="${MostExpensiveDamage}"></td>
+                    <td th:text="${CheapestDamage}"></td>
                 </tr>
                 </tbody>
             </table>
+            <a href="watchDamages" style="color: black">Klik her for mere!</a>
         </div>
     </div>
 </div>

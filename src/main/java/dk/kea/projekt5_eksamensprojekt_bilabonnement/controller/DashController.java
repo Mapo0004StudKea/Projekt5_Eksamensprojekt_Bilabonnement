@@ -1,6 +1,5 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.controller;
 
-import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageReportRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageRepository;
@@ -11,8 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import java.util.List;
 
 /**
  * Dashboard controller class
@@ -67,6 +64,12 @@ public class DashController {
         model.addAttribute("NumberOfDamageReports", totalNumbersOfDamageReports);
         int totalNumberOfDamages = damageRepository.findAllDamage().size();
         model.addAttribute("TotalNumberOfDamages", totalNumberOfDamages);
+        double totalSumOfDamages = damageRepository.getTotalPrice();
+        model.addAttribute("TotalSumOfDamages", totalSumOfDamages);
+        double mostExpensiveDamage = damageRepository.getMostExpensiveDamage();
+        model.addAttribute("MostExpensiveDamage", mostExpensiveDamage);
+        double cheapestDamage = damageRepository.getCheapestDamage();
+        model.addAttribute("CheapestDamage", cheapestDamage);
         return "dashboard";
     }
 }
