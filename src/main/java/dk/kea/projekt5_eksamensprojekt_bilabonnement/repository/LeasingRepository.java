@@ -61,8 +61,9 @@ public class LeasingRepository {
         return jdbcTemplate.queryForObject(GET_CAR_WITH_MOST_DAMAGE_REPORTS_SQL, Integer.class);
     }
 
-    public int getCarWithMostLeasingAgreementsByCount() {
-        String GET_CAR_WITH_MOST_DAMAGE_REPORTS_BY_COUNT_SQL = "SELECT COUNT(car_id) AS report_count FROM leasingcontract GROUP BY car_id ORDER BY report_count DESC LIMIT 1;";
-        return jdbcTemplate.queryForObject(GET_CAR_WITH_MOST_DAMAGE_REPORTS_BY_COUNT_SQL, int.class);
+    public Integer getCarWithMostLeasingAgreementsByCount() {
+        String GET_CAR_WITH_MOST_DAMAGE_REPORTS_BY_COUNT_SQL =
+                "SELECT COUNT(car_id) AS report_count FROM leasingcontract GROUP BY car_id ORDER BY report_count DESC LIMIT 1";
+        return jdbcTemplate.queryForObject(GET_CAR_WITH_MOST_DAMAGE_REPORTS_BY_COUNT_SQL, Integer.class);
     }
 }
