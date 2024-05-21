@@ -37,6 +37,8 @@ public class DashController {
     @Autowired
     DamageReportRepository damageReportRepository;
 
+    @Autowired
+    DamageRepository damageRepository;
 
     @GetMapping("/login")
     public String loginPage(){return "login";}
@@ -63,6 +65,8 @@ public class DashController {
         model.addAttribute("LeasingAgreementsByNumbers", totalNumberOfLeasingAgreements);
         int totalNumbersOfDamageReports = damageReportRepository.getFullListOfReport().size();
         model.addAttribute("NumberOfDamageReports", totalNumbersOfDamageReports);
+        int totalNumberOfDamages = damageRepository.findAllDamage().size();
+        model.addAttribute("TotalNumberOfDamages", totalNumberOfDamages);
         return "dashboard";
     }
 }

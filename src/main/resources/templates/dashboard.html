@@ -88,9 +88,21 @@
         </div>
     </div>
     <div class="flex-box">
-        <div class="flex-box-image fest-4"></div>
-        <h4>#</h4>
-        <a href="https://sydforsolen.dk/">Klik her for mere!</a>
+        <div class="flex-box-image fest-4">
+            <h2>Information for skader</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Total Antal Skader</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td th:text="${TotalNumberOfDamages}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
