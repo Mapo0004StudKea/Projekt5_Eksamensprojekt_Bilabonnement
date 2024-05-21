@@ -59,11 +59,13 @@
                 <thead>
                     <tr>
                         <th>Total Antal Leasing Aftaler</th>
+                        <th>Bilen med flest Leasing Aftaler</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td th:text="${LeasingAgreementsByNumbers}"></td>
+                        <td th:text="'Bil med id: '+${CarWithMostLeasingAgreements}+', Antal: '+${CarWithMostLeasingAgreementsByCount}"></td>
                     </tr>
                 </tbody>
             </table>

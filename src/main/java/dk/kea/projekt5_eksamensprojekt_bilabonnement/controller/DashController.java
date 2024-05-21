@@ -74,6 +74,10 @@ public class DashController {
         model.addAttribute("CarWithMostDamageReport", carWithMostDamageReports);
         int carWithMostDamageReportsByCount = damageReportRepository.getCarWithMostDamageReportsByCount();
         model.addAttribute("test", carWithMostDamageReportsByCount);
+        Integer carWithMostLeasingAgreements = leasingRepository.getCarWithMostLeasingAgreements();
+        model.addAttribute("CarWithMostLeasingAgreements", carWithMostDamageReports);
+        int carWithMostLeasingAgreementsByCount = leasingRepository.getCarWithMostLeasingAgreementsByCount();
+        model.addAttribute("CarWithMostLeasingAgreementsByCount", carWithMostDamageReportsByCount);
         return "dashboard";
     }
 }
