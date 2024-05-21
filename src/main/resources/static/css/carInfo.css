@@ -1,62 +1,71 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
 .flex-container {
     display: flex;
     justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    margin-left: 20px;
+
 }
 
-.flex-container-block-description {
+.flex-container-block, .flex-container-block-description {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
-    background-color: #fff; /* Baggrundsfarve */
-    border-radius: 10px; /* Afrundede hjørner */
-    box-shadow: 0px 0px 10px 0px rgba(0, 192, 255, 0.75); /* Skyggeeffekt */
-    min-height: 30vh;
-    min-width: 80vh;
-    margin: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 192, 255, 0.75);
+    padding: 20px;
+    flex: 1 1 45%;
+    gap: 2em;
+    margin-bottom: 20px;
 }
 
-.flex-container-block {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #fff; /* Baggrundsfarve */
-    border-radius: 10px; /* Afrundede hjørner */
-    box-shadow: 0px 0px 10px 0px rgba(0, 192, 255, 0.75); /* Skyggeeffekt */
-    min-height: 30vh;
-    min-width: 80vh;
-    margin: 20px;
-}
-
-.flex-container-block h1 {
-    height: 5vh; /* Fast højde til h1 */
-    line-height: 0vh; /* Gør tekst vertikalt centreret */
+.flex-container h1 {
+    font-size: 2em;
+    font-family: "Poppins", sans-serif;
+    color: black;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
     text-align: left;
+}
+.header-box {
+    min-height: 1em;
     display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.block{
+.block {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .smallBox {
     color: white;
     height: 100vh;
-    width: 10%;
+    width: 10vw;
 }
 
 .largerBox {
     margin: 0;
     color: white;
     height: 100vh;
-    width: 90%;
+    width: 90vw;
 }
 
 .pictureBox {
     margin: 0;
     color: red;
-    height: 35vh;
-    width: 25%;
+    background-size: cover;
 }
 
 .ModelBrand {
@@ -64,8 +73,7 @@
     font-size: 33px;
     text-align: left;
     color: black;
-    height: 35vh;
-    width: 75%;
+    flex: 1;
 }
 
 .DescriptionBox {
@@ -73,21 +81,19 @@
     text-align: left;
     color: black;
     margin: 0;
-    height: 100vh;
-    width: 100%;
+    flex: 1;
 }
 
 .button {
-    background-color: #1e90ff; /* Mørkeblå farve */
-    color: #fff; /* Hvid tekstfarve */
-    padding: 10px 20px; /* Tilføj lidt polstring */
-    border: none; /* Fjern kanten */
-    border-radius: 5px; /* Afrundede hjørner */
-    cursor: pointer; /* Gør cursor til en hånd når det er over knappen */
-    margin: 10px;
+    background-color: #1e90ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
 }
 
-/* Ændre farven, når musen er over knappen */
 .button:hover {
-    background-color: #005cbf; /* Mørkere blå farve */
+    background-color: #005cbf;
 }
