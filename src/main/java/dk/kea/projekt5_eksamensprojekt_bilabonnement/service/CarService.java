@@ -47,14 +47,13 @@ public class CarService {
         return totalNonLeasedMonthlyPrice;
     }
 
-   /* public int ShowAllCarsAvailableByINTNumbers() {
+   /*public int ShowAllCarsAvailableByINTNumbers() {
         int totalcars = 0;
-        System.out.println(carRepository.getFullListOfCars());
+
         List<CarModel> cars = carRepository.getFullListOfCars();
-        for (int i = 0; i<cars.size(); i++) {
-            totalcars +=i;
+        for (CarModel car: cars) {
+            totalcars++;
         }
-        System.out.println("totalkars" + totalcars);
-        return totalcars;
-    }*/
-}
+       return totalcars;
+        }*/
+    }
