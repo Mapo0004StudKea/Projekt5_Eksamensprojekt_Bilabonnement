@@ -44,9 +44,9 @@
                 </tr>
                 <tr>
                     <td>total forventet pris</td>
-                    <td th:text="${totalMonthlyPrice}"></td>
-                    <td th:text="${totalMonthlyPriceLease}"></td>
-                    <td th:text="${totalMonthlyPriceNonLease}"></td>
+                    <td th:text="${totalMonthlyPrice}+' DKK'"></td>
+                    <td th:text="${totalMonthlyPriceLease}+' DKK'"></td>
+                    <td th:text="${totalMonthlyPriceNonLease+' DKK'}"></td>
                 </tr>
             </tbody>
         </table>
@@ -107,9 +107,9 @@
                 <tbody>
                 <tr>
                     <td th:text="${TotalNumberOfDamages}"></td>
-                    <td th:text="${TotalSumOfDamages}"></td>
-                    <td th:text="${MostExpensiveDamage}"></td>
-                    <td th:text="${CheapestDamage}"></td>
+                    <td th:text="${TotalSumOfDamages}+' DKK'"></td>
+                    <td th:text="${MostExpensiveDamage}+' DKK'"></td>
+                    <td th:text="${CheapestDamage}+' DKK'"></td>
                 </tr>
                 </tbody>
             </table>
