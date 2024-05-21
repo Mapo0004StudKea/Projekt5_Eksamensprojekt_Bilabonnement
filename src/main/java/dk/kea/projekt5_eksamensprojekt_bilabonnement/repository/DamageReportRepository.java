@@ -60,4 +60,14 @@ public class DamageReportRepository {
         List<DamageReportModel> damageReportModels = jdbcTemplate.query(GET_ALL_REPORTS_BY_CAR_ID_SQL, new Object[]{id}, new BeanPropertyRowMapper<>(DamageReportModel.class));
         return damageReportModels;
     }
+
+    public Integer getCarWithMostDamageReports() {
+        String GET_CAR_WITH_MOST_DAMAGE_REPORTS_SQL =
+                "SELECT car_id FROM damagereport GROUP BY car_id ORDER BY COUNT(*) DESC LIMIT 1";
+        return jdbcTemplate.queryForObject(GET_CAR_WITH_MOST_DAMAGE_REPORTS_SQL, Integer.class);
+    }
+
+    public int getCarWithMostDamageReportsByCount() {
+        String GET_CAR_WITH_MOST_DAMAGE_REPORTS_BY_COUNT_SQL = "SELECT COUNT(car_id) AS report_count FROM damagereport GROUP BY car_id ORDER BY report_count DESC LIMIT 1";        return jdbcTemplate.queryForObject(GET_CAR_WITH_MOST_DAMAGE_REPORTS_BY_COUNT_SQL, int.class);
+    }
 }

@@ -29,28 +29,28 @@
         <table>
             <thead>
                 <tr>
-                    <th></th>
                     <th>Total Antal Biler</th>
                     <th>Antal biler udlejet</th>
                     <th>Antal ikke udlejet biler</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td></td>
                     <td th:text="${carsByNumber}"></td>
                     <td th:text="${LeasedCars}"></td>
                     <td th:text="${NonLeasedCars}"></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td>total forventet pris</td>
                     <td th:text="${totalMonthlyPrice}"></td>
                     <td th:text="${totalMonthlyPriceLease}"></td>
                     <td th:text="${totalMonthlyPriceNonLease}"></td>
+                    <td>total forventet pris</td>
                 </tr>
             </tbody>
         </table>
-        <a href="carListSite" style="color: black">Klik her for mere!</a>
+        <a href="carListSite" style="color: black">Til oversigt af biler</a>
     </div>
     <div class="flex-box">
         <div class="flex-box-image fest-2">
@@ -67,7 +67,7 @@
                     </tr>
                 </tbody>
             </table>
-            <a href="watchLeasingAgreements" style="color: black">Klik her for mere!</a>
+            <a href="watchLeasingAgreements" style="color: black">Til oversigt af aftaler</a>
         </div>
     </div>
     <div class="flex-box">
@@ -77,15 +77,17 @@
                 <thead>
                 <tr>
                     <th>Total Antal Skaderapporter</th>
+                    <th>Bilen med flest Skaderapporter</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <td th:text="${NumberOfDamageReports}"></td>
+                    <td th:text="'Bil med id: '+${CarWithMostDamageReport}+', Antal: '+${test}"></td>
                 </tr>
                 </tbody>
             </table>
-            <a href="DamageReportSite" style="color: black">Klik her for mere!</a>
+            <a href="DamageReportSite" style="color: black">Til oversigt af rapporter</a>
         </div>
     </div>
     <div class="flex-box">
@@ -109,7 +111,7 @@
                 </tr>
                 </tbody>
             </table>
-            <a href="watchDamages" style="color: black">Klik her for mere!</a>
+            <a href="watchDamages" style="color: black">Til oversigt af skader</a>
         </div>
     </div>
 </div>

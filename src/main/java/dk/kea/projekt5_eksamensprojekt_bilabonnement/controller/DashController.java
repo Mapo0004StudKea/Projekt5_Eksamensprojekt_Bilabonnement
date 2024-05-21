@@ -70,6 +70,10 @@ public class DashController {
         model.addAttribute("MostExpensiveDamage", mostExpensiveDamage);
         double cheapestDamage = damageRepository.getCheapestDamage();
         model.addAttribute("CheapestDamage", cheapestDamage);
+        Integer carWithMostDamageReports = damageReportRepository.getCarWithMostDamageReports();
+        model.addAttribute("CarWithMostDamageReport", carWithMostDamageReports);
+        int carWithMostDamageReportsByCount = damageReportRepository.getCarWithMostDamageReportsByCount();
+        model.addAttribute("test", carWithMostDamageReportsByCount);
         return "dashboard";
     }
 }
