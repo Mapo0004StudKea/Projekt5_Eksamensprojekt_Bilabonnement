@@ -11,116 +11,113 @@
     <div class="sidebar">
         <header><a href="dashboard">Bilabonnement</a></header>
         <ul>
-            <li><a href="dashboard">Dashboard</a> </li>
-            <li><a href="carListSite">Biler</a> </li>
-            <li><a href="watchLeasingAgreements">Leasing</a> </li>
-            <li><a href="DamageReportSite">Skadesrapport</a> </li>
+            <li><a href="dashboard">Dashboard</a></li>
+            <li><a href="carListSite">Biler</a></li>
+            <li><a href="watchLeasingAgreements">Leasing</a></li>
+            <li><a href="DamageReportSite">Skadesrapport</a></li>
         </ul>
     </div>
-    <h1>Bil info: </h1>
-
-    <div class="flex-container">
-        <div class="smallBox"></div>
-        <div class=largerBox>
-            <div class="flex-container">
-                <div class="pictureBox">
-                    <img th:src="@{'/image/'+${carModel.car_picture}}" style="height: 35vh;width: 105%;">
-                </div>
-                <div class="ModelBrand">
-                    <table>
-                        <tbody>
-                        <tr>
-                            <td th:text="${carModel.car_full_name}"></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="DescriptionBox">
-                <div class="flex-container-block-description">
-                    <h1>Beskrivelse:</h1>
-                    <table>
-                        <tbody>
-                        <tr>
-                            <td th:text="${carModel.car_description}"></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="block">
-                    <div class="flex-container-block">
-                        <table>
-                            <h1>Skaderapporter på bilen:</h1>
-                            <thead>
-                            <tr>
-                                <th>Rapport Navn</th>
-                                <th>Medarbejder Navn</th>
-                                <th>Dato</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr th:each="Report : ${damageReport}">
-                                <td>
-                                    <a th:href="@{'/watchDamageReport/' + ${Report.getId()}}">
-                                        <span th:text="${Report.getReport_name()}"> </span>
-                                    </a>
-                                </td>
-                                <td th:text="${Report.getReport_employee_name()}"></td>
-
-                                <td>
-                                    <a th:text="${Report.getReport_Damage_Date()}"></a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="flex-container-block">
-                        <table>
-                            <h1>Leasingaftaler på bilen:</h1>
-                            <thead>
-                            <tr>
-                                <th>Kundenavn</th>
-                                <th>Start leasing</th>
-                                <th>Slut leasing</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr th:each="Report : ${leaseReport}">
-                                <td>
-                                    <a th:href="@{'/watchLeasingAgreements'}">
-                                        <span th:text="${Report.customer_name}"> </span>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a th:text="${Report.getStart_leasing()}"></a>
-                                </td>
-                                <td>
-                                    <a th:text="${Report.getEnd_leasing()}"></a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+</div>
+    <div>
+        <div class="flex-container">
+            <div class="smallBox"></div>
+            <div class="largerBox">
                 <div class="flex-container">
-                    <form action="/carListSite">
-                        <button type="submit" class="button">Tilbage til bil Siden</button>
-                    </form>
-
-                    <form th:action="@{'/CreateNewReportEntry/'+ ${carModel.getId()}}">
-                        <button type="submit" class="button">Opret ny rapport</button>
-                    </form>
-
-                    <form action="/DamageReportSite">
-                        <button type="submit" class="button">Se alle skaderapporter</button>
-                    </form>
-                    <form th:action="@{'/makeNewLeasing/'+ ${carModel.getId()}}">
-                        <button type="submit" class="button">Opret leasing rapport</button>
-                    </form>
+                    <div class="pictureBox">
+                        <img th:src="@{'/image/'+${carModel.car_picture}}" style="height: 35vh; width: 105%;">
+                    </div>
+                    <div class="ModelBrand">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td th:text="${carModel.car_full_name}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="DescriptionBox">
+                    <div class="flex-container-block-description">
+                        <h1 class="header-box">Beskrivelse:</h1>
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td th:text="${carModel.car_description}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="block">
+                        <div class="flex-container-block">
+                            <h1 class="header-box">Skaderapporter på bilen:</h1>
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Rapport Navn</th>
+                                    <th>Medarbejder Navn</th>
+                                    <th>Dato</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="Report : ${damageReport}">
+                                    <td>
+                                        <a th:href="@{'/watchDamageReport/' + ${Report.getId()}}">
+                                            <span th:text="${Report.getReport_name()}"> </span>
+                                        </a>
+                                    </td>
+                                    <td th:text="${Report.getReport_employee_name()}"></td>
+                                    <td>
+                                        <a th:text="${Report.getReport_Damage_Date()}"></a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="flex-container-block">
+                            <h1 class="header-box">Leasingaftaler på bilen:</h1>
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Kundenavn</th>
+                                    <th>Start leasing</th>
+                                    <th>Slut leasing</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="Report : ${leaseReport}">
+                                    <td>
+                                        <a th:href="@{'/watchLeasingAgreements'}">
+                                            <span th:text="${Report.customer_name}"> </span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a th:text="${Report.getStart_leasing()}"></a>
+                                    </td>
+                                    <td>
+                                        <a th:text="${Report.getEnd_leasing()}"></a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="flex-container">
+                        <form action="/carListSite">
+                            <button type="submit" class="button">Tilbage til bil Siden</button>
+                        </form>
+                        <form th:action="@{'/CreateNewReportEntry/'+ ${carModel.getId()}}">
+                            <button type="submit" class="button">Opret ny rapport</button>
+                        </form>
+                        <form action="/DamageReportSite">
+                            <button type="submit" class="button">Se alle skaderapporter</button>
+                        </form>
+                        <form th:action="@{'/makeNewLeasing/'+ ${carModel.getId()}}">
+                            <button type="submit" class="button">Opret leasing rapport</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </body>
 </html>

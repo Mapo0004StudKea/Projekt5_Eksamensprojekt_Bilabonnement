@@ -11,13 +11,18 @@ body{
 .sidebar{
     position: fixed;
     font-size: 18px;
+    padding-top: 10px;
+    top: 0;
     left: 0;
     width: 12%;
     height: 100%;
     text-decoration: none;
     margin-right: 100px;
     background: white;
+    overflow-y: auto;
+
 }
+
 .sidebar header {
     font-size: 20px;
     color: black;
