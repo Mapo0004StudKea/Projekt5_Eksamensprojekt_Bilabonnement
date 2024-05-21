@@ -41,6 +41,9 @@ body{
 ul li:hover a{
     padding-left: 40px;
 }
+header a {
+    color: #1A1A1A;
+}
 
 
 
