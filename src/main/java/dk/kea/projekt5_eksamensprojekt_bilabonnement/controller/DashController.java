@@ -1,15 +1,19 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.controller;
 
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageReportRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.service.CarService;
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.service.DashService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 /**
  * Dashboard controller class
@@ -36,6 +40,8 @@ public class DashController {
 
     @Autowired
     DamageRepository damageRepository;
+    @Autowired
+    DashService dashService;
 
     @GetMapping("/")
     public String dash() {
@@ -50,6 +56,10 @@ public class DashController {
 
     @GetMapping("/dashboard")
     public String dashboard (Model model){
+        //her henter vi listen af biler. som er tæt på end_leasing, inden for 30 dage.
+        List<CarModel> list = dashService.listOfCarsNearEndLeasing(30);
+        model.addAttribute("endLeasing",list);
+
         //Metode der displayer antal biler med en int. Ved hjælp af size() kan vi omforme listen til integer.
         int totalnumberOfCars = carRepository.getFullListOfCars().size();
         model.addAttribute("carsByNumber", totalnumberOfCars);

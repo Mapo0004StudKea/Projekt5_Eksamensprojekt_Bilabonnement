@@ -55,6 +55,13 @@ public class LeasingRepository {
         return leasingModelList;
     }
 
+    public LeasingModel getLeasingContractsById(int id){
+        String GET_LIST_SQL ="SELECT * FROM leasingcontract WHERE car_id = ?";
+        LeasingModel leasingModel = jdbcTemplate.queryForObject(GET_LIST_SQL, new Object[]{id}, new BeanPropertyRowMapper<>(LeasingModel.class));
+        return leasingModel;
+    }
+
+
     public int getCarWithMostLeasingAgreements() {
         String GET_CAR_WITH_MOST_DAMAGE_REPORTS_SQL =
                 "SELECT car_id FROM leasingcontract GROUP BY car_id ORDER BY COUNT(*) DESC LIMIT 1";
