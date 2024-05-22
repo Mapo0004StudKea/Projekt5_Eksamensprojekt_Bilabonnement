@@ -28,8 +28,8 @@ public class DamageReportRepository {
     //lave et nyt damageReportModel
     public void createNewDamageReport(DamageReportModel damageReportModel){
         //indsæt sql statement
-        final String CREA_NEW_DamageReportModel_SQL = "INSERT INTO damagereport (report_name, report_description, report_employee_name, car_id) values (?,?,?,?)";
-        jdbcTemplate.update(CREA_NEW_DamageReportModel_SQL, damageReportModel.getReport_name(), damageReportModel.getReport_description(), damageReportModel.getReport_employee_name(), damageReportModel.getCar_id());
+        final String CREA_NEW_DamageReportModel_SQL = "INSERT INTO damagereport (report_name, report_description, report_employee_name, report_Damage_Date, car_id) values (?,?,?,?,?)";
+        jdbcTemplate.update(CREA_NEW_DamageReportModel_SQL, damageReportModel.getReport_name(), damageReportModel.getReport_description(), damageReportModel.getReport_employee_name(), damageReportModel.getReport_Damage_Date(), damageReportModel.getCar_id());
     }
 
     public void deletedDamageReportById(int id){
@@ -44,9 +44,9 @@ public class DamageReportRepository {
 
     public void UpdateDamageReportEntryInDatabase(DamageReportModel damageReportModel) {
         //update sql
-        String UPDATE_REPORT_BY_ID = "UPDATE damagereport SET report_name =?, report_description = ?, report_employee_name =?, car_id =?   WHERE id = ?";
+        String UPDATE_REPORT_BY_ID = "UPDATE damagereport SET report_name =?, report_description = ?, report_employee_name =?, report_Damage_Date = ?, car_id =?   WHERE id = ?";
         //update db vha. JdbcTemplate
-        jdbcTemplate.update(UPDATE_REPORT_BY_ID, damageReportModel.getReport_name(),damageReportModel.getReport_description(), damageReportModel.getReport_employee_name(), damageReportModel.getCar_id(), damageReportModel.getId());
+        jdbcTemplate.update(UPDATE_REPORT_BY_ID, damageReportModel.getReport_name(),damageReportModel.getReport_description(), damageReportModel.getReport_employee_name(), damageReportModel.getReport_Damage_Date(), damageReportModel.getCar_id(), damageReportModel.getId());
     }
 
     public List<DamageReportModel> getFullListOfReport(){

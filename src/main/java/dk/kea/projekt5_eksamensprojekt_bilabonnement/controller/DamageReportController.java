@@ -108,8 +108,9 @@ public class DamageReportController {
                                    @RequestParam("report_name") String report_name,
                                    @RequestParam("report_description") String report_description,
                                    @RequestParam("report_employee_name") String report_employee_name,
-                                   @RequestParam("car_id") int car_id,
-                                   @RequestParam("report_Damage_Date")LocalDate report_Damage_Date){
+                                   @RequestParam("report_Damage_Date") LocalDate report_Damage_Date,
+                                   @RequestParam("car_id") int car_id
+                                    ) {
         DamageReportModel damageReportModel = new DamageReportModel(id, report_name, report_description, report_employee_name, car_id, report_Damage_Date);
         damageReportRepository.UpdateDamageReportEntryInDatabase(damageReportModel);
         return "redirect:watchDamageReport/" + id;
