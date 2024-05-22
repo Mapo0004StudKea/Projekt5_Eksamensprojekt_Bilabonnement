@@ -7,48 +7,47 @@
     <link rel="stylesheet" href="../static/css/header.css" th:href="@{css/header.css}">
 </head>
 <body>
-<div class="sidebar">
-    <header><a th:href="@{/dashboard}">Bilabonnement</a></header>
-    <ul>
-        <li><a th:href="@{/dashboard}">Dashboard</a></li>
-        <li><a th:href="@{/carListSite}">Biler</a></li>
-        <li><a th:href="@{/watchLeasingAgreements}">Leasing</a></li>
-        <li><a th:href="@{/DamageReportSite}">Skadesrapport</a></li>
-        <li><a th:href="@{/watchDamages}">Skader</a> </li>
-    </ul>
-</div>
-<div class="container">
-    <form action="CreateNewCarEntryForm" method="post" class="form-container">
-        <h1>Opret ny bil</h1>
-        <div class="flex-container">
-            <div style=" padding-left: 75px">
-                <label for="car_picture-field">Billed til bilen:</label>
-                <input id="car_picture-field" name="car_picture" type="text">
-                <label for="car_full_name-field">Fulde navn:</label>
-                <input id="car_full_name-field" name="car_full_name" type="text">
-                <label for="car_Serialnr-field">Serie Nummer:</label>
-                <input id="car_Serialnr-field" name="car_Serialnr" type="text">
-                <label for="car_number-field">Nummerplade:</label>
-                <input id="car_number-field" name="car_number" type="text">
-                <label for="car_model-field">Model:</label>
-                <input id="car_model-field" name="car_model" type="text">
+    <div class="sidebar">
+        <header><a th:href="@{/dashboard}">Bilabonnement</a></header>
+        <ul>
+            <li><a th:href="@{/dashboard}">Dashboard</a></li>
+            <li><a th:href="@{/carListSite}">Biler</a></li>
+            <li><a th:href="@{/watchLeasingAgreements}">Leasing</a></li>
+            <li><a th:href="@{/DamageReportSite}">Skaderapport</a></li>
+            <li><a th:href="@{/watchDamages}">Skader</a> </li>
+        </ul>
+    </div>
+    <div class="container">
+        <form action="CreateNewCarEntryForm" method="post" class="form-container">
+            <h1>Opret ny bil</h1>
+            <div class="flex-container">
+                <div style=" padding-left: 75px">
+                    <label for="car_picture-field">Billed til bilen:</label>
+                    <input id="car_picture-field" name="car_picture" type="text">
+                    <label for="car_full_name-field">Fulde navn:</label>
+                    <input id="car_full_name-field" name="car_full_name" type="text">
+                    <label for="car_Serialnr-field">Serie Nummer:</label>
+                    <input id="car_Serialnr-field" name="car_Serialnr" type="text">
+                    <label for="car_number-field">Nummerplade:</label>
+                    <input id="car_number-field" name="car_number" type="text">
+                    <label for="car_model-field">Model:</label>
+                    <input id="car_model-field" name="car_model" type="text">
+                </div>
+                <div style="padding-left: 50px">
+                    <label for="car_name-field">Mærke:</label>
+                    <input id="car_name-field" name="car_name" type="text">
+                    <label for="car_year-field">År:</label>
+                    <input id="car_year-field" name="car_year" type="text">
+                    <label for="monthly_price-field">Månedspris:</label>
+                    <input id="monthly_price-field" name="monthly_price" type="text">
+                    <label for="is_leased-field">Udlejet:</label>
+                    <input id="is_leased-field" name="is_leased" type="checkbox" value="true">
+                    <label for="car_description-field" style="padding-top: 24px">Beskrivelse:</label>
+                    <input id="car_description-field" name="car_description" type="text">
+                </div>
             </div>
-            <div style="padding-left: 50px">
-                <label for="car_name-field">Mærke:</label>
-                <input id="car_name-field" name="car_name" type="text">
-                <label for="car_year-field">År:</label>
-                <input id="car_year-field" name="car_year" type="text">
-                <label for="monthly_price-field">Månedspris:</label>
-                <input id="monthly_price-field" name="monthly_price" type="text">
-                <label for="is_leased-field">Udlejet:</label>
-                <input id="is_leased-field" name="is_leased" type="checkbox" value="true">
-                <label for="car_description-field" style="padding-top: 24px">Beskrivelse:</label>
-                <input id="car_description-field" name="car_description" type="text">
-
-            </div>
-        </div>
-        <input type="submit" value="Opret ny bil">
-    </form>
-</div>
+            <input type="submit" value="Opret ny bil">
+        </form>
+    </div>
 </body>
 </html>
