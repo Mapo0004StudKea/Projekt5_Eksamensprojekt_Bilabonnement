@@ -4,6 +4,7 @@ import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.LeasingModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepository;
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.service.LeasingService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,6 +33,9 @@ public class LeasingController {
     @Autowired
     CarRepository carRepository;
 
+    @Autowired
+    LeasingService leasingService;
+
     //her bliver lavet en metode som viser alle leasinger
     @GetMapping("/watchLeasingAgreements")
     public String OverviewOfLeasings(Model model) {
@@ -56,8 +60,20 @@ public class LeasingController {
             @RequestParam(value = "is_unlimited", defaultValue = "false") boolean is_unlimited,
             @RequestParam(value = "is_limited", defaultValue = "false") boolean is_limited,
             @RequestParam("car_id") int car_id,
-            @RequestParam("ansat") String employee_name){
+            @RequestParam("ansat") String employee_name,
+            Model model){
 
+        String error = leasingService.checkLeasingDate(start_leasing, end_leasing, is_unlimited, is_limited);
+
+        // Se om der er en fejlmeddelelse fra checkLeasingDate metoden i leasingservice.
+        if(error != null) {
+            CarModel carModel = carRepository.GetCarById(car_id);
+            model.addAttribute("car_id", carModel);
+            model.addAttribute("error", error);
+            return "makeNewLeasing";
+        }
+
+        //Hvis ikke der er en fejlmeddelelse, fortsætter vi med at lave en leasingkontrakt.
         LeasingModel leasingModel = new LeasingModel(employee_name, monthly_price, customer_name, start_leasing, end_leasing, is_unlimited, is_limited, car_id);
         leasingRepository.createLeasingContract(leasingModel);
         return "redirect:/watchLeasingAgreements";
