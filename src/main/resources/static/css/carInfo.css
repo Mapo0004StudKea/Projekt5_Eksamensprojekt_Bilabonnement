@@ -11,10 +11,9 @@
     gap: 20px;
     padding: 10px;
     margin-left: 20px;
-
 }
 
-.flex-container-block, .flex-container-block-description {
+.flex-container-block-description {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -96,4 +95,61 @@
 
 .button:hover {
     background-color: #005cbf;
+}
+
+h1 {
+    margin-left: 220px;
+    margin-bottom: 50px;
+    margin-top: 50px
+}
+
+tr {
+    text-align: left
+}
+
+.Last_div {
+    margin-left: 875px;
+}
+
+.flex-container-block {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 192, 255, 0.75);
+    padding: 20px;
+    flex: 1 1 45%;
+    gap: 2em;
+    margin-bottom: 20px;
+}
+
+.flex-container-block-wdr {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 192, 255, 0.75);
+    padding: 20px;
+    flex: 1 1 45%;
+    gap: 2em;
+    margin-bottom: 20px;
+    margin-left: 180px;
+    margin-right: 150px;
+}
+
+.flex-container-block-cnre {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 192, 255, 0.75);
+    padding: 20px;
+    flex: 1 1 45%;
+    gap: 2em;
+    margin: 100px;
+    margin-left: 500px;
+    margin-right: 500px;
 }

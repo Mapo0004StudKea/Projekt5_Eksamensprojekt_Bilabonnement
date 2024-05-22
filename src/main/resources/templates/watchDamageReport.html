@@ -2,76 +2,84 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Se din skadesrapport</title>
+    <title>Se din skaderapport</title>
+    <link rel="stylesheet" href="../static/css/carInfo.css" th:href="@{/css/carInfo.css}">
     <link rel="stylesheet" href="../static/css/header.css" th:href="@{/css/header.css}">
-    <link rel="stylesheet" href="../static/css/carForm.css" th:href="@{/css/carForm.css}">
-    <link rel="stylesheet" href="../static/css/car.css" th:href="@{/css/car.css}">
-
 </head>
 <body>
-<div class="sidebar">
-    <header><a th:href="@{/dashboard}">Bilabonnement</a></header>
-    <ul>
-        <li><a th:href="@{/dashboard}">Dashboard</a></li>
-        <li><a th:href="@{/carListSite}">Biler</a></li>
-        <li><a th:href="@{/watchLeasingAgreements}">Leasing</a></li>
-        <li><a th:href="@{/DamageReportSite}">Skadesrapport</a></li>
-        <li><a th:href="@{/watchDamages}">Skader</a> </li>
-    </ul>
-</div>
-<div>
-    <div class="container">
-<h1 th:text="${watchdamage.getReport_name()}"></h1>
-<h1>Om Rapporten</h1>
-    <div class="table-container">
-<table class="table">
-    <thead>
-        <tr>
-            <th>Udført af</th>
-            <th>Beskrivelse af rapporten</th>
-            <th><a th:href="@{'/UpdateReport/' + ${watchdamage.getId()}}">
-                <button type="submit" >Opdater rapport</button>
-            </a>
-            </th>
-        </tr>
-    <tbody>
-        <tr>
-            <td th:text="${watchdamage.getReport_employee_name()}"></td>
-            <td th:text="${watchdamage.getReport_description()}"></td>
-        </tr>
-    </tbody>
-</table>
-<table class="table">
-    <thead>
-    <h1>Oversigt over skader i rapporten</h1>
-        <tr>
-            <th>navn på skaden</th>
-            <th>prisen på skaden</th>
-            <th>Skade beskrivelse</th>
-        </tr>
-    <tbody>
-        <tr th:each=" damage : ${damage}">
-            <td th:text="${damage.getDamage_name()}">Navn på skaden</td>
-            <td th:text="${damage.getDamage_price()}">Prisen på skaden</td>
-            <td th:text="${damage.getDamage_description()}"> Beskrivelse af skaden </td>
-            <td>
-                <a th:href="@{'/UpdateDamage/'+${damage.getId()}}">Opdater</a>
-            </td>
-            <td>
-                <a th:href="@{'/deleteDamage/'+${damage.id}}">Slet</a>
-            </td>
-        </tr>
-
-        <tr>
-            <td>Total pris:</td>
-            <td th:text="${totalPriceForDamages}"></td>
-        </tr>
-</table>
+    <div class="sidebar">
+        <header><a th:href="@{/dashboard}">Bilabonnement</a></header>
+        <ul>
+            <li><a th:href="@{/dashboard}">Dashboard</a></li>
+            <li><a th:href="@{/carListSite}">Biler</a></li>
+            <li><a th:href="@{/watchLeasingAgreements}">Leasing</a></li>
+            <li><a th:href="@{/DamageReportSite}">Skaderapport</a></li>
+            <li><a th:href="@{/watchDamages}">Skader</a> </li>
+        </ul>
     </div>
-<a th:href="@{'/makeNewDamage/' + ${watchdamage.getId()}}">
-    <button type="submit" >Opret ny skade</button>
-</a>
-</div>
-</div>
+    <div><h1 th:text="'Rapportnavn: '+${watchdamage.getReport_name()}"></h1></div>
+    <div class="flex-container">
+        <div class="flex-container-block-wdr">
+            <h1>Information om rapporten</h1>
+            <table >
+                <thead>
+                    <tr>
+                        <th>Udført af</th>
+                        <th>Rapportbeskrivelse</th>
+                        <th>Oprettelsesdato</th>
+                        <th>Opdater</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td th:text="${watchdamage.getReport_employee_name()}"></td>
+                        <td th:text="${watchdamage.getReport_description()}"></td>
+                        <td th:text="${watchdamage.getReport_Damage_Date()}"></td>
+                        <td>
+                            <a th:href="@{'/UpdateReport/' + ${watchdamage.getId()}}">Opdater</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="flex-container">
+        <div class="flex-container-block-wdr">
+            <h1>Oversigt over skader i rapporten</h1>
+            <table >
+                <thead>
+                    <tr>
+                        <th>navn på skaden</th>
+                        <th>prisen på skaden</th>
+                        <th>Skade beskrivelse</th>
+                        <th>Opdater</th>
+                        <th>Slet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each=" damage : ${Damage}">
+                        <td th:text="${damage.getDamage_name()}">Navn på skaden</td>
+                        <td th:text="${damage.getDamage_price()}">Prisen på skaden</td>
+                        <td th:text="${damage.getDamage_description()}"> Beskrivelse af skaden </td>
+                        <td>
+                            <a th:href="@{'/UpdateDamage/'+${damage.getId()}}">Opdater</a>
+                        </td>
+                        <td>
+                            <a th:href="@{'/deleteDamage/'+${damage.id}}">Slet</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Total pris:</td>
+                        <td th:text="${totalPriceForDamages}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div style="text-align: center">
+        <a th:href="@{'/makeNewDamage/' + ${watchdamage.getId()}}">
+            <button type="submit" class="button">Opret ny skade</button>
+        </a>
+    </div>
 </body>
 </html>
