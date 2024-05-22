@@ -61,10 +61,10 @@ public class DamageReportRepository {
         return damageReportModels;
     }
 
-    public Integer getCarWithMostDamageReports() {
+    public int getCarWithMostDamageReports() {
         String GET_CAR_WITH_MOST_DAMAGE_REPORTS_SQL =
                 "SELECT car_id FROM damagereport GROUP BY car_id ORDER BY COUNT(*) DESC LIMIT 1";
-        return jdbcTemplate.queryForObject(GET_CAR_WITH_MOST_DAMAGE_REPORTS_SQL, Integer.class);
+        return jdbcTemplate.queryForObject(GET_CAR_WITH_MOST_DAMAGE_REPORTS_SQL, int.class);
     }
 
     public int getCarWithMostDamageReportsByCount() {

@@ -37,6 +37,11 @@ public class DashController {
     @Autowired
     DamageRepository damageRepository;
 
+    @GetMapping("/")
+    public String dash() {
+        return "redirect:/login";
+    }
+
     @GetMapping("/login")
     public String loginPage(){return "login";}
 
@@ -70,13 +75,13 @@ public class DashController {
         model.addAttribute("MostExpensiveDamage", mostExpensiveDamage);
         double cheapestDamage = damageRepository.getCheapestDamage();
         model.addAttribute("CheapestDamage", cheapestDamage);
-        Integer carWithMostDamageReports = damageReportRepository.getCarWithMostDamageReports();
+        int carWithMostDamageReports = damageReportRepository.getCarWithMostDamageReports();
         model.addAttribute("CarWithMostDamageReport", carWithMostDamageReports);
         int carWithMostDamageReportsByCount = damageReportRepository.getCarWithMostDamageReportsByCount();
         model.addAttribute("test", carWithMostDamageReportsByCount);
-        Integer carWithMostLeasingAgreements = leasingRepository.getCarWithMostLeasingAgreements();
+        int carWithMostLeasingAgreements = leasingRepository.getCarWithMostLeasingAgreements();
         model.addAttribute("CarWithMostLeasingAgreements", carWithMostLeasingAgreements);
-        Integer carWithMostLeasingAgreementsByCount = leasingRepository.getCarWithMostLeasingAgreementsByCount();
+        int carWithMostLeasingAgreementsByCount = leasingRepository.getCarWithMostLeasingAgreementsByCount();
         model.addAttribute("CarWithMostLeasingAgreementsByCount", carWithMostLeasingAgreementsByCount);
         return "dashboard";
     }
