@@ -2,44 +2,37 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Ny Raport</title>
-    <link rel="stylesheet" href="../static/css/createDamageReport.css" th:href="@{/css/createDamageReport.css}">
+    <title>Ny Rapport</title>
+    <link rel="stylesheet" href="../static/css/carInfo.css" th:href="@{/css/carInfo.css}">
     <link rel="stylesheet" href="../static/css/header.css" th:href="@{/css/header.css}">
 </head>
 <body>
-<div class="sidebar">
-    <header><a th:href="@{/dashboard}">Bilabonnement</a></header>
-    <ul>
-        <li><a th:href="@{/dashboard}">Dashboard</a></li>
-        <li><a th:href="@{/carListSite}">Biler</a></li>
-        <li><a th:href="@{/watchLeasingAgreements}">Leasing</a></li>
-        <li><a th:href="@{/DamageReportSite}">Skadesrapport</a></li>
-        <li><a th:href="@{/watchDamages}">Skader</a> </li>
-    </ul>
-</div>
-<div class="block-container">
-    <div class="block-content">
-        <div class="blockLeasingContrakts">
-            <form action="/CreateNewReportEntry" method="post" class="form-container">
-                <h1>Opret ny skaderapport</h1>
-                <label for="name">Rapport navn:</label>
-                <input id="name" name="name" type="text">
-
-                <label for="description" >beskrivelse:</label>
-                <input id="description" class="label-wide" name="description" type="text">
-
-                <label for="employee">Medarbejder Navn:</label>
-                <input id="employee" name="employee" type="text">
-
-                <label for="report_Damage_Date">Dato:</label>
-                <input id="report_Damage_Date" name="report_Damage_Date" type="Date">
-
-                <input name="car_id" th:value="${car_id.getId()}" th:name="car_id" type="hidden">
-
-                <input type="submit" value="opret Report" class="button">
+    <div class="sidebar">
+        <header><a th:href="@{/dashboard}">Bilabonnement</a></header>
+        <ul>
+            <li><a th:href="@{/dashboard}">Dashboard</a></li>
+            <li><a th:href="@{/carListSite}">Biler</a></li>
+            <li><a th:href="@{/watchLeasingAgreements}">Leasing</a></li>
+            <li><a th:href="@{/DamageReportSite}">Skaderapport</a></li>
+            <li><a th:href="@{/watchDamages}">Skader</a> </li>
+        </ul>
+    </div>
+    <div class="flex-container">
+        <div class="flex-container-block-cnre">
+            <h1 style="text-align: center">Opret ny skaderapport</h1>
+            <form action="/CreateNewReportEntry" method="post" style="text-align: center; margin: 75px">
+                <label for="name">Rapport navn:</label><br>
+                <input id="name" name="name" type="text"><br>
+                <label for="description" >Beskrivelse:</label><br>
+                <input id="description" class="label-wide" name="description" type="text"><br>
+                <label for="employee">Medarbejder Navn:</label><br>
+                <input id="employee" name="employee" type="text"><br>
+                <label for="report_Damage_Date">Dato:</label><br>
+                <input id="report_Damage_Date" name="report_Damage_Date" type="Date"><br>
+                <input name="car_id" th:value="${car_id.getId()}" th:name="car_id" type="hidden"><br>
+                <input type="submit" value="Opret ny rapport" class="button"><br>
             </form>
         </div>
     </div>
-</div>
 </body>
 </html>

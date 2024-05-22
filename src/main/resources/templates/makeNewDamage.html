@@ -1,39 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Opret ny skade</title>
+    <link rel="stylesheet" href="../static/css/carInfo.css" th:href="@{/css/carInfo.css}">
+    <link rel="stylesheet" href="../static/css/header.css" th:href="@{/css/header.css}">
 </head>
 <body>
-
-<h1> Opret en ny skade</h1>
-
-<div class="block-container">
-    <div class="block-content">
-        <div class="block">
-            <h2>Aftaleindskrivning</h2>
+    <div class="sidebar">
+        <header><a th:href="@{/dashboard}">Bilabonnement</a></header>
+        <ul>
+            <li><a th:href="@{/dashboard}">Dashboard</a></li>
+            <li><a th:href="@{/carListSite}">Biler</a></li>
+            <li><a th:href="@{/watchLeasingAgreements}">Leasing</a></li>
+            <li><a th:href="@{/DamageReportSite}">Skaderapport</a></li>
+            <li><a th:href="@{/watchDamages}">Skader</a> </li>
+        </ul>
+    </div>
+    <h1 style="margin-left: 650px"> Opret en ny skade</h1>
+    <div class="flex-container">
+        <div class="flex-container-block-wdr" style="text-align: center; margin-left: 500px; margin-right: 500px">
+            <h2>Skadeindskrivning</h2>
             <form action="/makeNewDamage" method="post">
-                <label for="damagename">Skadens navn:</label><br>
-                <input type="text" id="damagename" name="damage_name"><br>
-
-                <label for="damageprice"> Pris på skaden:</label><br>
-                <input type="text" id="damageprice" name="damage_price"><br>
-
-                <label for="damagedescription"> Beskrivelse af skaden:</label><br>
-                <input type="text" id="damagedescription" name="damage_description"><br>
-
+                <label for="damageName">Skadens navn:</label><br>
+                <input type="text" id="damageName" name="damage_name"><br>
+                <label for="damagePrice"> Pris på skaden:</label><br>
+                <input type="text" id="damagePrice" name="damage_price"><br>
+                <label for="damageDescription"> Beskrivelse af skaden:</label><br>
+                <input type="text" id="damageDescription" name="damage_description"><br>
                 <p>
-
                     <input id="damageReport_id" name="damageReport_id" type="text" hidden th:value="${damagereportid}">
                 </p>
-
-                    <button type="submit" class="button">Gem</button>
-
-
+                <button type="submit" class="button">Gem</button>
             </form>
         </div>
     </div>
-</div>
-
 </body>
 </html>

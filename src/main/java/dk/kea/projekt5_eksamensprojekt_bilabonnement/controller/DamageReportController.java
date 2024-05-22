@@ -33,10 +33,13 @@ public class DamageReportController {
 
     @Autowired
     DamageReportRepository damageReportRepository;
+
     @Autowired
     DamageRepository damageRepository;
+
     @Autowired
     DamageService damageService;
+
     @Autowired
     CarRepository carRepository;
 
@@ -133,7 +136,7 @@ public class DamageReportController {
         model.addAttribute("watchdamage", damageReportModel);
         List<DamageModel> damageModelList = damageRepository.findDamageReportById(id);
 
-        model.addAttribute("damage",damageModelList);
+        model.addAttribute("Damage",damageModelList);
         double totalPrice = damageService.totalPriceForDamages(id);
         model.addAttribute("totalPriceForDamages", totalPrice);
         return "watchDamageReport";
