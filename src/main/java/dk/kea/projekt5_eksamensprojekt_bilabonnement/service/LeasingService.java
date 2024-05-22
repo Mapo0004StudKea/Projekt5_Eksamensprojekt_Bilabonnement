@@ -28,4 +28,6 @@ public class LeasingService {
         }
         return totalPrice;
     }
+
+
 }
