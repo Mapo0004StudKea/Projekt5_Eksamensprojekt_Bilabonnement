@@ -9,19 +9,19 @@
 </head>
 <body>
 <div class="sidebar">
-    <header><a href="dashboard">Bilabonnement</a></header>
+    <header><a th:href="@{/dashboard}">Bilabonnement</a></header>
     <ul>
-        <li><a href="dashboard">Dashboard</a> </li>
-        <li><a href="carListSite">Biler</a> </li>
-        <li><a href="watchLeasingAgreements">Leasing</a> </li>
-        <li><a href="DamageReportSite">Skadesrapport</a> </li>
+        <li><a th:href="@{/dashboard}">Dashboard</a></li>
+        <li><a th:href="@{/carListSite}">Biler</a></li>
+        <li><a th:href="@{/watchLeasingAgreements}">Leasing</a></li>
+        <li><a th:href="@{/DamageReportSite}">Skadesrapport</a></li>
+        <li><a th:href="@{/watchDamages}">Skader</a> </li>
     </ul>
 </div>
-
-        <h1 style="text-align: center">Oversigt over alle leasingaftaler</h1>
-            <div class="table-container"  style="margin-left: 75px">
-            <table class="table">
-                <thead>
+<h1 style="text-align: center">Oversigt over alle leasingaftaler</h1>
+    <div class="table-container"  style="margin-left: 75px">
+        <table class="table">
+            <thead>
                 <tr>
                     <th>Medarbejder</th>
                     <th>Kunde navn</th>
@@ -29,15 +29,15 @@
                     <th>Opdater</th>
                     <th>slet</th>
                 </tr>
-                </thead>
-                <tbody>
+            </thead>
+            <tbody>
                 <tr th:each="Leasing : ${LeasingAgremenst}">
-                    <!-- <td th:text="${Leasing.getId()}">abonoment ID</td> -->
+                        <!-- <td th:text="${Leasing.getId()}">abonoment ID</td> -->
                     <td th:text="${Leasing.getEmployee_name()}"></td>
                     <td>
-                    <a th:href="@{'/CarInfoPage/' + ${Leasing.getCar_id()}}">
-                    <span th:text="${Leasing.getCustomer_name()}">kunde navn</span>
-                    </a>
+                        <a th:href="@{'/CarInfoPage/' + ${Leasing.getCar_id()}}">
+                        <span th:text="${Leasing.getCustomer_name()}">kunde navn</span>
+                        </a>
                     </td>
                     <td th:text="${Leasing.getMonthly_price()}">prisen</td>
                     <td>
@@ -47,13 +47,15 @@
                         <a th:href="@{'/deleteFromLeasingList/'+${Leasing.id}}">Fjern</a>
                     </td>
                 </tr>
-                </tbody>
-            </table>
-                <div class="table-container">
-                    <form action="/makeNewLeasing">
-                        <button type="submit" class="button">Opret ny leasing</button>
-                    </form>
-                </div>
-
+            </tbody>
+        </table>
+    </div>
+    <div class="flex-container">
+        <div class="table-container">
+            <form action="/makeNewLeasing">
+                <button type="submit" class="button">Opret ny leasing</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
