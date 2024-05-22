@@ -24,6 +24,30 @@
     <h2>Dashboard</h2>
 </div>
 <div class="flex-container">
+
+    <div class="flex-box">
+        <h2 style="margin-bottom: 30px">De Næste biler som komemr hjem</h2>
+        <table style="border: 1px solid #ddd">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Bil Name</th>
+                <th>Bil Nummer</th>
+                <th>Hvornår</th>
+            </tr>
+            </thead>
+            <tbody style="border: 1px solid #ddd">
+            <tr th:each="car : ${endLeasing}">
+                <td></td>
+                <td th:text="${car.getCar_name()}"></td>
+                <td th:text="${car.getCar_number()}"></td>
+            </tr>
+
+            </tbody>
+        </table>
+        <a href="carListSite" style="color: black">Til oversigt af biler</a>
+    </div>
+
     <div class="flex-box">
         <h2 style="margin-bottom: 30px">Information for biler</h2>
         <table style="border: 1px solid #ddd">

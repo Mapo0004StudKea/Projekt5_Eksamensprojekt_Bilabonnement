@@ -140,4 +140,5 @@ public class CarController {
         model.addAttribute("leaseReport", leasingModels);
         return "carInfoPage";
     }
+
 }
