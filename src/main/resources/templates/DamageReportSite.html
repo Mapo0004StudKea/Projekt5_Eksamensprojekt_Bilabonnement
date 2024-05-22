@@ -18,7 +18,7 @@
         <li><a th:href="@{/watchDamages}">Skader</a> </li>
     </ul>
 </div>
-<h1 style="text-align: center">Oversigt over alle skadesrapporter</h1>
+<h1 style="text-align: center; margin-bottom: 30px">Oversigt over alle skadesrapporter</h1>
 <div class="table-container" >
 <table class="table">
         <thead>
@@ -52,7 +52,7 @@
     </table>
 </div>
 <div class="table-container">
-    <form action="/CreateNewReportEntry">
+    <form th:action="@{/CreateNewReportEntry}">
         <button type="submit" class="button">Opret ny rapport</button>
     </form>
 </div>
