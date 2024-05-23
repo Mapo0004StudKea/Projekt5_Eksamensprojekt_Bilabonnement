@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <html lang="en">
 <link rel="stylesheet" href="../static/css/leasing.css" th:href="@{css/leasing.css}">
@@ -25,9 +25,6 @@
         <div class="block">
             <h2>Aftaleindskrivning</h2>
             <form action="/makeNewLeasing" method="post">
-                    <!-- her displayer den error messagesne, der kommer fra leasingService (checkLeasingDate), og vises i postmappingen makeNewLEasing -->
-                <div th:if="${error}" class="error-message" th:text="${error}"></div>
-
                 <label for="ansat">Ansat:</label><br>
                 <input type="text" id="ansat" name="ansat"><br>
 
@@ -35,17 +32,17 @@
                 <input type="text" id="navn" name="navn"><br>
 
                 <label for="leasingPrice">Pris:</label><br>
-                <input type="number" id="leasingPrice" name="Pris" th:value="${car_id.getMonthly_price()}"><br>
+                <input type="text" id="leasingPrice" name="Pris"><br>
 
 
                 <input name="car_id" th:value="${car_id.getId()}" th:name="car_id" type="hidden"><br>
 
                 <label>Abonnementsaftale:</label><br>
                 <input id="is_limited" name="is_limited" type="checkbox" value="true">
-                <label for="is_limited">Begrænset</label><br>
+                <label for="is_limited">Begrænset <small>:Maks 150 dage (5 måneder)</small> </label><br>
 
                 <input id="unlimited" name="is_unlimited" type="checkbox" value="true">
-                <label for="unlimited">Ubegrænset</label><br>
+                <label for="unlimited">Ubegrænset <small>:Minimum 90 dage (3 måneder)</small></label><br>
 
                 <label for="startdato">Startdato:</label><br>
                 <input type="date" id="startdato" name="startdato"><br>

@@ -19,42 +19,9 @@ import java.util.List;
  * @author Viggo Beck, vibe0002@stud.kea.dk
  */
 
-@Service
-public class LeasingService {
+    @Service
+    public class LeasingService {
 
-    @Autowired
-    private LeasingRepository leasingRepository;
-    @Autowired
-    private CarRepository carRepository;
-
-
-    /*
-    //Metode til at beregne forskellen mellem limited og unlimited.
-    public double calculateLeasingPrice (boolean is_limited, boolean is_unlimited, double monthly_price){
-        double totalPrice = monthly_price;
-
-        if(is_limited){
-            totalPrice += 500; //Tillæg for limited
-        } else if(is_unlimited){
-            totalPrice += 1000; //Tillæg for unlimited
-        }
-        return totalPrice;
-    }
-
-     */
-
-    /*public double calculateTotalPrice() {
-        double totalPrice = 0;
-        List<LeasingModel> list = leasingRepository.getListOfLeasingContracts();
-        for (LeasingModel leasing : list) {
-        double price = carRepository.GetCarById(leasing.getCar_id()).getMonthly_price();
-        double finalPrice = calculateLeasingPrice(leasing.getIs_limited(), leasing.getIs_unlimited(), price);
-        totalPrice += finalPrice;
-        }
-        return totalPrice;
-    }
-
-     */
 
     //Metode der sørger for at biler der er limited kun kan lejes i en periode på 5 måneder, og unlimited kun kan lejes fra 3 måneder og op.
     public String checkLeasingDate(LocalDate startLeasing, LocalDate endLeasing, boolean isUnlimited, boolean isLimited) {
@@ -69,5 +36,4 @@ public class LeasingService {
         }
         return null;
     }
-
 }
