@@ -2,6 +2,7 @@ package dk.kea.projekt5_eksamensprojekt_bilabonnement.repository;
 
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -63,26 +64,34 @@ public class CarRepository {
     public CarModel GetCarByIdForUpdate(int id) {
         //find SQL
         String GET_CAR_BY_ID_SQL = "SELECT * FROM car WHERE id = ?";
-        //returner query-resultat fra JdbcTemplate, med rowmapper som omsætter databaserække til car
+        //returner query-resultat fra JdbcTemplate, med rowMapper som omsætter databaserække til car
         return jdbcTemplate.queryForObject(GET_CAR_BY_ID_SQL, new Object[]{id}, new BeanPropertyRowMapper<>(CarModel.class));
     }
 
     public void UpdateCarEntryInDatabase(CarModel carModel) {
+        final int MAX_CAR_PICTURE_LENGTH = 255;
+        final int MAX_CAR_FULL_NAME_LENGTH = 50;
+
+        if (carModel.getCar_picture().length() > MAX_CAR_PICTURE_LENGTH) {
+            throw new IllegalArgumentException("billedet overskrider den maksimalt tilladte længde på " + MAX_CAR_PICTURE_LENGTH + " tegn");
+        }
+        if (carModel.getCar_full_name().length() > MAX_CAR_FULL_NAME_LENGTH) {
+            throw new IllegalArgumentException("bilens fulde navn overskrider den maksimalt tilladte længde på " + MAX_CAR_FULL_NAME_LENGTH + " tegn");
+        }
+
         //update sql
         String UPDATE_CAR_ENTRy_SQL = "UPDATE car SET car_picture = ?, car_full_name = ?, car_Serialnr = ?, car_number = ?, car_model = ?, car_name = ?, car_year = ?, monthly_price = ?, is_leased = ?, car_description = ? WHERE id = ?";
         //update db vha. JdbcTemplate
-        jdbcTemplate.update(UPDATE_CAR_ENTRy_SQL, carModel.getCar_picture(), carModel.getCar_full_name(), carModel.getCar_Serialnr(), carModel.getCar_number(), carModel.getCar_model(), carModel.getCar_name(), carModel.getCar_year(), carModel.getMonthly_price(), carModel.isIs_leased(), carModel.getCar_description(), carModel.getId());
-    }
+        try {
+            jdbcTemplate.update(UPDATE_CAR_ENTRy_SQL, carModel.getCar_picture(), carModel.getCar_full_name(), carModel.getCar_Serialnr(), carModel.getCar_number(), carModel.getCar_model(), carModel.getCar_name(), carModel.getCar_year(), carModel.getMonthly_price(), carModel.isIs_leased(), carModel.getCar_description(), carModel.getId());
+        } catch (DataIntegrityViolationException e) {
+            // Her kaster den en fejlbesked med mere beskrivelse
+            throw new IllegalArgumentException("For meget data i nogle af felterne: " + e.getMessage(), e);
 
+        }
+    }
     public CarModel GetCarById(int id) {
         String GET_CAR_BY_ID_SQL = "SELECT * FROM car WHERE id = ?";
         return jdbcTemplate.queryForObject(GET_CAR_BY_ID_SQL, new Object[]{id}, new BeanPropertyRowMapper<>(CarModel.class));
     }
-
-    /*public List<CarModel> showCarsByINT() {
-        //count (*) finder antallet af udlejede biler som en int, i stedet for som en List, som vores metode ovenover gør.
-        String GET_CARS_BY_INT_NUMBER = "SELECT count(*) FROM car WHERE is_leased = 1";
-        List<CarModel> carmodel = jdbcTemplate.query(GET_CARS_BY_INT_NUMBER, new BeanPropertyRowMapper<>(CarModel.class));
-        return carmodel;
-    }*/
 }
