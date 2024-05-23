@@ -40,7 +40,7 @@ public class LeasingController {
     @GetMapping("/watchLeasingAgreements")
     public String OverviewOfLeasings(Model model) {
         List<LeasingModel>allLeasing =leasingRepository.getListOfLeasingContracts();
-        model.addAttribute("LeasingAgremenst",allLeasing);
+        model.addAttribute("LeasingAgreements",allLeasing);
         return "watchLeasingAgreements";
     }
     

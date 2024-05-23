@@ -31,7 +31,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="Leasing : ${LeasingAgremenst}">
+                <tr th:each="Leasing : ${LeasingAgreements}">
                         <!-- <td th:text="${Leasing.getId()}">abonoment ID</td> -->
                     <td th:text="${Leasing.getEmployee_name()}"></td>
                     <td>
@@ -39,7 +39,8 @@
                         <span th:text="${Leasing.getCustomer_name()}">kunde navn</span>
                         </a>
                     </td>
-                    <td th:text="${Leasing.getMonthly_price()}">prisen</td>
+                    <!--/*@thymesVar id="setTotal_price" type=""*/-->
+                    <td th:text="${Leasing.getMonthly_price_with_addon()}">Total pris</td>
                     <td>
                         <a th:href="@{'/updateLeasingEntry/'+${Leasing.id}}">Opdater</a>
                     </td>
