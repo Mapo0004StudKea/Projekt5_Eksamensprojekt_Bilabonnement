@@ -1,6 +1,7 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.service;
 
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarsAndLeasingModels;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.LeasingModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepository;
@@ -19,10 +20,11 @@ public class DashService {
     @Autowired
     LeasingRepository leasingRepository;
 
-    public List<CarModel> listOfCarsNearEndLeasing(int daysThreshold) {
+    public CarsAndLeasingModels listOfCarsNearEndLeasing(int daysThreshold) {
         //jeg laver en række liste for at kunne håndter metoden
         //jeg skal havde sortedList tilbage og udprintes.
         List<CarModel> sortedList = new ArrayList<>();
+        List<LeasingModel> leasingModelsList = new ArrayList<>();
         //jeg skal undersøge hver bil leasingsList, men skal første hente bilerne
         List<CarModel> carList = carRepository.getFullListOfCars();
         LocalDate today = LocalDate.now();
@@ -44,10 +46,11 @@ public class DashService {
                 //så henter jeg end_leasing, for at tjekke om den er inden for 30 dage.
                 LocalDate endLeasingDate = latestLeasingModel.getEnd_leasing();
                 if (endLeasingDate != null && ChronoUnit.DAYS.between(today, endLeasingDate) <= daysThreshold) {
+                    leasingModelsList.add(listOfleasing.get(listOfleasing.size()-1));
                     sortedList.add(carModel);
                 }
             }
         }
-        return sortedList;
+        return new CarsAndLeasingModels(sortedList, leasingModelsList);
     }
     }

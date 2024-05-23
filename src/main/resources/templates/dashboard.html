@@ -24,30 +24,6 @@
     <h2>Dashboard</h2>
 </div>
 <div class="flex-container">
-
-    <div class="flex-box">
-        <h2 style="margin-bottom: 30px">De Næste biler som komemr hjem</h2>
-        <table style="border: 1px solid #ddd">
-            <thead>
-            <tr>
-                <th></th>
-                <th>Bil Name</th>
-                <th>Bil Nummer</th>
-                <th>Hvornår</th>
-            </tr>
-            </thead>
-            <tbody style="border: 1px solid #ddd">
-            <tr th:each="car : ${endLeasing}">
-                <td></td>
-                <td th:text="${car.getCar_name()}"></td>
-                <td th:text="${car.getCar_number()}"></td>
-            </tr>
-
-            </tbody>
-        </table>
-        <a href="carListSite" style="color: black">Til oversigt af biler</a>
-    </div>
-
     <div class="flex-box">
         <h2 style="margin-bottom: 30px">Information for biler</h2>
         <table style="border: 1px solid #ddd">
@@ -76,6 +52,7 @@
         </table>
         <a href="carListSite" style="color: black">Til oversigt af biler</a>
     </div>
+
     <div class="flex-box">
         <div class="flex-box-image fest-2">
             <h2 style="margin-bottom: 30px">Information for Leasing Aftaler</h2>
@@ -93,9 +70,42 @@
                     </tr>
                 </tbody>
             </table>
+
+            <h2 style="margin-bottom: 10px">De Næste biler som kommer hjem</h2>
+            <div class="block">
+                <div class="flex-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Bil Name</th>
+                    <th>Nummer</th>
+                </tr>
+                </thead>
+
+                <tbody style="border: 1px solid #ddd">
+                <tr th:each="car : ${endLeasing}">
+                    <td th:text="${car.getCar_name()}"></td>
+                    <td th:text="${car.getCar_number()}"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                <th>Hvornår</th>
+                </thead>
+                <tbody style="border: 1px solid #ddd">
+                <tr th:each="leasing : ${leasingmodels}">
+                    <td th:text="${leasing.getEnd_leasing()}"></td>
+                </tr>
+                </tbody>
+            </table>
+                </div>
+
+            </div>
             <a href="watchLeasingAgreements" style="color: black">Til oversigt af aftaler</a>
         </div>
     </div>
+
     <div class="flex-box">
         <div class="flex-box-image fest-3">
             <h2 style="margin-bottom: 30px">Information for Skaderapporter</h2>

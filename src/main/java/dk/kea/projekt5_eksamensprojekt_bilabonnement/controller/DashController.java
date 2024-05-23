@@ -1,6 +1,8 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.controller;
 
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarsAndLeasingModels;
+import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.LeasingModel;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageReportRepository;
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageRepository;
@@ -57,8 +59,11 @@ public class DashController {
     @GetMapping("/dashboard")
     public String dashboard (Model model){
         //her henter vi listen af biler. som er tæt på end_leasing, inden for 30 dage.
-        List<CarModel> list = dashService.listOfCarsNearEndLeasing(30);
-        model.addAttribute("endLeasing",list);
+        CarsAndLeasingModels result = dashService.listOfCarsNearEndLeasing(30);
+        List<CarModel> carsNearEndLeasing = result.getCars();
+        List<LeasingModel> leasingModels = result.getLeasingModels();
+        model.addAttribute("endLeasing",carsNearEndLeasing);
+        model.addAttribute("leasingmodels",leasingModels);
 
         //Metode der displayer antal biler med en int. Ved hjælp af size() kan vi omforme listen til integer.
         int totalnumberOfCars = carRepository.getFullListOfCars().size();

@@ -60,4 +60,19 @@ body{
     color: white;
 }
 
+.block tr{
+    display: flex;
+}
+.block td {
+    padding: 10px;
+}
+.block th {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
 
+.block{
+    display: flex;
+
+}
