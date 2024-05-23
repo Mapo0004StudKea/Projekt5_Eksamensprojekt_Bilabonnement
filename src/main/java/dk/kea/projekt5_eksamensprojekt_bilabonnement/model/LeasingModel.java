@@ -58,7 +58,7 @@ public class LeasingModel {
     public double getMonthly_price() {
         return monthly_price;
     }
-
+    //Metode til at lægge tillæg til den månedelige pris. getMetoden bliver kaldt i htmlen 'watchLeasingAgreements'.
     public double getMonthly_price_with_addon(){
         double finalPrice = 0;
         if(is_unlimited){

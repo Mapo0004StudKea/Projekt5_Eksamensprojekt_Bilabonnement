@@ -54,6 +54,8 @@ public class LeasingService {
         return totalPrice;
     }
 
+     */
+
     //Metode der sørger for at biler der er limited kun kan lejes i en periode på 5 måneder, og unlimited kun kan lejes fra 3 måneder og op.
     public String checkLeasingDate(LocalDate startLeasing, LocalDate endLeasing, boolean isUnlimited, boolean isLimited) {
         //Period.between viser årene, månederne og dagene mellem en given periode. Her start og end leasing.
@@ -67,10 +69,5 @@ public class LeasingService {
         }
         return null;
     }
-
-     */
-
-
-
 
 }
