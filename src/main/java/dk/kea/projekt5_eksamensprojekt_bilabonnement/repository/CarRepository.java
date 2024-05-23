@@ -41,7 +41,7 @@ public class CarRepository {
         return carModels;
     }
 
-        public List<CarModel> getNonLeasedCars() {
+    public List<CarModel> getNonLeasedCars() {
         String DISPLAY_NonLEASED_CARS = "SELECT * FROM car WHERE is_leased = 0";
         List<CarModel> carModels = jdbcTemplate.query(DISPLAY_NonLEASED_CARS, new BeanPropertyRowMapper<>(CarModel.class));
         return carModels;

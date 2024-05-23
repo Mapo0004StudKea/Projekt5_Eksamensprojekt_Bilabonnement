@@ -12,8 +12,8 @@ public class CarModel {
         private int id;
         private String car_picture;
         private String car_full_name;
-        private int car_Serialnr;
-        private int car_number;
+        private String car_Serialnr;
+        private String car_number;
         private String car_model;
         private String car_name;
         private String car_year;
@@ -21,7 +21,7 @@ public class CarModel {
         private boolean is_leased;
         private String car_description;
 
-    public CarModel(String car_picture, String car_full_name, int car_Serialnr, int car_number, String car_model, String car_name, String car_year, double monthly_price, boolean is_leased, String car_description) {
+    public CarModel(String car_picture, String car_full_name, String  car_Serialnr, String  car_number, String car_model, String car_name, String car_year, double monthly_price, boolean is_leased, String car_description) {
         this.car_picture = car_picture;
         this.car_full_name = car_full_name;
         this.car_Serialnr = car_Serialnr;
@@ -42,7 +42,7 @@ public class CarModel {
         this.car_description = car_description;
     }
 
-    public CarModel(int id, int serialNumber, int carNumber, String carModel, String carBrand, String carYear, double monthlyPrice, boolean isLeased) {
+    public CarModel(int id, String  serialNumber, String  carNumber, String carModel, String carBrand, String carYear, double monthlyPrice, boolean isLeased) {
         this.id = id;
         this.car_Serialnr = serialNumber;
         this.car_number = carNumber;
@@ -54,7 +54,7 @@ public class CarModel {
 
     }
 
-    public CarModel(int id, String car_picture, String car_full_name, int car_Serialnr, int car_number, String car_model, String car_name, String car_year, double monthly_price, boolean is_leased, String car_description) {
+    public CarModel(int id, String car_picture, String car_full_name, String  car_Serialnr, String  car_number, String car_model, String car_name, String car_year, double monthly_price, boolean is_leased, String car_description) {
         this.id = id;
         this.car_picture = car_picture;
         this.car_full_name = car_full_name;
@@ -68,7 +68,7 @@ public class CarModel {
         this.car_description = car_description;
     }
 
-    public CarModel(int car_Serialnr, int car_number, String car_model, String car_name, String car_year, double monthly_price, boolean is_leased) {
+    public CarModel(String  car_Serialnr, String  car_number, String car_model, String car_name, String car_year, double monthly_price, boolean is_leased) {
         this.car_Serialnr = car_Serialnr;
         this.car_number = car_number;
         this.car_model = car_model;
@@ -89,19 +89,19 @@ public class CarModel {
         this.id = id;
     }
 
-    public int getCar_Serialnr() {
+    public String  getCar_Serialnr() {
         return car_Serialnr;
     }
 
-    public void setCar_Serialnr(int car_Serialnr) {
+    public void setCar_Serialnr(String  car_Serialnr) {
         this.car_Serialnr = car_Serialnr;
     }
 
-    public int getCar_number() {
+    public String  getCar_number() {
         return car_number;
     }
 
-    public void setCar_number(int car_number) {
+    public void setCar_number(String  car_number) {
         this.car_number = car_number;
     }
 

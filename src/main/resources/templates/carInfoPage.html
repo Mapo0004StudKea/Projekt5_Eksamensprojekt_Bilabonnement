@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="../static/css/header.css" th:href="@{/css/header.css}">
 </head>
 <body>
-<div class="flex-container">
-    <div class="sidebar">
-        <header><a th:href="@{/dashboard}">Bilabonnement</a></header>
-        <ul>
-            <li><a th:href="@{/dashboard}">Dashboard</a></li>
-            <li><a th:href="@{/carListSite}">Biler</a></li>
-            <li><a th:href="@{/watchLeasingAgreements}">Leasing</a></li>
-            <li><a th:href="@{/DamageReportSite}">Skadesrapport</a></li>
-            <li><a th:href="@{/watchDamages}">Skader</a> </li>
-        </ul>
+    <div class="flex-container">
+        <div class="sidebar">
+            <header><a th:href="@{/dashboard}">Bilabonnement</a></header>
+            <ul>
+                <li><a th:href="@{/dashboard}">Dashboard</a></li>
+                <li><a th:href="@{/carListSite}">Biler</a></li>
+                <li><a th:href="@{/watchLeasingAgreements}">Leasing</a></li>
+                <li><a th:href="@{/DamageReportSite}">Skaderapport</a></li>
+                <li><a th:href="@{/watchDamages}">Skader</a> </li>
+            </ul>
+        </div>
     </div>
-</div>
     <div>
         <div class="flex-container">
             <div class="smallBox"></div>
@@ -113,7 +113,7 @@
                             <button type="submit" class="button">Se alle skaderapporter</button>
                         </form>
                         <form th:action="@{'/makeNewLeasing/'+ ${carModel.getId()}}">
-                            <button type="submit" class="button">Opret leasing rapport</button>
+                            <button type="submit" class="button">Opret ny leasingaftale</button>
                         </form>
                     </div>
                 </div>

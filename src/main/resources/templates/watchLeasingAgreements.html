@@ -14,7 +14,7 @@
         <li><a th:href="@{/dashboard}">Dashboard</a></li>
         <li><a th:href="@{/carListSite}">Biler</a></li>
         <li><a th:href="@{/watchLeasingAgreements}">Leasing</a></li>
-        <li><a th:href="@{/DamageReportSite}">Skadesrapport</a></li>
+        <li><a th:href="@{/DamageReportSite}">Skaderapport</a></li>
         <li><a th:href="@{/watchDamages}">Skader</a> </li>
     </ul>
 </div>
@@ -32,11 +32,10 @@
             </thead>
             <tbody>
                 <tr th:each="Leasing : ${LeasingAgreements}">
-                        <!-- <td th:text="${Leasing.getId()}">abonoment ID</td> -->
                     <td th:text="${Leasing.getEmployee_name()}"></td>
                     <td>
                         <a th:href="@{'/CarInfoPage/' + ${Leasing.getCar_id()}}">
-                        <span th:text="${Leasing.getCustomer_name()}">kunde navn</span>
+                        <span th:text="${Leasing.getCustomer_name()}">Kunde navn</span>
                         </a>
                     </td>
                     <!--/*@thymesVar id="setTotal_price" type=""*/-->

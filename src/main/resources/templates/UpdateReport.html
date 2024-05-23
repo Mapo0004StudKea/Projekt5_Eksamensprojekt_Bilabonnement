@@ -14,7 +14,7 @@
         <li><a th:href="@{/dashboard}">Dashboard</a></li>
         <li><a th:href="@{/carListSite}">Biler</a></li>
         <li><a th:href="@{/watchLeasingAgreements}">Leasing</a></li>
-        <li><a th:href="@{/DamageReportSite}">Skadesrapport</a></li>
+        <li><a th:href="@{/DamageReportSite}">Skaderapport</a></li>
         <li><a th:href="@{/watchDamages}">Skader</a> </li>
     </ul>
 </div>
@@ -24,7 +24,7 @@
         <h1>Opdater report</h1>
         <input name="id" type="hidden" th:value="${updateReport.id}" th:name="id">
 
-        <label for="report_name">Reportens navn:</label>
+        <label for="report_name">Rapportens navn:</label>
         <input id="report_name" name="report_name" type="text" th:value="${updateReport.getReport_name()}">
 
         <label for="report_description">Beskrivelse af skade:</label>

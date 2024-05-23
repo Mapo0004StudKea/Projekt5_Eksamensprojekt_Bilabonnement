@@ -13,7 +13,7 @@
         <li><a th:href="@{/dashboard}">Dashboard</a></li>
         <li><a th:href="@{/carListSite}">Biler</a></li>
         <li><a th:href="@{/watchLeasingAgreements}">Leasing</a></li>
-        <li><a th:href="@{/DamageReportSite}">Skadesrapport</a></li>
+        <li><a th:href="@{/DamageReportSite}">Skaderapport</a></li>
         <li><a th:href="@{/watchDamages}">Skader</a> </li>
     </ul>
 </div>
@@ -31,13 +31,13 @@
         <label for="customer_name">Kunde Navn:</label>
         <input id="customer_name" name="customer_name" type="text" th:value="${updateLease.customer_name}">
 
-        <label for="start_leasing">Kunde Navn:</label>
+        <label for="start_leasing">Start leasing:</label>
         <input id="start_leasing" name="start_leasing" type="text" th:value="${updateLease.start_leasing}">
 
-        <label for="end_leasing">Kunde Navn:</label>
+        <label for="end_leasing">Slut leasing:</label>
         <input id="end_leasing" name="end_leasing" type="text" th:value="${updateLease.end_leasing}">
 
-        <label for="is_unlimited">Ubegrænse:</label>
+        <label for="is_unlimited">Ubegrænset:</label>
         <input id="is_unlimited" name="is_unlimited" type="text" th:value="${updateLease.is_unlimited}">
 
         <label for="is_limited">Begrænset:</label>
