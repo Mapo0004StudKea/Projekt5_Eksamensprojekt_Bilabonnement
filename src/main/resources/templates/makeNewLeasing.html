@@ -25,6 +25,9 @@
         <div class="block">
             <h2>Aftaleindskrivning</h2>
             <form action="/makeNewLeasing" method="post">
+
+                <div th:if="${error}" class="error-message" th:text="${error}"></div>
+
                 <label for="ansat">Ansat:</label><br>
                 <input type="text" id="ansat" name="ansat"><br>
 
