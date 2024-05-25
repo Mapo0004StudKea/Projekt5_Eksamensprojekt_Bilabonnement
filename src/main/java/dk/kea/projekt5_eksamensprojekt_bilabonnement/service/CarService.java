@@ -12,6 +12,7 @@ import java.util.List;
  *
  * @author Martin Poulsen, mapo0004@stud.kea.dk
  *
+ * Forskelliges metoder der bliver brugt til at udrang pris på forskellige måder, for biler, leasede biler og ikke-leasede biler.
  */
 
 @Service
@@ -20,40 +21,48 @@ public class CarService {
     @Autowired
     CarRepository carRepository;
 
-    public double calculateTotalMonthlyPrice() {
-        List<CarModel> cars = carRepository.getFullListOfCars();
-        double totalPrice = 0;
-        for (CarModel car : cars) {
-                totalPrice += car.getMonthly_price();
+        //En metode der beregner den samlede månedlige pris for alle biler
+        public double calculateTotalMonthlyPrice() {
+            //Henter en liste af alle biler fra databasen
+            List<CarModel> cars = carRepository.getFullListOfCars();
+            //Initialiserer den samlede pris
+            double totalPrice = 0;
+            //Går igennem hver bil i listen
+            for (CarModel car : cars) {
+                    //Tilføjer bilens månedlige pris til den samlede pris
+                    totalPrice += car.getMonthly_price();
+            }
+            //Returnerer den samlede månedlige pris for alle biler
+            return totalPrice;
         }
-        return totalPrice;
-    }
 
-    public double calculateTotalMonthlyPriceForLeasedCars() {
-        List<CarModel> leasedCars = carRepository.getLeasedCars();
-        double totalLeasedMonthlyPrice = 0;
-        for (CarModel car : leasedCars) {
-            totalLeasedMonthlyPrice += car.getMonthly_price();
+        //En metode der beregner den samlede månedlige pris for leasede biler
+        public double calculateTotalMonthlyPriceForLeasedCars() {
+            //Henter en liste af leasede biler fra databasen
+            List<CarModel> leasedCars = carRepository.getLeasedCars();
+            //Initialiserer den samlede pris for leasede biler
+            double totalLeasedMonthlyPrice = 0;
+            //Går igennem hver leasede bil i listen
+            for (CarModel car : leasedCars) {
+                //Tilføjer bilens månedlige pris til den samlede pris for leasede biler
+                totalLeasedMonthlyPrice += car.getMonthly_price();
+            }
+            //Returnerer den samlede månedlige pris for alle leasede biler
+            return totalLeasedMonthlyPrice;
         }
-        return totalLeasedMonthlyPrice;
-    }
 
-    public double calculateTotalMonthlyPriceForNonLeasedCars() {
-        List<CarModel> nonLeasedCars = carRepository.getNonLeasedCars();
-        double totalNonLeasedMonthlyPrice = 0;
-        for (CarModel car : nonLeasedCars) {
-            totalNonLeasedMonthlyPrice += car.getMonthly_price();
+        //Beregner den samlede månedlige pris for ikke-leasede biler
+        public double calculateTotalMonthlyPriceForNonLeasedCars() {
+            //Henter en liste af ikke-leasede biler fra databasen
+            List<CarModel> nonLeasedCars = carRepository.getNonLeasedCars();
+            //Initialiserer den samlede pris for ikke-leasede biler
+            double totalNonLeasedMonthlyPrice = 0;
+            //Går igennem hver ikke-leasede bil i listen
+            for (CarModel car : nonLeasedCars) {
+                //Tilføjer bilens månedlige pris til den samlede pris for ikke-leasede biler
+                totalNonLeasedMonthlyPrice += car.getMonthly_price();
+            }
+            //Returnerer den samlede månedlige pris for ikke-leasede biler
+            return totalNonLeasedMonthlyPrice;
         }
-        return totalNonLeasedMonthlyPrice;
-    }
-
-   /*public int ShowAllCarsAvailableByINTNumbers() {
-        int totalcars = 0;
-
-        List<CarModel> cars = carRepository.getFullListOfCars();
-        for (CarModel car: cars) {
-            totalcars++;
-        }
-       return totalcars;
-        }*/
     }

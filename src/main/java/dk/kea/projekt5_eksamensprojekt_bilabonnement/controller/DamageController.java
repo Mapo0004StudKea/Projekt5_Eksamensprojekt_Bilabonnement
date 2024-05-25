@@ -17,6 +17,9 @@ import java.util.List;
  * Damages controller class
  *
  * @author Viggo Beck, vibe0002@stud.kea.dk
+ * @author Martin Poulsen, mapo0004@stud.kea.dk
+ * @author Sebastian Drumm, sedr0001@stud.kea.dk
+ * @author Viktor Rasmussen, vira0004@stud.kea.dk
  * */
 
 @Controller

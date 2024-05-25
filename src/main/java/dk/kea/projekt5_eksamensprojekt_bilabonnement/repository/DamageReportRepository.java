@@ -22,8 +22,6 @@ public class DamageReportRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
-    CarModel carModel;
-
 
     //lave et nyt damageReportModel
     public void createNewDamageReport(DamageReportModel damageReportModel){

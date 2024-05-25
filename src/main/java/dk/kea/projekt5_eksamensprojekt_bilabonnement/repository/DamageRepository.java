@@ -19,8 +19,6 @@ public class DamageRepository {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    private DamageModel damageModel;
-
     public void createNewDamage(DamageModel damage){
         final String INSERT_DAMAGE_SQL = "INSERT INTO damages (damage_name, damage_price, damage_description, damagereport_id) VALUES (?, ?, ?, ?)";
         jdbcTemplate.update(INSERT_DAMAGE_SQL, damage.getDamage_name(), damage.getDamage_price(), damage.getDamage_description(), damage.getDamageReport_id());
