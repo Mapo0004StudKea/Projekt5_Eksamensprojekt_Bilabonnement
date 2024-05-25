@@ -76,7 +76,7 @@ public class LeasingController {
         //Hvis ikke der er en fejlmeddelelse, fortsætter vi med at lave en leasingkontrakt.
         LeasingModel leasingModel = new LeasingModel(employee_name, monthly_price, customer_name, start_leasing, end_leasing, is_unlimited, is_limited, car_id);
         leasingRepository.createLeasingContract(leasingModel);
-        return "redirect:/watchLeasingAgreements";
+        return "redirect:/CarInfoPage/" + car_id;
     }
 
     @GetMapping("/deleteFromLeasingList/{id}")
