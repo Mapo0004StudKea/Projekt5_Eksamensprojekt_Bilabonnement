@@ -109,6 +109,7 @@ public class LeasingController {
             @RequestParam("is_limited") boolean is_limited,
             @RequestParam("car_id") int car_id
     ) {
+
         LeasingModel leasingModel = new LeasingModel(id, employee_name, monthly_price, customer_name, start_leasing, end_leasing, is_unlimited, is_limited, car_id);
         leasingRepository.updateLeasing(leasingModel);
         return "redirect:watchLeasingAgreements";

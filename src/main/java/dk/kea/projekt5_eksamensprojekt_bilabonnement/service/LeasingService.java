@@ -25,7 +25,7 @@ import java.util.List;
 
     //Metode der sørger for at biler der er limited kun kan lejes i en periode på 5 måneder, og unlimited kun kan lejes fra 3 måneder og op.
     public String checkLeasingDate(LocalDate startLeasing, LocalDate endLeasing, boolean isUnlimited, boolean isLimited) {
-        //Period.between viser årene, månederne og dagene mellem en given periode. Her start og end leasing.
+
         if (isLimited && ChronoUnit.DAYS.between(startLeasing, endLeasing) > 150) {
             return "For en begrænset leasingaftale, kan du kun leje 150 dage";
             //Det blev nødt til at være chronounit her, der er mere nøjagtig end ovenover. Ellers ville det ikke virke af en eller anden grund.
@@ -35,5 +35,18 @@ import java.util.List;
             return "En leasingaftale kan ikke være både begrænset og ubegrænset.";
         }
         return null;
+    }
+    public String validateLeasingDuration(LocalDate startLeasing, LocalDate endLeasing, boolean isLimited, boolean isUnlimited) {
+        long leasingDuration = ChronoUnit.DAYS.between(startLeasing, endLeasing);
+
+        if (isLimited && leasingDuration > 150) {
+            return "Begrænset leasing kan ikke være længere end 150 dage.";
+        }
+
+        if (isUnlimited && leasingDuration < 90) {
+            return "Ubegrænset leasing skal være mindst 3 måneder.";
+        }
+
+        return null; // Return null if validation passes
     }
 }
