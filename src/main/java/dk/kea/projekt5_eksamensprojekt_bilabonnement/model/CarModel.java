@@ -7,6 +7,8 @@ import java.util.PrimitiveIterator;
  *
  * @author Martin Poulsen, mapo0004@stud.kea.dk
  * @author Sebastian Drumm, sedr0001@stud.kea.dk
+ *
+ * Vores bil model med Constructors, getters og setters.
  */
 public class CarModel {
         private int id;

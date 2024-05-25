@@ -1,9 +1,11 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.model;
 
 /**
- * leasing model class
+ * Skade model class
  *
  * @author Viggo Beck, vibe0002@stud.kea.dk
+ *
+ * Vores skade model med Constructors, getters og setters.
  */
 public class DamageModel {
     int id;

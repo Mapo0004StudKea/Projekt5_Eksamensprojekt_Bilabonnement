@@ -53,21 +53,31 @@ public class DamageReportRepository {
         return damageReportModels;
     }
 
+    //Metode til at hente alle skaderapporter for en bestemt bil ved ID
     public List<DamageReportModel> getAllReportsByCarId(int id) {
+        //SQL-forespørgsel til at hente alle skaderapporter for en bil baseret på bilens ID
         final String GET_ALL_REPORTS_BY_CAR_ID_SQL = "select * from damagereport where car_id = ?;";
+        //Udfører SQL-forespørgslen og mapper resultaterne til en liste af DamageReportModel objekter
         List<DamageReportModel> damageReportModels = jdbcTemplate.query(GET_ALL_REPORTS_BY_CAR_ID_SQL, new Object[]{id}, new BeanPropertyRowMapper<>(DamageReportModel.class));
+        //Returnerer listen af skaderapporter
         return damageReportModels;
     }
 
+    //Metode til at finde den bil der har flest skaderapporter
     public int getCarWithMostDamageReports() {
+        // SQL-forespørgsel til at finde ID'et på den bil der har flest skaderapporter
         String GET_CAR_WITH_MOST_DAMAGE_REPORTS_SQL =
                 "SELECT car_id FROM damagereport GROUP BY car_id ORDER BY COUNT(*) DESC LIMIT 1";
+        //Udfører SQL-forespørgslen og returnerer ID'et på bilen med flest skaderapporter
         return jdbcTemplate.queryForObject(GET_CAR_WITH_MOST_DAMAGE_REPORTS_SQL, int.class);
     }
 
+    //Metode til at finde antallet af skaderapporter for den bil der har flest skaderapporter
     public int getCarWithMostDamageReportsByCount() {
+        //SQL-forespørgsel til at finde antallet af skaderapporter for den bil der har flest skaderapporter
         String GET_CAR_WITH_MOST_DAMAGE_REPORTS_BY_COUNT_SQL =
                 "SELECT COUNT(car_id) AS report_count FROM damagereport GROUP BY car_id ORDER BY report_count DESC LIMIT 1";
+        //Udfører SQL-forespørgslen og returnerer antallet af skaderapporter for bilen med flest skaderapporter
         return jdbcTemplate.queryForObject(GET_CAR_WITH_MOST_DAMAGE_REPORTS_BY_COUNT_SQL, int.class);
     }
 }

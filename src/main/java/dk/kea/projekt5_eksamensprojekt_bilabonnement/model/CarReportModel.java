@@ -2,6 +2,14 @@ package dk.kea.projekt5_eksamensprojekt_bilabonnement.model;
 
 import dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel;
 
+/**
+ * carReport model class
+ *
+ * @author Martin Poulsen, mapo0004@stud.kea.dk
+ *
+ * Vores bilRapport model med Constructors, getters og setters.
+ */
+
 public class CarReportModel {
     private CarModel carModel;
     private DamageReportModel damageReportModel;

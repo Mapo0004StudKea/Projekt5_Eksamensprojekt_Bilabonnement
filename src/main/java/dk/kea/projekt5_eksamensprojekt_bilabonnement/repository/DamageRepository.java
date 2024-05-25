@@ -54,25 +54,37 @@ public class DamageRepository {
         jdbcTemplate.update(UPDATE_DAMAGE_SQL, damage.getDamage_name(), damage.getDamage_price(), damage.getDamage_description(), damage.getDamageReport_id(), damage.getId());
     }
 
-
+    //Metode til at hente en liste af skader baseret på et skaderapport-ID
     public List<DamageModel> getFullPriceFromId(int damageReport_id) {
+        //SQL-forespørgsel til at hente alle skader fra "damages" tabellen baseret på skaderapport-ID
         String GET_FULL_PRICE_FROM_ID_SQL = "SELECT * FROM damages WHERE damagereport_id = ?";
+        //Udfører SQL-forespørgslen og mapper resultaterne til en liste af DamageModel objekter
         List<DamageModel> damageModelList = jdbcTemplate.query(GET_FULL_PRICE_FROM_ID_SQL, new Object[]{damageReport_id}, new BeanPropertyRowMapper<>(DamageModel.class));
+        //Returnerer listen af skader
         return damageModelList;
     }
 
+    //Metode til at få den samlede pris af alle skader
     public double getTotalPrice() {
+        //SQL-forespørgsel til at beregne summen af alle skadepriser i "damages" tabellen
         String GET_TOTAL_PRICE = "select sum(damage_price) from damages";
+        //Udfører SQL-forespørgslen og returnerer den samlede skadepris
         return jdbcTemplate.queryForObject(GET_TOTAL_PRICE, double.class);
     }
 
+    //Metode til at finde prisen på den dyreste skade
     public double getMostExpensiveDamage() {
+        //SQL-forespørgsel til at finde prisen på den dyreste skade i "damages" tabellen
         String GET_MOST_EXPENSIVE_DAMAGE = "SELECT damage_price FROM damages WHERE damage_price = (SELECT MAX(damage_price) FROM damages)";
+        //Udfører SQL-forespørgslen og returnerer prisen på den dyreste skade
         return jdbcTemplate.queryForObject(GET_MOST_EXPENSIVE_DAMAGE, double.class);
     }
 
+    //Metode til at finde prisen på den billigste skade
     public double getCheapestDamage() {
+        //SQL-forespørgsel til at finde prisen på den billigste skade i "damages" tabellen
         String GET_CHEAPEST_DAMAGE = "SELECT damage_price FROM damages WHERE damage_price = (SELECT MIN(damage_price) FROM damages)";
+        //Udfører SQL-forespørgslen og returnerer prisen på den billigste skade
         return jdbcTemplate.queryForObject(GET_CHEAPEST_DAMAGE, double.class);
     }
 }

@@ -8,6 +8,8 @@ import java.time.LocalDate;
  * @author Viggo Beck, vibe0002@stud.kea.dk
  * @author Sebastian Drumm, sedr0001@stud.kea.dk
  * @author Martin Poulsen, mapo0004@stud.kea.dk
+ *
+ * Vores leasing model med Constructors, getters og setters.
  */
 
 public class LeasingModel {

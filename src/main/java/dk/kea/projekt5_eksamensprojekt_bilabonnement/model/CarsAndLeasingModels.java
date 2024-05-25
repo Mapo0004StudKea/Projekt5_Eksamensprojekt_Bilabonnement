@@ -1,6 +1,14 @@
 package dk.kea.projekt5_eksamensprojekt_bilabonnement.model;
 import java.util.List;
 
+/**
+ * carLeasing model class
+ *
+ * @author Sebastian Drumm, sedr0001@stud.kea.dk
+ *
+ * Vores bilLeasing model med Constructors, getters og setters.
+ */
+
 public class CarsAndLeasingModels{
         private List<CarModel> cars;
         private List<LeasingModel> leasingModels;
