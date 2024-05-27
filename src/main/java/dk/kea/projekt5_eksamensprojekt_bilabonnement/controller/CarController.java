@@ -163,7 +163,7 @@ public class CarController {
         return "redirect:carListSite";
     }
 
-    //En getMapping der vViser detaljer om en bil baseret på dens id
+    //En getMapping der viser detaljer om en bil baseret på dens id
     @GetMapping("/CarInfoPage/{id}")
     public String carInfoPage(
             @PathVariable("id") int car_Id,
