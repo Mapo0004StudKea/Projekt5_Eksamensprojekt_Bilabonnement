@@ -35,8 +35,12 @@ Vi anvender Thymeleaf, beskrevet mere i rapporten.
 Vi anvender html og css, beskrevet mere i rapporten.
 
 Collaborators
+
 Martin Poulsen
+
 Sebastian Drumm
+
 Viggo Møhring Beck
+
 Viktor Rasmussen
 
