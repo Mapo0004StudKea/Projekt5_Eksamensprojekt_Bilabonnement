@@ -16,7 +16,7 @@ Link til vores github repository: https://github.com/Mapo0004StudKea/Projekt5_Ek
 9.	Åbn din webbrowser og naviger til den port, hvor applikationen kører.
 10.	Brug programmet efter behov.
 
-Følgende programmer skal være anvendt i vores projekt og er nødvendige for at køre programmet.
+Nedenstående teknologie har være anvendt i vores projekt og er nødvendige for at køre programmet.
 
 Vi bruger IntelliJ IDEA 2024.1.2 (Ultimate Edition) som er en IDE (Integrated Development Environment).
 
@@ -34,5 +34,9 @@ Vi anvender Thymeleaf, beskrevet mere i rapporten.
 
 Vi anvender html og css, beskrevet mere i rapporten.
 
-
+Collaborators
+Martin Poulsen
+Sebastian Drumm
+Viggo Møhring Beck
+Viktor Rasmussen
 
