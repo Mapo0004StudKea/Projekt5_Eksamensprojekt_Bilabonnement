@@ -16,6 +16,9 @@ import static org.mockito.Mockito.when;
 
 public class CarServiceTest {
 
+    //Vi bruger mock/mockito til at isolere testen, og sørge for at det kun er metoden fra servicen der bliver kaldt.
+    //ChatGPT har hjulpet med til at implementere @Mock og @InjectMocks, samt importen af assertEquals.
+
     // Mock annotationen opretter en kopi af carRepository. Den efterligner (mocker) objektet.
     @Mock
     private CarRepository carRepository;
@@ -23,7 +26,7 @@ public class CarServiceTest {
     // InjectMocks opretter en instans af Carservie, og injecter carrepository over i.
     @InjectMocks CarService carService;
 
-    //BEforeEach initialisrer mocksne og bliver udført før hver test.
+    //BeforeEach initialisrer mocksne og bliver udført før hver test.
     @BeforeEach
     public void setup() {
         MockitoAnnotations.openMocks(this);
@@ -40,7 +43,7 @@ public class CarServiceTest {
         CarModel car2 = new CarModel();
         car2.setMonthly_price(100);
 
-        //DE bliver herefter lagt ned i en liste der repræsenterer leaesede biler.
+        //De bliver herefter lagt ned i en liste der repræsenterer leaesede biler.
         List<CarModel> leasedCars = Arrays.asList(car1,car2);
 
         //behavior af getLeasedCars() metoden af  det "mocked" carRepository returnerer listen af leasede biler når den bliver kaldt.
@@ -54,7 +57,7 @@ public class CarServiceTest {
 
         //assert
 
-        //Her sættes der havd vi forventer at den samlede pris vil blive for de leasede biler vi har oprettet. Med en 0.01 tolerance.
+        //Her sættes der hvad vi forventer at den samlede pris vil blive for de leasede biler vi har oprettet. Med en 0.01 tolerance.
         assertEquals(300, totalMonthlyPrice, 0.01);
     }
 }

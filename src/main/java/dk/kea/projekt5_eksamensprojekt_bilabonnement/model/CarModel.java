@@ -36,6 +36,12 @@ public class CarModel {
         this.car_description = car_description;
     }
 
+    public CarModel(int id, String car_name, boolean is_leased) {
+        this.id = id;
+        this.car_name = car_name;
+        this.is_leased = is_leased;
+    }
+
     public String getCar_description() {
         return car_description;
     }

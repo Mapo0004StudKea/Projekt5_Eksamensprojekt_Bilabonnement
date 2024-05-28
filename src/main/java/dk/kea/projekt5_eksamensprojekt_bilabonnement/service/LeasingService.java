@@ -36,17 +36,4 @@ import java.util.List;
         }
         return null;
     }
-    public String validateLeasingDuration(LocalDate startLeasing, LocalDate endLeasing, boolean isLimited, boolean isUnlimited) {
-        long leasingDuration = ChronoUnit.DAYS.between(startLeasing, endLeasing);
-
-        if (isLimited && leasingDuration > 150) {
-            return "Begrænset leasing kan ikke være længere end 150 dage.";
-        }
-
-        if (isUnlimited && leasingDuration < 90) {
-            return "Ubegrænset leasing skal være mindst 3 måneder.";
-        }
-
-        return null; // Return null if validation passes
-    }
 }

@@ -33,5 +33,6 @@ public class CarsAndLeasingModels{
         public void setLeasingModels(List<LeasingModel> leasingModels) {
             this.leasingModels = leasingModels;
         }
-    }
+
+}
 

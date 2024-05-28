@@ -49,6 +49,12 @@ public class LeasingModel {
     public LeasingModel() {
     }
 
+    public LeasingModel(int id, int car_id, LocalDate end_leasing) {
+        this.id = id;
+        this.car_id = car_id;
+        this.end_leasing = end_leasing;
+    }
+
     public int getId() {
         return id;
     }
