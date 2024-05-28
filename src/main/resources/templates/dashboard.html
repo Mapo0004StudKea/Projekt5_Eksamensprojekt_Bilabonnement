@@ -5,9 +5,9 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="../static/css/header.css" th:href="@{css/header.css}">
     <link rel="stylesheet" href="../static/css/body.css" th:href="@{css/body.css}">
+
 </head>
 <body>
-
 
 <div class="sidebar">
     <header><a th:href="@{/dashboard}">Bilabonnement</a></header>
@@ -23,10 +23,11 @@
 <div class="overskrift">
     <h2>Dashboard</h2>
 </div>
+
 <div class="flex-container">
     <div class="flex-box">
         <h2 style="margin-bottom: 30px">Information for biler</h2>
-        <table style="border: 1px solid #ddd">
+        <table class="dash-box" style="border: 1px solid #ddd">
             <thead>
                 <tr>
                     <th></th>
@@ -54,13 +55,12 @@
     </div>
 
     <div class="flex-box">
-        <div class="flex-box-image fest-2">
             <h2 style="margin-bottom: 30px">Information for Leasing Aftaler</h2>
-            <table>
+            <table class="dash-box">
                 <thead>
                     <tr>
-                        <th>Total Antal Leasing Aftaler</th>
-                        <th>Bilen med flest Leasing Aftaler</th>
+                        <th>Leasing Aftaler</th>
+                        <th>Mest populære bil</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -74,7 +74,7 @@
             <h2 style="margin-bottom: 10px">De Næste biler som kommer hjem</h2>
             <div class="block">
                 <div class="flex-container">
-            <table>
+            <table class="dash-box">
                 <thead>
                 <tr>
                     <th>Bil Name</th>
@@ -103,17 +103,16 @@
 
             </div>
             <a href="watchLeasingAgreements" style="color: black">Til oversigt af aftaler</a>
-        </div>
+
     </div>
 
     <div class="flex-box">
-        <div class="flex-box-image fest-3">
             <h2 style="margin-bottom: 30px">Information for Skaderapporter</h2>
-            <table>
+            <table class="dash-box">
                 <thead>
                 <tr>
-                    <th>Total Antal Skaderapporter</th>
-                    <th>Bilen med flest Skaderapporter</th>
+                    <th>Skadesrapporter</th>
+                    <th>Bil m/flest skader</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -124,12 +123,10 @@
                 </tbody>
             </table>
             <a href="DamageReportSite" style="color: black">Til oversigt af rapporter</a>
-        </div>
     </div>
     <div class="flex-box">
-        <div class="flex-box-image fest-4">
             <h2 style="margin-bottom: 30px">Information for skader</h2>
-            <table>
+            <table class="dash-box">
                 <thead>
                 <tr>
                     <th>Total Antal Skader</th>
@@ -148,7 +145,6 @@
                 </tbody>
             </table>
             <a href="watchDamages" style="color: black">Til oversigt af skader</a>
-        </div>
     </div>
 </div>
 

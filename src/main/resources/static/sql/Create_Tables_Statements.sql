@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS bilabonnement_gruppe3;
 CREATE DATABASE bilabonnement_gruppe3;
 USE bilabonnement_gruppe3;
 

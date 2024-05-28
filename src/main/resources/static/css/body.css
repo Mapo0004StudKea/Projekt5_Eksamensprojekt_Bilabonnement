@@ -25,13 +25,8 @@ body{
     text-align: center;
     line-height: 25px;
     border-radius: 30px;
-}
-.flex-box-image{
-    background-color: white;
-    height: 300px;
-    margin-bottom: 15px;
-    background-size: cover;
-    border-radius: 30px 30px 0 0;
+    box-shadow: 0px 0px 10px 0px rgba(0, 192, 255, 0.75);
+
 }
 
 .flex-box a{
@@ -50,7 +45,9 @@ body{
 .overskrift {
     height: 8vh;
     display: flex;
-    align-items: flex-end;
+    justify-content: center;
+    margin-right: 8%;
+    padding: 15px;
 }
 .overskrift h2{
     color: #1A1A1A;
@@ -70,9 +67,10 @@ body{
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
-}
 
-.block{
+}
+.block {
     display: flex;
-
 }
+
+
