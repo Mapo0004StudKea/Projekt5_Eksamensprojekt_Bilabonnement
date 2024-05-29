@@ -4,6 +4,7 @@ package dk.kea.projekt5_eksamensprojekt_bilabonnement.model;
  * Skade model class
  *
  * @author Viggo Beck, vibe0002@stud.kea.dk
+ * @author Viktor Rasmussen, vira0004@stud.kea.dk
  *
  * Vores skade model med Constructors, getters og setters.
  */
