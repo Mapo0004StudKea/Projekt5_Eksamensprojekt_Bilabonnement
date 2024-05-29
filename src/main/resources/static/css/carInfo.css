@@ -9,8 +9,9 @@
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 10px;
+    padding: 50px;
     margin-left: 20px;
+
 }
 
 .flex-container-block-description {
