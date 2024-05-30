@@ -89,7 +89,7 @@ public class CarController {
     @GetMapping("/CreateNewCarEntry")
     public String CreateNewCarEntry() {
         //returnere CreateNewCarEntryForm-siden
-        return "/CreateNewCarEntryForm";
+        return "CreateNewCarEntryForm";
     }
 
     //En postMapping der håndterer oprettelsen af nye biler
