@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/Sebastian Drumm/IdeaProjects/Projekt5_Eksamensprojekt_Bilabonnement/src/main/java/dk/kea/projekt5_eksamensprojekt_bilabonnement</OriginalElement>
+  <nodes>
+    <node x="1739.5" y="1242.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepository</node>
+    <node x="257.5" y="2046.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.service.DamageService</node>
+    <node x="1375.0" y="1242.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository</node>
+    <node x="2096.5" y="1974.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.LeasingController</node>
+    <node x="-191.5" y="1146.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageReportModel</node>
+    <node x="1625.5" y="2046.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.service.DashService</node>
+    <node x="1968.5" y="990.5">dk.kea.projekt5_eksamensprojekt_bilabonnement.service.LeasingService</node>
+    <node x="1517.0" y="2542.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.DashController</node>
+    <node x="-224.0" y="2010.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarReportModel</node>
+    <node x="1715.5" y="2410.5">dk.kea.projekt5_eksamensprojekt_bilabonnement.Projekt5EksamensprojektBilabonnementApplication</node>
+    <node x="211.5" y="2530.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.DamageReportController</node>
+    <node x="204.0" y="1206.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageRepository</node>
+    <node x="838.5" y="-14.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel</node>
+    <node x="671.0" y="1962.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageReportRepository</node>
+    <node x="1184.5" y="2034.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.service.CarService</node>
+    <node x="1555.0" y="930.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarsAndLeasingModels</node>
+    <node x="2088.0" y="2506.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.CarController</node>
+    <node x="184.0" y="202.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageModel</node>
+    <node x="1386.0" y="2410.5">dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.CustomErrorController</node>
+    <node x="1655.5" y="46.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.model.LeasingModel</node>
+    <node x="-21.0" y="1718.0">dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.DamageController</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.CarController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository" relationship="TO_ONE">
+      <point x="-106.0" y="-176.0" />
+      <point x="2194.0" y="2382.0" />
+      <point x="2080.0" y="2382.0" />
+      <point x="2080.0" y="2282.0" />
+      <point x="1600.0" y="2282.0" />
+      <point x="1600.0" y="1662.0" />
+      <point x="1540.0" y="1662.0" />
+      <point x="0.0" y="140.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.DamageController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageRepository" relationship="TO_ONE">
+      <point x="100.5" y="-104.0" />
+      <point x="280.5" y="1682.0" />
+      <point x="380.0" y="1682.0" />
+      <point x="0.0" y="176.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.DamageController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageModel" relationship="CREATE">
+      <point x="-100.5" y="-104.0" />
+      <point x="79.5" y="1682.0" />
+      <point x="180.0" y="1682.0" />
+      <point x="180.0" y="1182.0" />
+      <point x="252.0" y="1182.0" />
+      <point x="-68.0" y="200.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.CarController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel" relationship="CREATE">
+      <point x="106.0" y="-176.0" />
+      <point x="2406.0" y="2482.0" />
+      <point x="2560.0" y="2482.0" />
+      <point x="2560.0" y="862.0" />
+      <point x="1020.75" y="862.0" />
+      <point x="60.75" y="416.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.DashController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.service.CarService" relationship="TO_ONE">
+      <point x="0.0" y="-140.0" />
+      <point x="1700.0" y="2362.0" />
+      <point x="1380.0" y="2362.0" />
+      <point x="0.0" y="68.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.LeasingController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.model.LeasingModel" relationship="CREATE">
+      <point x="111.75" y="-128.0" />
+      <point x="2431.75" y="1942.0" />
+      <point x="2460.0" y="1942.0" />
+      <point x="2460.0" y="902.0" />
+      <point x="1872.25" y="902.0" />
+      <point x="72.25" y="356.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.DashController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageReportRepository" relationship="TO_ONE">
+      <point x="0.0" y="-140.0" />
+      <point x="1700.0" y="2382.0" />
+      <point x="900.0" y="2382.0" />
+      <point x="0.0" y="140.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.DashController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.service.DashService" relationship="TO_ONE">
+      <point x="0.0" y="-140.0" />
+      <point x="1700.0" y="2262.0" />
+      <point x="1820.0" y="2262.0" />
+      <point x="0.0" y="56.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.DamageReportController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarReportModel" relationship="CREATE">
+      <point x="-114.25" y="-152.0" />
+      <point x="325.75" y="2502.0" />
+      <point x="-40.0" y="2502.0" />
+      <point x="0.0" y="92.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.LeasingController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository" relationship="TO_ONE">
+      <point x="-111.75" y="-128.0" />
+      <point x="2208.25" y="1942.0" />
+      <point x="2200.0" y="1942.0" />
+      <point x="2200.0" y="1582.0" />
+      <point x="1540.0" y="1582.0" />
+      <point x="0.0" y="140.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.DamageReportController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageRepository" relationship="TO_ONE">
+      <point x="114.25" y="-152.0" />
+      <point x="554.25" y="2502.0" />
+      <point x="560.0" y="2502.0" />
+      <point x="560.0" y="1682.0" />
+      <point x="380.0" y="1682.0" />
+      <point x="0.0" y="176.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.CarController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepository" relationship="TO_ONE">
+      <point x="-106.0" y="-176.0" />
+      <point x="2194.0" y="2382.0" />
+      <point x="2080.0" y="2382.0" />
+      <point x="2080.0" y="2082.0" />
+      <point x="2040.0" y="2082.0" />
+      <point x="2040.0" y="1542.0" />
+      <point x="1940.0" y="1542.0" />
+      <point x="0.0" y="140.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.DamageReportController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.service.DamageService" relationship="TO_ONE">
+      <point x="114.25" y="-152.0" />
+      <point x="554.25" y="2502.0" />
+      <point x="560.0" y="2502.0" />
+      <point x="560.0" y="2182.0" />
+      <point x="400.0" y="2182.0" />
+      <point x="0.0" y="56.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.service.DashService" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarsAndLeasingModels" relationship="CREATE">
+      <point x="-97.25" y="-56.0" />
+      <point x="1722.75" y="2022.0" />
+      <point x="1720.0" y="2022.0" />
+      <point x="0.0" y="92.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarsAndLeasingModels" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.model.LeasingModel" relationship="TO_MANY">
+      <point x="0.0" y="-92.0" />
+      <point x="1720.0" y="882.0" />
+      <point x="1727.75" y="882.0" />
+      <point x="-72.25" y="356.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarReportModel" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel" relationship="TO_ONE">
+      <point x="0.0" y="-92.0" />
+      <point x="-40.0" y="1702.0" />
+      <point x="40.0" y="1702.0" />
+      <point x="40.0" y="1642.0" />
+      <point x="140.0" y="1642.0" />
+      <point x="140.0" y="1162.0" />
+      <point x="900.0" y="1162.0" />
+      <point x="900.0" y="842.0" />
+      <point x="899.25" y="842.0" />
+      <point x="-60.75" y="416.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.DamageReportController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageReportRepository" relationship="TO_ONE">
+      <point x="114.25" y="-152.0" />
+      <point x="554.25" y="2502.0" />
+      <point x="560.0" y="2502.0" />
+      <point x="560.0" y="2362.0" />
+      <point x="900.0" y="2362.0" />
+      <point x="0.0" y="140.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.service.DashService" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepository" relationship="TO_ONE">
+      <point x="97.25" y="-56.0" />
+      <point x="1917.25" y="2022.0" />
+      <point x="1920.0" y="2022.0" />
+      <point x="1920.0" y="2002.0" />
+      <point x="2040.0" y="2002.0" />
+      <point x="2040.0" y="1542.0" />
+      <point x="1940.0" y="1542.0" />
+      <point x="0.0" y="140.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageReportRepository" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel" relationship="TO_ONE">
+      <point x="0.0" y="-140.0" />
+      <point x="900.0" y="842.0" />
+      <point x="899.25" y="842.0" />
+      <point x="-60.75" y="416.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.CarController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.service.CarService" relationship="TO_ONE">
+      <point x="-106.0" y="-176.0" />
+      <point x="2194.0" y="2382.0" />
+      <point x="2080.0" y="2382.0" />
+      <point x="2080.0" y="2302.0" />
+      <point x="1380.0" y="2302.0" />
+      <point x="0.0" y="68.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarsAndLeasingModels" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarModel" relationship="TO_MANY">
+      <point x="0.0" y="-92.0" />
+      <point x="1720.0" y="902.0" />
+      <point x="900.0" y="902.0" />
+      <point x="900.0" y="842.0" />
+      <point x="899.25" y="842.0" />
+      <point x="-60.75" y="416.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageRepository" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageModel" relationship="TO_ONE">
+      <point x="0.0" y="-176.0" />
+      <point x="380.0" y="1182.0" />
+      <point x="388.0" y="1182.0" />
+      <point x="68.0" y="200.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.DashController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageRepository" relationship="TO_ONE">
+      <point x="0.0" y="-140.0" />
+      <point x="1700.0" y="2262.0" />
+      <point x="640.0" y="2262.0" />
+      <point x="640.0" y="1682.0" />
+      <point x="380.0" y="1682.0" />
+      <point x="0.0" y="176.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.LeasingController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.service.LeasingService" relationship="TO_ONE">
+      <point x="-111.75" y="-128.0" />
+      <point x="2208.25" y="1942.0" />
+      <point x="2200.0" y="1942.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.service.DashService" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository" relationship="TO_ONE">
+      <point x="97.25" y="-56.0" />
+      <point x="1917.25" y="2022.0" />
+      <point x="1920.0" y="2022.0" />
+      <point x="1920.0" y="1602.0" />
+      <point x="1540.0" y="1602.0" />
+      <point x="0.0" y="140.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.service.CarService" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository" relationship="TO_ONE">
+      <point x="0.0" y="-68.0" />
+      <point x="1380.0" y="1662.0" />
+      <point x="1540.0" y="1662.0" />
+      <point x="0.0" y="140.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.CarController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageReportRepository" relationship="TO_ONE">
+      <point x="-106.0" y="-176.0" />
+      <point x="2194.0" y="2382.0" />
+      <point x="2080.0" y="2382.0" />
+      <point x="2080.0" y="2322.0" />
+      <point x="900.0" y="2322.0" />
+      <point x="0.0" y="140.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.model.CarReportModel" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageReportModel" relationship="TO_ONE">
+      <point x="0.0" y="-92.0" />
+      <point x="-40.0" y="1702.0" />
+      <point x="40.0" y="1702.0" />
+      <point x="40.0" y="1642.0" />
+      <point x="35.75" y="1642.0" />
+      <point x="75.75" y="236.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.LeasingController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepository" relationship="TO_ONE">
+      <point x="-111.75" y="-128.0" />
+      <point x="2208.25" y="1942.0" />
+      <point x="2200.0" y="1942.0" />
+      <point x="2200.0" y="1562.0" />
+      <point x="2040.0" y="1562.0" />
+      <point x="2040.0" y="1542.0" />
+      <point x="1940.0" y="1542.0" />
+      <point x="0.0" y="140.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.DashController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository" relationship="TO_ONE">
+      <point x="0.0" y="-140.0" />
+      <point x="1700.0" y="2262.0" />
+      <point x="1160.0" y="2262.0" />
+      <point x="1160.0" y="1662.0" />
+      <point x="1540.0" y="1662.0" />
+      <point x="0.0" y="140.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.DamageReportController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.model.DamageReportModel" relationship="CREATE">
+      <point x="-114.25" y="-152.0" />
+      <point x="325.75" y="2502.0" />
+      <point x="-40.0" y="2502.0" />
+      <point x="-40.0" y="2482.0" />
+      <point x="-240.0" y="2482.0" />
+      <point x="-240.0" y="1982.0" />
+      <point x="-115.75" y="1982.0" />
+      <point x="-75.75" y="236.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.DashController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.LeasingRepository" relationship="TO_ONE">
+      <point x="0.0" y="-140.0" />
+      <point x="1700.0" y="2262.0" />
+      <point x="2040.0" y="2262.0" />
+      <point x="2040.0" y="1542.0" />
+      <point x="1940.0" y="1542.0" />
+      <point x="0.0" y="140.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.service.DamageService" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.DamageRepository" relationship="TO_ONE">
+      <point x="0.0" y="-56.0" />
+      <point x="400.0" y="1682.0" />
+      <point x="380.0" y="1682.0" />
+      <point x="0.0" y="176.0" />
+    </edge>
+    <edge source="dk.kea.projekt5_eksamensprojekt_bilabonnement.controller.DamageReportController" target="dk.kea.projekt5_eksamensprojekt_bilabonnement.repository.CarRepository" relationship="TO_ONE">
+      <point x="114.25" y="-152.0" />
+      <point x="554.25" y="2502.0" />
+      <point x="560.0" y="2502.0" />
+      <point x="560.0" y="2182.0" />
+      <point x="600.0" y="2182.0" />
+      <point x="600.0" y="1662.0" />
+      <point x="1540.0" y="1662.0" />
+      <point x="0.0" y="140.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.4572149464038728" showDependencies="true" x="1110.2120649926144" y="1233.3519999999999" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -30,7 +30,7 @@ import java.util.*;
  */
 
 @Controller
-public class DamageReportController {
+    public class DamageReportController {
 
     @Autowired
     DamageReportRepository damageReportRepository;

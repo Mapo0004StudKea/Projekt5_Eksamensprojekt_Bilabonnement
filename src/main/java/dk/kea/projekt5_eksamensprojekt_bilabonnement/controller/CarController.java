@@ -89,7 +89,7 @@ public class CarController {
     @GetMapping("/CreateNewCarEntry")
     public String CreateNewCarEntry() {
         //returnere CreateNewCarEntryForm-siden
-        return "/CreateNewCarEntryForm";
+        return "CreateNewCarEntryForm";
     }
 
     //En postMapping der håndterer oprettelsen af nye biler
@@ -165,10 +165,7 @@ public class CarController {
 
     //En getMapping der viser detaljer om en bil baseret på dens id
     @GetMapping("/CarInfoPage/{id}")
-    public String carInfoPage(
-            @PathVariable("id") int car_Id,
-            Model model
-    ) {
+    public String carInfoPage(@PathVariable("id") int car_Id,Model model) {
         //Henter bilen fra databasen
         CarModel carModel = carRepository.GetCarById(car_Id);
         //Tilføjer bilen til modellen for at kunne vise det på siden

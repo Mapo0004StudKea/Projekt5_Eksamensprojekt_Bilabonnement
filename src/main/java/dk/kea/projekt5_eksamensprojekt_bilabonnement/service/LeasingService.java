@@ -22,7 +22,6 @@ import java.util.List;
     @Service
     public class LeasingService {
 
-
     //Metode der sørger for at biler der er limited kun kan lejes i en periode på 5 måneder, og unlimited kun kan lejes fra 3 måneder og op.
     public String checkLeasingDate(LocalDate startLeasing, LocalDate endLeasing, boolean isUnlimited, boolean isLimited) {
 

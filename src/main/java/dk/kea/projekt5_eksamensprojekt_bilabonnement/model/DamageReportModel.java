@@ -13,12 +13,12 @@ import java.time.LocalDate;
  */
 
 public class DamageReportModel {
-    int id;
-    String report_name;
-    String report_description;
-    String report_employee_name;
-    LocalDate report_Damage_Date;
-    int car_id;
+    private int id;
+    private String report_name;
+    private String report_description;
+    private String report_employee_name;
+    private LocalDate report_Damage_Date;
+    private int car_id;
 
     public DamageReportModel() {
     }

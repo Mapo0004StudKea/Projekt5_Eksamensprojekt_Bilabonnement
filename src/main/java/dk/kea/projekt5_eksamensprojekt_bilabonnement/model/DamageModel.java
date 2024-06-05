@@ -8,11 +8,11 @@ package dk.kea.projekt5_eksamensprojekt_bilabonnement.model;
  * Vores skade model med Constructors, getters og setters.
  */
 public class DamageModel {
-    int id;
-    String damage_name;
-    double damage_price;
-    String damage_description;
-    int damageReport_id;
+    private int id;
+    private String damage_name;
+    private double damage_price;
+    private String damage_description;
+    private int damageReport_id;
 
     public DamageModel(int id, String damage_name, double damage_price, String damage_description, int damageReport_id) {
         this.id = id;

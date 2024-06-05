@@ -18,14 +18,6 @@ public class DamageService {
     @Autowired
     DamageRepository damageRepository;
 
-    public double calculateTotalDamagePrice(){
-        List<DamageModel> damage = damageRepository.findAllDamage();
-        double totalPrice = 0;
-        for(DamageModel damageModel : damage){
-            totalPrice += damageModel.getDamage_price();
-        }
-        return totalPrice;
-    }
 
     public double totalPriceForDamages(int damageReport_id) {
         List<DamageModel> damageModels = damageRepository.getFullPriceFromId(damageReport_id);

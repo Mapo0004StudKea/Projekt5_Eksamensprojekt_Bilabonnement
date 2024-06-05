@@ -19,6 +19,7 @@ public class CarModel {
         private String car_model;
         private String car_name;
         private String car_year;
+
         private double monthly_price;
         private boolean is_leased;
         private String car_description;

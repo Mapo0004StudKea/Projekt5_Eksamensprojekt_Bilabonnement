@@ -20,11 +20,13 @@ public class DashService {
     @Autowired
     LeasingRepository leasingRepository;
 
+    // chat Gbdt, har hjulpet en del med denne metode.
+    // jeg har lavet en model CarsAndLeasingModels som består af to lister som jeg gerne ville retunere.
     public CarsAndLeasingModels listOfCarsNearEndLeasing(int daysThreshold) {
         //jeg laver en række liste for at kunne håndter metoden
-        //jeg skal havde sortedList tilbage og udprintes.
-        List<CarModel> sortedList = new ArrayList<>();
-        List<LeasingModel> leasingModelsList = new ArrayList<>();
+        //jeg skal havde listOfCarsSorted tilbage og udprintes.
+        List<CarModel> listOfCarsSorted = new ArrayList<>();
+        List<LeasingModel> listOfLeasingSorted = new ArrayList<>();
         //jeg skal undersøge hver bil leasingsList, men skal første hente bilerne
         List<CarModel> carList = carRepository.getFullListOfCars();
         LocalDate today = LocalDate.now();
@@ -41,16 +43,16 @@ public class DashService {
                     latestLeasingModel = listOfleasing.get(listOfleasing.size()-1);
                    // System.out.println(latestLeasingModel.getEnd_leasing());
                     //System.out.println(latestLeasingModel.getCar_id());
-                    // Now you can use latestLeasingModel as needed
                 }
                 //så henter jeg end_leasing, for at tjekke om den er inden for 30 dage.
                 LocalDate endLeasingDate = latestLeasingModel.getEnd_leasing();
                 if (endLeasingDate != null && ChronoUnit.DAYS.between(today, endLeasingDate) <= daysThreshold) {
-                    leasingModelsList.add(listOfleasing.get(listOfleasing.size()-1));
-                    sortedList.add(carModel);
+                    // og så add'er jeg dem til litsten.
+                    listOfLeasingSorted.add(listOfleasing.get(listOfleasing.size()-1));
+                    listOfCarsSorted.add(carModel);
                 }
             }
         }
-        return new CarsAndLeasingModels(sortedList, leasingModelsList);
+        return new CarsAndLeasingModels(listOfCarsSorted, listOfLeasingSorted);
     }
     }

@@ -13,15 +13,15 @@ import java.time.LocalDate;
  */
 
 public class LeasingModel {
-    int id;
-    String employee_name;
-    double monthly_price;
-    String customer_name;
-    LocalDate start_leasing;
-    LocalDate end_leasing;
-    boolean is_unlimited;
-    boolean is_limited;
-    int car_id;
+     private int id;
+    private String employee_name;
+    private double monthly_price;
+    private String customer_name;
+    private LocalDate start_leasing;
+    private LocalDate end_leasing;
+    private boolean is_unlimited;
+    private boolean is_limited;
+    private int car_id;
 
     public LeasingModel(int id, String employee_name, double monthly_price, String customer_name, LocalDate start_leasing, LocalDate end_leasing, boolean is_unlimited, boolean is_limited, int car_id) {
         this.id = id;
