@@ -16,6 +16,7 @@ import java.util.List;
  * @author Sebastian Drumm, sedr
  * @author Viggo Beck, vibe0002@stud.kea.dk
  * @author Martin Poulsen, mapo0004@stud.kea.dk
+ *  @author Viktor Rasmussen, vira0004@stud.kea.dk
  */
 @Repository
 public class DamageReportRepository {

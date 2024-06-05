@@ -20,11 +20,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         @Test
         public void testIsLimitedExceeds150Days() {
             // Definerer start- og slutdatoer for leasingperioden
-            LocalDate start = LocalDate.of(2024, 1, 1);
-            LocalDate end = LocalDate.of(2024, 6, 1);
+            LocalDate startDate = LocalDate.of(2024, 1, 1);
+            LocalDate endDate = LocalDate.of(2024, 8, 1);
 
             // Kalder checkLeasingDate-metoden med en begrænset leasingperiode på mere end 150 dage
-            String result = leasingService.checkLeasingDate(start, end, false, true);
+            String result = leasingService.checkLeasingDate(startDate, endDate, false, true);
             assertEquals("For en begrænset leasingaftale, kan du kun leje 150 dage", result);
         }
 
@@ -40,11 +40,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
         @Test
         public void testIsLimitedWithin150Days() {
-            LocalDate start = LocalDate.of(2024, 1, 1);
-            LocalDate end = LocalDate.of(2024, 5, 1);
+            LocalDate startDate = LocalDate.of(2024, 1, 1);
+            LocalDate endDate = LocalDate.of(2024, 5, 1);
 
             // Kalder checkLeasingDate-metoden med en begrænset leasingperiode på under 150 dage
-            String result = leasingService.checkLeasingDate(start, end, false, true);
+            String result = leasingService.checkLeasingDate(startDate, endDate, false, true);
 
             // Kontrollerer, at resultatet er null, da leasingperioden er gyldig for begrænset leasing
             assertEquals(null, result);

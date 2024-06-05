@@ -23,7 +23,7 @@ public class CarServiceTest {
     @Mock
     private CarRepository carRepository;
 
-    // InjectMocks opretter en instans af Carservie, og injecter carrepository over i.
+    // InjectMocks opretter en instans af Carservice, og injecter carrepository over i.
     @InjectMocks CarService carService;
 
     //BeforeEach initialisrer mocksne og bliver udført før hver test.
